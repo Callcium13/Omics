@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in rule fastqc in file /data/leuven/362/vsc36251/Assignment2/snakefile, line 30:
+Wildcards in input files cannot be determined from output files:
+'name'

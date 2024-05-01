@@ -1,0 +1,95 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+extract_snps         1
+fastqc               1
+snpeff               1
+total                6
+
+Select jobs to execute...
+
+[Wed May  1 18:11:05 2024]
+rule SNP_calling:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    output: 3_samtools/snps.vcf
+    jobid: 12
+    reason: Missing output files: 3_samtools/snps.vcf
+    resources: tmpdir=/tmp
+
+[Wed May  1 18:17:20 2024]
+Finished job 12.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Wed May  1 18:17:20 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 8
+    reason: Missing output files: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00121.GRCh38DH.exome.chr21
+    resources: tmpdir=/tmp
+
+[Wed May  1 18:17:36 2024]
+Finished job 8.
+2 of 6 steps (33%) done
+Select jobs to execute...
+
+[Wed May  1 18:17:36 2024]
+rule SNP_norm_filt:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 3_samtools/snps.vcf
+    output: 4_cleaned/snps.cleaned.vcf
+    jobid: 24
+    reason: Missing output files: 4_cleaned/snps.cleaned.vcf; Input files updated by another job: 3_samtools/snps.vcf
+    resources: tmpdir=/tmp
+
+[Wed May  1 18:17:39 2024]
+Finished job 24.
+3 of 6 steps (50%) done
+Select jobs to execute...
+
+[Wed May  1 18:17:39 2024]
+rule snpeff:
+    input: 4_cleaned/snps.cleaned.vcf
+    output: 5_snpeff/snps.annotated.vcf, 5_snpeff/snpEff_summary.html, 5_snpeff/snpEff_genes.txt
+    log: 5_snpeff/snakemake.err
+    jobid: 25
+    reason: Missing output files: 5_snpeff/snps.annotated.vcf; Input files updated by another job: 4_cleaned/snps.cleaned.vcf
+    resources: tmpdir=/tmp
+
+[Wed May  1 18:18:23 2024]
+Finished job 25.
+4 of 6 steps (67%) done
+Select jobs to execute...
+
+[Wed May  1 18:18:23 2024]
+rule extract_snps:
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    jobid: 26
+    reason: Missing output files: genes.vcf; Input files updated by another job: 5_snpeff/snps.annotated.vcf
+    resources: tmpdir=/tmp
+
+[Wed May  1 18:18:23 2024]
+Error in rule extract_snps:
+    jobid: 26
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    shell:
+        
+        bcftools view -i 'INFO/GENE="APP" || INFO/GENE="SOD21" || INFO/GENE="DYRK1A"' 5_snpeff/snps.annotated.vcf -o genes.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job extract_snps since they might be corrupted:
+genes.vcf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-01T181102.533054.snakemake.log

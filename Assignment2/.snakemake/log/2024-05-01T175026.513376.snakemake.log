@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+bwa                 11
+extract_snps         1
+fastqc              11
+snpeff               1
+total               27
+
+Select jobs to execute...
+
+[Wed May  1 17:50:28 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 6
+    reason: Missing output files: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png
+    wildcards: sample=HG01791.GRCh38DH.exome.chr21
+    resources: tmpdir=/tmp
+
+RuleException in rule fastqc in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 30:
+AttributeError: 'Wildcards' object has no attribute 'name', when formatting the following:
+
+        echo "Input Fastq: {input} "
+        fastqc -o 1_fastqc {input} --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o {wildcards.name}_fastqc.zip )
+
+        # grep WARN 1_fastqc/{wildcards.name}_fastqc/summary.txt && false
+        

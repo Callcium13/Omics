@@ -1,0 +1,49 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+bwa                 11
+extract_snps         1
+snpeff               1
+total               16
+
+Select jobs to execute...
+
+[Wed May  1 18:28:40 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai
+    jobid: 15
+    reason: Code has changed since last execution
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: tmpdir=/tmp
+
+[Wed May  1 18:29:29 2024]
+Error in rule bwa:
+    jobid: 15
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+
+                if [ -f 2_bwa/HG00111.GRCh38DH.exome.chr21.bam ] && [ -f 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai ]; then
+            echo "BAM file created sucessfully."
+        else
+            echo "Error: BAM file missing: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam"
+            exit 1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job bwa since they might be corrupted:
+2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-01T182838.972284.snakemake.log

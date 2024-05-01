@@ -1,60 +1,85 @@
 
-
-#To make the project a little easier, use only those fastq files of which the identifier ends with the last digit of your vsc number
-#fastq_files_dir  = '/staging/leuven/stg_00079/teaching/1000genomes'
-
 vsc_number = "36251"  # VSC number for filtering id's
 
-#Important. Your Snakefile should do the fastq selection. Make sure you select your input files with a line that looks like this: 
-#sample_names, = glob_wildcards("/staging/leuven/stg_00079/teaching/1000genomes/{sample}.fq.gz")
+# get the list of names from the genomes folder
 sample_names, = glob_wildcards("/staging/leuven/stg_00079/teaching/1000genomes/{sample}.fq.gz")
-
-#- given that this yields a Python list - you can in the Snakefile, using python, filter on samples with the correct identifiers (for example using regular expressions).
+#filter that list based on the last digit
 sample_names = [id for id in sample_names if id[6] == vsc_number[-1]]
 
 #Additionally, to lighten the load further, we extracted fastq reads of just chromosome 21 for you to map
 BWA_DB_chr21 = '/lustre1/project/stg_00079/teaching/hg38_21/chr21.fa'
 
-# snpeff_jar = ("/lustre1/project/stg_00079/teaching/miniconda3/pkgs"
-#               + "/snpeff-5.1-hdfd78af_2/share/snpeff-5.1-2/snpEff.jar")
+#get the jar and data for SNPeff
 snpeff_jar = "/staging/leuven/stg_00079/teaching/I0U19a_conda_2024/share/snpeff-5.2-0/snpEff.jar"
-
+snpeff_genome = 'hg38'
 snpeff_db_folder = "/staging/leuven/stg_00079/teaching/1000genomes/hg38"
 
-#rule to collect all output files required on completion
+#rule stating what the end goal is, 
+#these endpoint will determine which graphs are actually checked for dependecies
+#anything not requested will have itself or its dependencies generated
 rule all:
     input:
-        fastqc_zip=expand(
-            "1_fastqc/{name}_fastqc.zip",
-            name=sample_names),
-        vcf = "5_snpeff/snps.annotated.vcf",
+        fastqc_zip=expand("1_fastqc/{sample}_fastqc.zip", sample=sample_names),
+        summary_png=expand("1_fastqc/{sample}_fastqc/summary.png", sample=sample_names),
+        rep1=expand("1_fastqc/{sample}_fastqc/Images/per_base_quality.png", sample=sample_names),
+        vcf="3_samtools/snps.vcf",
+        cleaned_vcf="4_cleaned/snps.cleaned.vcf",
+        snpeff = "5_snpeff/snps.annotated.vcf",       
         genes_vcf="genes.vcf",
-        # heatmap_image="7_heatmap/snps_heatmap.png"
-
+        heatmap_image="7_heatmap/snps_heatmap.png"
 
 # Rule for performing FastQC
 rule fastqc:
     input:
-        fq = "/staging/leuven/stg_00079/teaching/1000genomes/{name}.fq.gz"
+        fq = "/staging/leuven/stg_00079/teaching/1000genomes/{sample}.fq.gz"
 
     output:
-        zip="1_fastqc/{name}_fastqc.zip",
-        html="1_fastqc/{name}_fastqc.html",
-        summarytxt="1_fastqc/{name}_fastqc/summary.txt",
-        basequal=report("1_fastqc/{name}_fastqc/Images/per_base_quality.png",
-                        category='FastQC',
-                        subcategory='Per base quality',
-                        labels={"sample": "{name}"})
+        fastqc_zip="1_fastqc/{sample}_fastqc.zip",
+        html="1_fastqc/{sample}_fastqc.html",
+        summarydata="1_fastqc/{sample}_fastqc/fastqc_data.txt",
+        rep1=report("1_fastqc/{sample}_fastqc/Images/per_base_quality.png", category="Fastqc",
+                    subcategory="Per base quality", labels={"sample": "{sample}"}),
+        rep2=report("1_fastqc/{sample}_fastqc/Images/per_base_sequence_content.png", category="Fastqc",
+                     subcategory="Per base sequence content", labels={"sample": "{sample}"}),
+        rep3=report("1_fastqc/{sample}_fastqc/summary.txt", category="Fastqc",
+                    subcategory="Summary text", labels={"sample": "{sample}"}),
 
     shell:
         """
-        echo "Input Fastq: {input} "
-        fastqc -o 1_fastqc {input}
+        echo "Input Fastq: {sample} "
+        fastqc -o 1_fastqc {input} --extract
 
         echo "Unzip the output"
-        ( cd 1_fastqc ; unzip -o {wildcards.name}_fastqc.zip )
+        ( cd 1_fastqc ; unzip -o {wildcards.sample}_fastqc.zip )
 
-        # grep WARN 1_fastqc/{wildcards.name}_fastqc/summary.txt && false
+        # grep WARN 1_fastqc/{wildcards.sample}_fastqc/summary.txt && false
+                # Check if the HTML report is generated
+        if [ ! -f 1_fastqc/{wildcards.sample}_fastqc.html ]; then
+            echo "Error: HTML report not generated."
+            exit 1
+        fi
+
+        # Check if the summary data file is present
+        if [ ! -f 1_fastqc/{wildcards.sample}_fastqc/fastqc_data.txt ]; then
+            echo "Error: Summary data file not generated."
+            exit 1
+        fi
+
+        # Check if the required images are generated
+        if [ ! -f 1_fastqc/{wildcards.sample}_fastqc/Images/per_base_quality.png ] || \
+           [ ! -f 1_fastqc/{wildcards.sample}_fastqc/Images/per_base_sequence_content.png ]; then
+            echo "Error: Required images not generated."
+            exit 1
+        fi
+
+        # Check if the summary text file is generated and contains no warnings
+        if [ ! -f 1_fastqc/{wildcards.sample}_fastqc/summary.txt ]; then
+            echo "Error: Summary text file not generated."
+            exit 1
+        elif grep -q "WARN" 1_fastqc/{wildcards.sample}_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            exit 1
+        fi
         """
 
 # Rule for performing BWA
@@ -68,11 +93,19 @@ rule bwa:
         db=BWA_DB_chr21,
     shell:
         """
-        bwa mem {params.db} {input.fq} \
+        echo "Performing BWA on: {sample} "
+        bwa mem {params} {input} \
             | samtools sort - \
             > {output.bam}
         samtools index {output.bam}
+
+   
         """
+        # if [ -f {output.bam} ] && [ -f {output.bai} ]; then
+        #     echo "BAM file created sucessfully."
+        # else
+        #     echo "Error: BAM file missing: {output.bam}"
+        #     exit 1     
 
 # Rule for SNP calling using bcftools
 rule SNP_calling:
@@ -83,8 +116,17 @@ rule SNP_calling:
         vcf="3_samtools/snps.vcf",
     shell:
         """
+        echo "Performing SNP calling on: {sample} "
         bcftools mpileup -Ou -f {input.db} {input.bams} \
              | bcftools call -mv -Ov -o {output.vcf}
+
+        # Check if the VCF file was created
+        if [ -f {output.vcf} ]; then
+            echo "VCF was generated."
+        else
+            echo "Error: SNP calling failed"
+            exit 1
+        fi
         """
 
 # Rule for SNP normalization & filtering
@@ -96,6 +138,7 @@ rule SNP_norm_filt:
         vcf="4_cleaned/snps.cleaned.vcf"
     shell:
         """
+        echo "Normalizing and filtering: {sample} "
         ( cat {input.vcf} \
            | vt decompose - \
            | vt normalize -n -r {input.db} - \
@@ -111,6 +154,7 @@ rule snpeff:
     params:
         snpeff_db_folder = snpeff_db_folder,
         snpeff_jar = snpeff_jar,
+        snpeff_genome = snpeff_genome,
     log:
         err="5_snpeff/snakemake.err",
     output:
@@ -119,7 +163,7 @@ rule snpeff:
         genetxt = "5_snpeff/snpEff_genes.txt",
     shell:
         """
-
+        echo "Annotating: {sample} "
         mkdir -p 5_snpeff
 
         java -Xmx4096m -jar \
@@ -132,16 +176,7 @@ rule snpeff:
 
         """
 
-# Rule for extracting SNPs associated with APP, SOD21, and DYRK1A into a new VCF file
-rule extract_snps:
-    input:
-        vcf="5_snpeff/snps.annotated.vcf",
-    output:
-        genes_vcf="genes.vcf",
-    shell:
-        """
-        bcftools view -i 'INFO/GENE="APP" || INFO/GENE="SOD21" || INFO/GENE="DYRK1A"' {input.vcf} -o {output.genes_vcf}
-        """
+
 
 # Rule for creating an image with a heatmap showing the number of SNPs per individual
 rule snp_heatmap:
@@ -157,4 +192,48 @@ rule snp_heatmap:
         awk '{print $1}' snps_per_individual.txt > individuals.txt
         awk '{print $2}' snps_per_individual.txt > snps.txt
         python heatmap.py individuals.txt snps.txt {output.heatmap_image}
+        """
+
+rule fastqc_report_image:
+    input:
+        summarytxt = "1_fastqc/{sample}_fastqc/summary.txt"
+    output:
+        statuspng = report("1_fastqc/{sample}_fastqc/summary.png",
+                         category='Fastqc',
+                         subcategory='Status',
+                         labels={"sample": "{sample}"})
+
+    run:
+        import pandas as pd
+        import seaborn as sns
+        import matplotlib.pyplot as plt
+
+        #load data
+        data = pd.read_csv(input.summarytxt, sep="\t", header=None)
+        data.columns = ['status', 'test', 'sample']
+
+        #assign dummy x value for scatterplot
+        data['x'] = 1
+
+        #create image
+        fig = plt.figure(figsize=(4,5))
+        ax = plt.gca()
+        sns.scatterplot(data, x='x', y='test', hue='status', s=200, ax=ax)
+        ax.get_xaxis().set_visible(False)
+        ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+        plt.tight_layout()
+        plt.title(wildcards.sample)
+        plt.savefig(output.statuspng)
+
+# Rule for extracting SNPs associated with APP, SOD21, and DYRK1A into a new VCF file
+rule extract_snps:
+    input:
+        vcf="5_snpeff/snps.annotated.vcf",
+    output:
+        genes_vcf="genes.vcf",
+    shell:
+        """
+        # Extract SNPs associated with APP, SOD21, and DYRK1A from the annotated VCF file
+        bcftools view -i 'INFO/ANN[*].Gene_Name="APP" || INFO/ANN[*].Gene_Name="SOD21" || INFO/ANN[*].Gene_Name="DYRK1A"' \
+            {input.vcf} -o {output.genes_vcf}
         """

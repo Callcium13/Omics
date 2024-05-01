@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH --account="lp_edu_large_omics" #the account which will be charged for the compute time.
+#SBATCH --cluster="wice" #the cluster we will run our workload on, currently only wice is implemented.
+#SBATCH -N 1 #the numbers of nodes used, leave this at 1 unless you specifically know how to use multiple nodes.
+#SBATCH -n 1 #the number of cpu cores we would like to use one every node.
+#SBATCH -t 00:30:00 #the duration our job will run for, shorter times are easier to schedule, but jobs will stop once this timer runs out.
+#SBATCH -o ./snakemake.out #a location to save the console output of our job.
+
+export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/:$PATH
+
+snakemake --unlock
+
+snakemake -c1 --report
+

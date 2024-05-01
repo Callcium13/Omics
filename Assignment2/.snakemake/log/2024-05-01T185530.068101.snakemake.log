@@ -1,0 +1,53 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+all                        1
+extract_snps               1
+fastqc_report_image        1
+snp_heatmap                1
+total                      4
+
+Select jobs to execute...
+
+[Wed May  1 18:55:33 2024]
+rule fastqc_report_image:
+    input: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 2
+    reason: Missing output files: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG00141.GRCh38DH.exome.chr21
+    resources: tmpdir=/tmp
+
+[Wed May  1 18:55:39 2024]
+Finished job 2.
+1 of 4 steps (25%) done
+Select jobs to execute...
+
+[Wed May  1 18:55:39 2024]
+rule extract_snps:
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    jobid: 7
+    reason: Missing output files: genes.vcf
+    resources: tmpdir=/tmp
+
+[Wed May  1 18:55:39 2024]
+Error in rule extract_snps:
+    jobid: 7
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    shell:
+        
+        bcftools view -i 'INFO/ANN[*].GENE="APP" || INFO/ANN[*].GENE="SOD21" || INFO/ANN[*].GENE="DYRK1A"'             5_snpeff/snps.annotated.vcf -o genes.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job extract_snps since they might be corrupted:
+genes.vcf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-01T185530.068101.snakemake.log
