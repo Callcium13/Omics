@@ -1,0 +1,184 @@
+
+
+#To make the project a little easier, use only those fastq files of which the identifier ends with the last digit of your vsc number
+#fastq_files_dir  = '/staging/leuven/stg_00079/teaching/1000genomes'
+
+vsc_number = "36251"  # VSC number for filtering id's
+
+#Important. Your Snakefile should do the fastq selection. Make sure you select your input files with a line that looks like this: 
+#sample_names, = glob_wildcards("/staging/leuven/stg_00079/teaching/1000genomes/{sample}.fq.gz")
+sample_names, = glob_wildcards("/staging/leuven/stg_00079/teaching/1000genomes/{sample}.fq.gz")
+
+#- given that this yields a Python list - you can in the Snakefile, using python, filter on samples with the correct identifiers (for example using regular expressions).
+sample_names = [id for id in sample_names if id[6] == vsc_number[-1]]
+
+ #DELETE THIS
+#sample_names = sample_names[0] #DELETE THIS
+ #DELETE THIS
+ 
+#Additionally, to lighten the load further, we extracted fastq reads of just chromosome 21 for you to map
+BWA_DB_chr21 = '/lustre1/project/stg_00079/teaching/hg38_21/chr21.fa'
+
+# snpeff_jar = ("/lustre1/project/stg_00079/teaching/miniconda3/pkgs"
+#               + "/snpeff-5.1-hdfd78af_2/share/snpeff-5.1-2/snpEff.jar")
+snpeff_jar = "/staging/leuven/stg_00079/teaching/I0U19a_conda_2024/share/snpeff-5.2-0/snpEff.jar"
+
+snpeff_db_folder = "/staging/leuven/stg_00079/teaching/1000genomes/hg38"
+
+#rule to collect all output files required on completion
+rule all:
+    input:
+        fastqc_zip=expand(
+            "1_fastqc/{name}_fastqc.zip",
+            name=sample_names),
+        vcf = "5_snpeff/snps.annotated.vcf",
+        genes_vcf="6_gene_snps/genes.vcf",
+        heatmap_image="7_heatmap/snps_heatmap.png", 
+        # report = "Snakefile_report.html",       
+        slurm = "snakemake.slurm"
+
+
+# Rule for performing FastQC
+rule fastqc:
+    input:
+        fq = "/staging/leuven/stg_00079/teaching/1000genomes/{name}.fq.gz"
+
+    output:
+        zip="1_fastqc/{name}_fastqc.zip",
+        html="1_fastqc/{name}_fastqc.html",
+        summarytxt="1_fastqc/{name}_fastqc/summary.txt",
+        basequal=report("1_fastqc/{name}_fastqc/Images/per_base_quality.png",
+                        category='FastQC',
+                        subcategory='Per base quality',
+                        labels={"sample": "{name}"})
+
+    shell:
+        """
+        echo "Input Fastq: {input} "
+        fastqc -o 1_fastqc {input}
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o {wildcards.name}_fastqc.zip )
+
+        # grep WARN 1_fastqc/{wildcards.name}_fastqc/summary.txt && false
+        """
+
+# Rule for performing BWA
+rule bwa:
+    input:
+        fq="/staging/leuven/stg_00079/teaching/1000genomes/{sample}.fq.gz",
+    output:
+        bam = "2_bwa/{sample}.bam",
+        bai = "2_bwa/{sample}.bam.bai",
+    params:
+        db=BWA_DB_chr21,
+    shell:
+        """
+        bwa mem {params.db} {input.fq} \
+            | samtools sort - \
+            > {output.bam}
+        samtools index {output.bam}
+        """
+
+# Rule for SNP calling using bcftools
+rule SNP_calling:
+    input:
+        db=BWA_DB_chr21,
+        bams=expand("2_bwa/{sample}.bam", sample=sample_names),
+    output:
+        vcf="3_samtools/snps.vcf",
+    shell:
+        """
+        bcftools mpileup -Ou -f {input.db} {input.bams} \
+             | bcftools call -mv -Ov -o {output.vcf}
+        """
+
+# Rule for SNP normalization & filtering
+rule SNP_norm_filt:
+    input:
+        db=BWA_DB_chr21,
+        vcf="3_samtools/snps.vcf"
+    output:
+        vcf="4_cleaned/snps.cleaned.vcf"
+    shell:
+        """
+        ( cat {input.vcf} \
+           | vt decompose - \
+           | vt normalize -n -r {input.db} - \
+           | vt uniq - \
+           | vt view -f "QUAL>20" -h - \
+           > {output.vcf} )
+        """
+
+# Rule for SNP annotation using SNPeff
+rule snpeff:
+    input:
+        vcf = "4_cleaned/snps.cleaned.vcf",
+    params:
+        snpeff_db_folder = snpeff_db_folder,
+        snpeff_jar = snpeff_jar,
+    log:
+        err="5_snpeff/snakemake.err",
+    output:
+        vcf = "5_snpeff/snps.annotated.vcf",
+        html = "5_snpeff/snpEff_summary.html",
+        genetxt = "5_snpeff/snpEff_genes.txt",
+    shell:
+        """
+
+        mkdir -p 5_snpeff
+
+        java -Xmx4096m -jar \
+            {params.snpeff_jar} eff hg38 \
+            -dataDir {params.snpeff_db_folder} \
+            {input.vcf} > {output.vcf}
+
+        # move output files to the snpeff output folder
+        mv snpEff_genes.txt snpEff_summary.html 5_snpeff
+
+        """
+
+# Rule for extracting SNPs associated with APP, SOD21, and DYRK1A into a new VCF file
+rule extract_snps:
+    input:
+        vcf="5_snpeff/snps.annotated.vcf",
+    output:
+        genes_vcf="6_gene_snps/genes.vcf",
+    shell:
+        """
+        bcftools view -i 'INFO/GENE="APP" || INFO/GENE="SOD21" || INFO/GENE="DYRK1A"' {input.vcf} -o {output.genes_vcf}
+        """
+
+# Rule for creating an image with a heatmap showing the number of SNPs per individual
+rule snp_heatmap:
+    input:
+        vcf="5_snpeff/snps.annotated.vcf",
+    output:
+        heatmap_image="7_heatmap/snps_heatmap.png",
+    shell:
+        """
+        bcftools query -l {input.vcf} > samples.txt
+        bcftools query -f '%CHROM\t%POS[\t%GT]\n' {input.vcf} | grep -v '#' | cut -f 3- > genotypes.txt
+        paste samples.txt genotypes.txt | awk '{print $1,$(NF-1),$NF}' | sort | uniq -c | awk '{print $2,$3,$1}' > snps_per_individual.txt
+        awk '{print $1}' snps_per_individual.txt > individuals.txt
+        awk '{print $2}' snps_per_individual.txt > snps.txt
+        python heatmap.py individuals.txt snps.txt {output.heatmap_image}
+        """
+
+# # Rule for generating the Snakefile report
+# rule snakefile_report:
+#     output:
+#         "Snakefile_report.html"
+#     shell:
+#         """
+#         snakemake -c1 -s /data/leuven/362/vsc36251/Assignment2/snakefile --report > {output}
+#         """
+
+# Rule for submitting Snakemake workflow as a SLURM job
+rule submit_job:
+    output:
+        "snakemake.slurm"
+    shell:
+        """
+        snakemake -c1 -s /data/leuven/362/vsc36251/Assignment2/snakefile -d /data/leuven/362/vsc36251/Assignment2/snakemakeOutput
+        """

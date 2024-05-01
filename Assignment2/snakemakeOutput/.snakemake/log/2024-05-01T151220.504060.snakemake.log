@@ -1,0 +1,16 @@
+Building DAG of jobs...
+Creating report...
+Adding per_base_quality.png (0.053 MB).
+Adding per_base_quality.png (0.045 MB).
+Adding per_base_quality.png (0.047 MB).
+Adding per_base_quality.png (0.038 MB).
+Adding per_base_quality.png (0.051 MB).
+Adding per_base_quality.png (0.044 MB).
+Adding per_base_quality.png (0.049 MB).
+Adding per_base_quality.png (0.046 MB).
+Adding per_base_quality.png (0.044 MB).
+Adding per_base_quality.png (0.051 MB).
+Adding per_base_quality.png (0.05 MB).
+Missing metadata for file genes.vcf. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Downloading resources and rendering HTML.
+Report created: snakemake_report.html.

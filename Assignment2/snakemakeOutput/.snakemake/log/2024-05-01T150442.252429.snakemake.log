@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /data/leuven/362/vsc36251/Assignment2/snakefile, line 29:
+Missing input files for rule all:
+    affected files:
+        Snakefile_report.html
+        snakemake.slurm

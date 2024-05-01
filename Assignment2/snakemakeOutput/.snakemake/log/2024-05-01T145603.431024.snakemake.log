@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all                 1
+extract_snps        1
+snp_heatmap         1
+snpeff              1
+submit_job          1
+total               5
+
+Select jobs to execute...
+
+[Wed May  1 14:56:06 2024]
+rule snpeff:
+    input: 4_cleaned/snps.cleaned.vcf
+    output: 5_snpeff/snps.annotated.vcf, 5_snpeff/snpEff_summary.html, 5_snpeff/snpEff_genes.txt
+    log: 5_snpeff/snakemake.err
+    jobid: 12
+    reason: Code has changed since last execution
+    resources: tmpdir=/tmp
+
+Terminating processes on user request, this might take some time.

@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+all                     1
+extract_snps            1
+snakefile_report        1
+snp_heatmap             1
+snpeff                  1
+submit_job              1
+total                   6
+
+Select jobs to execute...
+
+[Wed May  1 15:01:54 2024]
+rule submit_job:
+    output: snakemake.slurm
+    jobid: 28
+    reason: Missing output files: snakemake.slurm
+    resources: tmpdir=/tmp
+
+RuleException in rule submit_job in file /data/leuven/362/vsc36251/Assignment2/snakefile, line 178:
+AttributeError: 'Params' object has no attribute 'partition', when formatting the following:
+
+        snakemake -j 1 --cluster "sbatch -n {threads} -p {params.partition}" --jobs 1
+        

@@ -12,17 +12,14 @@ sample_names, = glob_wildcards("/staging/leuven/stg_00079/teaching/1000genomes/{
 #- given that this yields a Python list - you can in the Snakefile, using python, filter on samples with the correct identifiers (for example using regular expressions).
 sample_names = [id for id in sample_names if id[6] == vsc_number[-1]]
 
- #DELETE THIS
-sample_names = sample_names[0] #DELETE THIS
- #DELETE THIS
- 
 #Additionally, to lighten the load further, we extracted fastq reads of just chromosome 21 for you to map
 BWA_DB_chr21 = '/lustre1/project/stg_00079/teaching/hg38_21/chr21.fa'
 
-snpeff_jar = ("/lustre1/project/stg_00079/teaching/miniconda3/pkgs"
-              + "/snpeff-5.1-hdfd78af_2/share/snpeff-5.1-2/snpEff.jar")
+# snpeff_jar = ("/lustre1/project/stg_00079/teaching/miniconda3/pkgs"
+#               + "/snpeff-5.1-hdfd78af_2/share/snpeff-5.1-2/snpEff.jar")
+snpeff_jar = "/staging/leuven/stg_00079/teaching/I0U19a_conda_2024/share/snpeff-5.2-0/snpEff.jar"
 
-snpeff_db_folder = "/staging/leuven/stg_00079/teaching/snpeff_db/"
+snpeff_db_folder = "/staging/leuven/stg_00079/teaching/1000genomes/hg38"
 
 #rule to collect all output files required on completion
 rule all:
@@ -31,6 +28,9 @@ rule all:
             "1_fastqc/{name}_fastqc.zip",
             name=sample_names),
         vcf = "5_snpeff/snps.annotated.vcf",
+        genes_vcf="genes.vcf",
+        # heatmap_image="7_heatmap/snps_heatmap.png"
+
 
 # Rule for performing FastQC
 rule fastqc:
@@ -123,7 +123,7 @@ rule snpeff:
         mkdir -p 5_snpeff
 
         java -Xmx4096m -jar \
-            {params.snpeff_jar} eff hg19 \
+            {params.snpeff_jar} eff hg38 \
             -dataDir {params.snpeff_db_folder} \
             {input.vcf} > {output.vcf}
 
@@ -133,25 +133,28 @@ rule snpeff:
         """
 
 # Rule for extracting SNPs associated with APP, SOD21, and DYRK1A into a new VCF file
-# Add your rule for extracting SNPs into genes.vcf here
+rule extract_snps:
+    input:
+        vcf="5_snpeff/snps.annotated.vcf",
+    output:
+        genes_vcf="genes.vcf",
+    shell:
+        """
+        bcftools view -i 'INFO/GENE="APP" || INFO/GENE="SOD21" || INFO/GENE="DYRK1A"' {input.vcf} -o {output.genes_vcf}
+        """
 
 # Rule for creating an image with a heatmap showing the number of SNPs per individual
-# Add your rule for creating the heatmap image here
-
-# # Rule for generating the Snakefile report
-# rule snakefile_report:
-#     output:
-#         "Snakefile_report.html"
-#     shell:
-#         """
-#         snakemake --report > {output}
-#         """
-
-# # Rule for submitting Snakemake workflow as a SLURM job
-# rule submit_job:
-#     output:
-#         "snakemake.slurm"
-#     shell:
-#         """
-#         snakemake -j 1 --cluster "sbatch -n {threads} -p {params.partition}" --jobs 1
-#         """
+rule snp_heatmap:
+    input:
+        vcf="5_snpeff/snps.annotated.vcf",
+    output:
+        heatmap_image="7_heatmap/snps_heatmap.png",
+    shell:
+        """
+        bcftools query -l {input.vcf} > samples.txt
+        bcftools query -f '%CHROM\t%POS[\t%GT]\n' {input.vcf} | grep -v '#' | cut -f 3- > genotypes.txt
+        paste samples.txt genotypes.txt | awk '{print $1,$(NF-1),$NF}' | sort | uniq -c | awk '{print $2,$3,$1}' > snps_per_individual.txt
+        awk '{print $1}' snps_per_individual.txt > individuals.txt
+        awk '{print $2}' snps_per_individual.txt > snps.txt
+        python heatmap.py individuals.txt snps.txt {output.heatmap_image}
+        """
