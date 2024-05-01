@@ -1,0 +1,23 @@
+2024-04-29 15:49:49.479 [info] Extension host with pid 451097 started
+2024-04-29 15:49:49.496 [info] Lock '/data/leuven/362/vsc36251/User/workspaceStorage/5568b795/vscode.lock': Lock acquired.
+2024-04-29 15:49:49.540 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2024-04-29 15:49:49.589 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-04-29 15:49:49.675 [info] Eager extensions activated
+2024-04-29 15:49:49.675 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-04-29 15:49:49.676 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-04-29 15:50:07.375 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+2024-04-29 15:50:09.624 [debug] ProxyResolver#loadSystemCertificates count 154
+2024-04-29 15:50:09.625 [debug] ProxyResolver#loadSystemCertificates parse error Error: error:0480006C:PEM routines::no start line
+	at new X509Certificate (node:internal/crypto/x509:119:21)
+	at /usr/lib/code-server/lib/vscode/node_modules/@vscode/proxy-agent/out/index.js:493:48
+	at Array.filter (<anonymous>)
+	at /usr/lib/code-server/lib/vscode/node_modules/@vscode/proxy-agent/out/index.js:491:26
+	at Generator.next (<anonymous>)
+	at fulfilled (/usr/lib/code-server/lib/vscode/node_modules/@vscode/proxy-agent/out/index.js:32:58)
+2024-04-29 15:50:09.657 [debug] ProxyResolver#loadSystemCertificates count filtered 149
+2024-04-29 15:50:09.659 [debug] ProxyResolver#resolveProxy unconfigured https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream DIRECT 
+2024-04-29 15:50:16.876 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-04-29 15:50:16.877 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-04-29 15:50:16.877 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-04-29 15:50:18.046 [debug] ProxyResolver#resolveProxy unconfigured https://default.exp-tas.com/vscode/ab DIRECT 
+2024-04-29 16:20:17.912 [debug] ProxyResolver#resolveProxy unconfigured https://default.exp-tas.com/vscode/ab DIRECT 

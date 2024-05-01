@@ -1,0 +1,133 @@
+SLURM_JOB_ID: 61367878
+SLURM_JOB_USER: vsc36251
+SLURM_JOB_ACCOUNT: lp_edu_large_omics
+SLURM_JOB_NAME: sys/dashboard/sys/jupyter-lab
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: q28c32n3
+SLURM_JOB_CPUS_PER_NODE: 1
+Date: Mon Apr 29 12:27:31 CEST 2024
+Walltime: 00-02:00:00
+========================================================================
+Script starting...
+Waiting for Jupyter Notebook server to open port 59836...
+TIMING - Starting wait at: Mon Apr 29 12:27:31 CEST 2024
+TIMING - Starting main script at: Mon Apr 29 12:27:33 CEST 2024
+TIMING - Starting jupyter at: Mon Apr 29 12:27:33 CEST 2024
+++ cut -d: -f6
++++ whoami
+++ getent passwd vsc36251
++ USER_HOME=/user/leuven/362/vsc36251
++ USER_DATA_DIR=/data/leuven/362/vsc36251
++ /opt/jupyterhub/pyvenv/bin/jupyter-lab -y --no-browser --config=/data/leuven/362/vsc36251/.ondemand/data/batch_connect/sys/jupyter-lab/output/65601d23-c049-4657-be69-b4e6893ae5d8/config.py /data/leuven/362/vsc36251
+[W 2024-04-29 12:27:34.381 ServerApp] ServerApp.password config is deprecated in 2.0. Use PasswordIdentityProvider.hashed_password.
+[I 2024-04-29 12:27:34.416 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2024-04-29 12:27:34.422 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2024-04-29 12:27:34.428 ServerApp] jupyterlab | extension was successfully linked.
+[I 2024-04-29 12:27:34.433 ServerApp] notebook | extension was successfully linked.
+[I 2024-04-29 12:27:34.658 ServerApp] notebook_shim | extension was successfully linked.
+[W 2024-04-29 12:27:34.673 ServerApp] WARNING: The Jupyter server is listening on all IP addresses and not using encryption. This is not recommended.
+[I 2024-04-29 12:27:34.673 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2024-04-29 12:27:34.676 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2024-04-29 12:27:34.677 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2024-04-29 12:27:34.679 LabApp] JupyterLab extension loaded from /opt/jupyterhub/pyvenv/lib64/python3.8/site-packages/jupyterlab
+[I 2024-04-29 12:27:34.679 LabApp] JupyterLab application directory is /opt/jupyterhub/pyvenv/share/jupyter/lab
+[I 2024-04-29 12:27:34.679 LabApp] Extension Manager is 'pypi'.
+[I 2024-04-29 12:27:34.691 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2024-04-29 12:27:34.694 ServerApp] notebook | extension was successfully loaded.
+[I 2024-04-29 12:27:34.694 ServerApp] Serving notebooks from local directory: /data/leuven/362/vsc36251
+[I 2024-04-29 12:27:34.694 ServerApp] Jupyter Server 2.14.0 is running at:
+[I 2024-04-29 12:27:34.694 ServerApp] http://localhost:59836/node/q28c32n3.tier2.hpc.kuleuven.be/59836/lab
+[I 2024-04-29 12:27:34.694 ServerApp]     http://127.0.0.1:59836/node/q28c32n3.tier2.hpc.kuleuven.be/59836/lab
+[I 2024-04-29 12:27:34.694 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 2024-04-29 12:27:34.912 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+Discovered Jupyter Notebook server listening on port 59836!
+TIMING - Wait ended at: Mon Apr 29 12:27:34 CEST 2024
+Generating connection YAML file...
+[I 2024-04-29 12:27:48.100 ServerApp] User 56234e97a30446058a0a35d3080b0512 logged in.
+[I 2024-04-29 12:27:48.103 ServerApp] 302 POST /node/q28c32n3.tier2.hpc.kuleuven.be/59836/login (56234e97a30446058a0a35d3080b0512@2a02:2c40:0:240a:4:242:ac11:3) 4.55ms
+[I 2024-04-29 12:27:48.153 ServerApp] 302 GET /node/q28c32n3.tier2.hpc.kuleuven.be/59836/ (@2a02:2c40:0:240a:4:242:ac11:3) 0.49ms
+[W 2024-04-29 12:27:50.651 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2024-04-29 12:27:51.111 ServerApp] 404 GET /node/q28c32n3.tier2.hpc.kuleuven.be/59836/api/contents/scratch/vsc36251/vsc36251/vsc36251/variant_calling_manual/annotated_snps.vcf?content=0&hash=0&1714386497003 (56234e97a30446058a0a35d3080b0512@2a02:2c40:0:240a:4:242:ac11:3) 1.53ms referer=https://ondemand.hpc.kuleuven.be/node/q28c32n3.tier2.hpc.kuleuven.be/59836/lab?
+[W 2024-04-29 12:27:51.112 ServerApp] 404 GET /node/q28c32n3.tier2.hpc.kuleuven.be/59836/api/contents/scratch/vsc36251/vsc36251/vsc36251/variant_calling_manual/annotated_snps.vcf?content=0&hash=0&1714386497003 (2a02:2c40:0:240a:4:242:ac11:3): No such file or directory: scratch/vsc36251/vsc36251/vsc36251/variant_calling_manual/annotated_snps.vcf
+[W 2024-04-29 12:27:51.135 ServerApp] 404 GET /node/q28c32n3.tier2.hpc.kuleuven.be/59836/api/contents/scratch/vsc36251/vsc36251/vsc36251/variant_calling_manual/clean_snps.vcf?content=0&hash=0&1714386497004 (56234e97a30446058a0a35d3080b0512@2a02:2c40:0:240a:4:242:ac11:3) 1.13ms referer=https://ondemand.hpc.kuleuven.be/node/q28c32n3.tier2.hpc.kuleuven.be/59836/lab?
+[W 2024-04-29 12:27:51.135 ServerApp] 404 GET /node/q28c32n3.tier2.hpc.kuleuven.be/59836/api/contents/scratch/vsc36251/vsc36251/vsc36251/variant_calling_manual/clean_snps.vcf?content=0&hash=0&1714386497004 (2a02:2c40:0:240a:4:242:ac11:3): No such file or directory: scratch/vsc36251/vsc36251/vsc36251/variant_calling_manual/clean_snps.vcf
+[W 2024-04-29 12:27:51.148 ServerApp] 404 GET /node/q28c32n3.tier2.hpc.kuleuven.be/59836/api/contents/scratch/variant_calling_manual/TLE66_T.fastq?content=0&hash=0&1714386497002 (56234e97a30446058a0a35d3080b0512@2a02:2c40:0:240a:4:242:ac11:3) 1.40ms referer=https://ondemand.hpc.kuleuven.be/node/q28c32n3.tier2.hpc.kuleuven.be/59836/lab?
+[W 2024-04-29 12:27:51.148 ServerApp] 404 GET /node/q28c32n3.tier2.hpc.kuleuven.be/59836/api/contents/scratch/variant_calling_manual/TLE66_T.fastq?content=0&hash=0&1714386497002 (2a02:2c40:0:240a:4:242:ac11:3): No such file or directory: scratch/variant_calling_manual/TLE66_T.fastq
+[I 2024-04-29 12:27:51.552 ServerApp] Kernel started: eeb6fa19-e05e-4b68-8e15-e68d5f207712
+[I 2024-04-29 12:27:52.388 ServerApp] Kernel started: ad3b2dad-2f69-4d9e-b682-91c2229b3db7
+[I 2024-04-29 12:28:17.803 ServerApp] Creating new notebook in /Assignment2
+[I 2024-04-29 12:28:18.181 ServerApp] Kernel started: ea612811-9242-4445-952b-621dabf93fe0
+[I 2024-04-29 12:28:27.391 ServerApp] Connecting to kernel eeb6fa19-e05e-4b68-8e15-e68d5f207712.
+[I 2024-04-29 12:28:27.486 ServerApp] Starting buffering for eeb6fa19-e05e-4b68-8e15-e68d5f207712:491fc438-d376-4fa8-812f-60b4745fef4e
+[I 2024-04-29 12:28:27.513 ServerApp] Connecting to kernel eeb6fa19-e05e-4b68-8e15-e68d5f207712.
+[I 2024-04-29 12:28:27.620 ServerApp] Connecting to kernel eeb6fa19-e05e-4b68-8e15-e68d5f207712.
+[I 2024-04-29 12:28:27.764 ServerApp] Connecting to kernel ad3b2dad-2f69-4d9e-b682-91c2229b3db7.
+[I 2024-04-29 12:28:27.851 ServerApp] Starting buffering for ad3b2dad-2f69-4d9e-b682-91c2229b3db7:ef03965c-8a0f-42ac-8f78-7b9beab4a06e
+[I 2024-04-29 12:28:27.891 ServerApp] Connecting to kernel ad3b2dad-2f69-4d9e-b682-91c2229b3db7.
+[I 2024-04-29 12:28:27.971 ServerApp] Starting buffering for ad3b2dad-2f69-4d9e-b682-91c2229b3db7:6b153e9f-fe9b-4e84-bf59-4a9f74d0b2fb
+[I 2024-04-29 12:28:28.002 ServerApp] Connecting to kernel ea612811-9242-4445-952b-621dabf93fe0.
+[I 2024-04-29 12:28:28.086 ServerApp] Starting buffering for ea612811-9242-4445-952b-621dabf93fe0:de8e4da8-ec09-4b61-bf1d-23d9f203088f
+[I 2024-04-29 12:28:28.130 ServerApp] Connecting to kernel ea612811-9242-4445-952b-621dabf93fe0.
+[I 2024-04-29 12:28:28.264 ServerApp] Connecting to kernel ea612811-9242-4445-952b-621dabf93fe0.
+[I 2024-04-29 12:28:29.048 ServerApp] Creating new file in /Assignment2
+[I 2024-04-29 12:30:18.265 ServerApp] Saving file at /Assignment2/Untitled.ipynb
+[I 2024-04-29 12:32:38.280 ServerApp] Saving file at /Assignment2/snakefile
+[I 2024-04-29 12:45:34.363 LabApp] `sys_prefix` level settings are read-only, using `user` level for migration to `lockedExtensions`
+[I 2024-04-29 12:45:34.372 LabApp] `sys_prefix` level settings are read-only, using `user` level for migration to `lockedExtensions`
+[I 2024-04-29 12:45:34.383 LabApp] `sys_prefix` level settings are read-only, using `user` level for migration to `lockedExtensions`
+[I 2024-04-29 12:46:38.501 ServerApp] Saving file at /Assignment2/snakefile
+[I 2024-04-29 13:02:55.439 ServerApp] Creating new notebook in /Assignment2
+[I 2024-04-29 13:02:55.896 ServerApp] Kernel started: 2b611dd0-6aa6-48b5-953a-224f0ada019f
+[I 2024-04-29 13:03:02.327 ServerApp] Connecting to kernel 2b611dd0-6aa6-48b5-953a-224f0ada019f.
+[IPKernelApp] WARNING | Unknown message type: 'comm_open'
+[IPKernelApp] WARNING | Unknown message type: 'comm_msg'
+[I 2024-04-29 13:03:11.913 ServerApp] Starting buffering for 2b611dd0-6aa6-48b5-953a-224f0ada019f:fce82032-f4ad-453f-90d1-521f383e38e6
+[I 2024-04-29 13:03:30.315 ServerApp] Kernel started: fa1d49af-7b24-400b-b07f-4bb5ee56a3c8
+[I 2024-04-29 13:03:31.079 ServerApp] Connecting to kernel fa1d49af-7b24-400b-b07f-4bb5ee56a3c8.
+[I 2024-04-29 13:03:51.559 ServerApp] Kernel started: afd08efb-553d-4440-bc68-277ad8cf9fb8
+[I 2024-04-29 13:03:56.624 ServerApp] Starting buffering for fa1d49af-7b24-400b-b07f-4bb5ee56a3c8:79b0d491-4d98-45b3-9d09-8443cc30588a
+[E 2024-04-29 13:03:57.440 ServerApp] Uncaught exception GET /node/q28c32n3.tier2.hpc.kuleuven.be/59836/api/kernels/afd08efb-553d-4440-bc68-277ad8cf9fb8/channels?session_id=5a469188-fc37-44ca-838f-d91056eebb52 (2a02:2c40:0:240a:4:242:ac11:3)
+    HTTPServerRequest(protocol='http', host='q28c32n3.tier2.hpc.kuleuven.be:59836', method='GET', uri='/node/q28c32n3.tier2.hpc.kuleuven.be/59836/api/kernels/afd08efb-553d-4440-bc68-277ad8cf9fb8/channels?session_id=5a469188-fc37-44ca-838f-d91056eebb52', version='HTTP/1.1', remote_ip='2a02:2c40:0:240a:4:242:ac11:3')
+    Traceback (most recent call last):
+      File "/opt/jupyterhub/pyvenv/lib64/python3.8/site-packages/tornado/web.py", line 1790, in _execute
+        result = await result
+      File "/opt/jupyterhub/pyvenv/lib64/python3.8/site-packages/jupyter_server/services/kernels/websocket.py", line 66, in get
+        await super().get(kernel_id=kernel_id)
+      File "/opt/jupyterhub/pyvenv/lib64/python3.8/site-packages/tornado/websocket.py", line 273, in get
+        await self.ws_connection.accept_connection(self)
+      File "/opt/jupyterhub/pyvenv/lib64/python3.8/site-packages/tornado/websocket.py", line 863, in accept_connection
+        await self._accept_connection(handler)
+      File "/opt/jupyterhub/pyvenv/lib64/python3.8/site-packages/tornado/websocket.py", line 903, in _accept_connection
+        self.selected_subprotocol = handler.select_subprotocol(subprotocols)
+      File "/opt/jupyterhub/pyvenv/lib64/python3.8/site-packages/jupyter_server/services/kernels/websocket.py", line 88, in select_subprotocol
+        preferred_protocol = self.connection.kernel_ws_protocol
+    AttributeError: 'NoneType' object has no attribute 'kernel_ws_protocol'
+[E 2024-04-29 13:03:57.458 ServerApp] {
+      "Host": "q28c32n3.tier2.hpc.kuleuven.be:59836",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
+[E 2024-04-29 13:03:57.458 ServerApp] 500 GET /node/q28c32n3.tier2.hpc.kuleuven.be/59836/api/kernels/afd08efb-553d-4440-bc68-277ad8cf9fb8/channels?session_id=5a469188-fc37-44ca-838f-d91056eebb52 (56234e97a30446058a0a35d3080b0512@2a02:2c40:0:240a:4:242:ac11:3) 5692.00ms referer=None
+[I 2024-04-29 13:06:19.294 ServerApp] Saving file at /Assignment2/Untitled.ipynb
+[I 2024-04-29 13:06:35.344 ServerApp] Kernel restarted: ea612811-9242-4445-952b-621dabf93fe0
+[I 2024-04-29 13:06:35.364 ServerApp] Starting buffering for ea612811-9242-4445-952b-621dabf93fe0:714f3b10-557d-4c78-aefb-5180e5e2e301
+[I 2024-04-29 13:06:35.488 ServerApp] Connecting to kernel ea612811-9242-4445-952b-621dabf93fe0.
+[I 2024-04-29 13:06:35.488 ServerApp] Restoring connection for ea612811-9242-4445-952b-621dabf93fe0:714f3b10-557d-4c78-aefb-5180e5e2e301
+[I 2024-04-29 13:06:37.809 ServerApp] Kernel restarted: ea612811-9242-4445-952b-621dabf93fe0
+[I 2024-04-29 13:06:37.829 ServerApp] Starting buffering for ea612811-9242-4445-952b-621dabf93fe0:714f3b10-557d-4c78-aefb-5180e5e2e301
+[I 2024-04-29 13:06:37.928 ServerApp] Connecting to kernel ea612811-9242-4445-952b-621dabf93fe0.
+[I 2024-04-29 13:06:37.928 ServerApp] Restoring connection for ea612811-9242-4445-952b-621dabf93fe0:714f3b10-557d-4c78-aefb-5180e5e2e301
+[I 2024-04-29 13:08:19.480 ServerApp] Saving file at /Assignment2/Untitled.ipynb
+[I 2024-04-29 13:10:19.700 ServerApp] Saving file at /Assignment2/Untitled.ipynb
+[I 2024-04-29 13:10:39.328 ServerApp] Saving file at /Assignment2/snakefile
+[I 2024-04-29 13:12:20.255 ServerApp] Saving file at /Assignment2/Untitled.ipynb
+[I 2024-04-29 13:30:53.826 ServerApp] Starting buffering for eeb6fa19-e05e-4b68-8e15-e68d5f207712:ef7120f1-544e-45ad-a5c3-08ccff6d64fe
+[I 2024-04-29 13:30:53.827 ServerApp] Starting buffering for ea612811-9242-4445-952b-621dabf93fe0:714f3b10-557d-4c78-aefb-5180e5e2e301
+[I 2024-04-29 13:48:18.214 ServerApp] Connecting to kernel eeb6fa19-e05e-4b68-8e15-e68d5f207712.
+[I 2024-04-29 13:48:18.214 ServerApp] Restoring connection for eeb6fa19-e05e-4b68-8e15-e68d5f207712:ef7120f1-544e-45ad-a5c3-08ccff6d64fe
+[I 2024-04-29 13:48:19.494 ServerApp] Connecting to kernel ea612811-9242-4445-952b-621dabf93fe0.
+[I 2024-04-29 13:48:19.494 ServerApp] Restoring connection for ea612811-9242-4445-952b-621dabf93fe0:714f3b10-557d-4c78-aefb-5180e5e2e301
+[I 2024-04-29 14:14:37.588 ServerApp] Starting buffering for eeb6fa19-e05e-4b68-8e15-e68d5f207712:ef7120f1-544e-45ad-a5c3-08ccff6d64fe
+[I 2024-04-29 14:14:37.589 ServerApp] Starting buffering for ea612811-9242-4445-952b-621dabf93fe0:714f3b10-557d-4c78-aefb-5180e5e2e301
+slurmstepd: error: *** JOB 61367878 ON q28c32n3 CANCELLED AT 2024-04-29T14:27:30 DUE TO TIME LIMIT ***

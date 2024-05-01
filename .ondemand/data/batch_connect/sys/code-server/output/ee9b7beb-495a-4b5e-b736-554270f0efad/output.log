@@ -1,0 +1,199 @@
+SLURM_JOB_ID: 61368468
+SLURM_JOB_USER: vsc36251
+SLURM_JOB_ACCOUNT: lp_edu_large_omics
+SLURM_JOB_NAME: sys/dashboard/sys/code-server
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: s28c11n4
+SLURM_JOB_CPUS_PER_NODE: 1
+Date: Mon Apr 29 15:48:45 CEST 2024
+Walltime: 00-01:00:00
+========================================================================
+Script starting...
+Mon Apr 29 15:48:45 CEST 2024: Waiting for Code Server to open port 22253...
+
+#exec prerun
+node_arch=$(cat /sys/devices/cpu/caps/pmu_name)
+++ cat /sys/devices/cpu/caps/pmu_name
++ node_arch=icelake
+
+
+USER_HOME=$(getent passwd $(whoami) | cut -d: -f6)
+++ cut -d: -f6
++++ whoami
+++ getent passwd vsc36251
++ USER_HOME=/user/leuven/362/vsc36251
+USER_DATA_DIR="${USER_HOME/\/user\///data/}"
++ USER_DATA_DIR=/data/leuven/362/vsc36251
+mkdir -p "${USER_DATA_DIR}/.config/code-server/extensions"
++ mkdir -p /data/leuven/362/vsc36251/.config/code-server/extensions
+code-server \
+    --auth="password" \
+    --bind-addr="0.0.0.0:${port}" \
+    --disable-telemetry \
+    --extensions-dir="${USER_DATA_DIR}/.config/code-server/extensions" \
+    --user-data-dir="${USER_DATA_DIR}" \
+    --log debug
++ code-server --auth=password --bind-addr=0.0.0.0:22253 --disable-telemetry --extensions-dir=/data/leuven/362/vsc36251/.config/code-server/extensions --user-data-dir=/data/leuven/362/vsc36251 --log debug
+[2024-04-29T13:48:48.592Z] debug parent:449190 spawned child process 449218
+[2024-04-29T13:48:48.955Z] debug child:449218 initiating handshake
+[2024-04-29T13:48:48.958Z] debug parent:449190 got message [38;2;140;140;140m{"message":{"type":"handshake"}}[0m
+[2024-04-29T13:48:48.961Z] debug child:449218 got message [38;2;140;140;140m{"message":{"type":"handshake","args":{"bind-addr":"0.0.0.0:22253","auth":"password","password":"<redacted>","config":"/user/leuven/362/vsc36251/.config/code-server/config.yaml","disable-telemetry":true,"extensions-dir":"/data/leuven/362/vsc36251/.config/code-server/extensions","user-data-dir":"/data/leuven/362/vsc36251","log":"debug","session-socket":"/data/leuven/362/vsc36251/code-server-ipc.sock","verbose":false,"host":"0.0.0.0","port":22253,"proxy-domain":[],"_":[],"usingEnvPassword":true,"usingEnvHashedPassword":false}}}[0m
+[2024-04-29T13:48:48.962Z] info  code-server 4.22.1 760d1318e98945d05133c6121f99541ca7a39bf8
+[2024-04-29T13:48:48.962Z] info  Using user-data-dir /data/leuven/362/vsc36251
+[2024-04-29T13:48:48.962Z] debug Using extensions-dir /data/leuven/362/vsc36251/.config/code-server/extensions
+[2024-04-29T13:48:48.979Z] info  Using config file /user/leuven/362/vsc36251/.config/code-server/config.yaml
+[2024-04-29T13:48:48.979Z] info  HTTP server listening on http://0.0.0.0:22253/
+[2024-04-29T13:48:48.980Z] info    - Authentication is enabled
+[2024-04-29T13:48:48.980Z] info      - Using password from $PASSWORD
+[2024-04-29T13:48:48.980Z] info    - Not serving HTTPS
+[2024-04-29T13:48:48.980Z] info  Session server listening on /data/leuven/362/vsc36251/code-server-ipc.sock
+Mon Apr 29 15:48:49 CEST 2024: Discovered code-server listening on port 22253!
+Generating connection YAML file...
+[2024-04-29T13:49:35.784Z] debug heartbeat
+[2024-04-29T13:49:35.971Z] debug got cookie domain [38;2;140;140;140m{"host":"s28c11n4.tier2.hpc.kuleuven.be"}[0m
+[2024-04-29T13:49:35.972Z] debug redirecting from /login to ./
+[15:49:36] 
+
+
+
+
+[15:49:36] Extension host agent started.
+[15:49:36] No uninstalled extensions found.
+[2024-04-29T13:49:36.468Z] debug redirecting from / to ./?folder=/user/leuven/362/vsc36251
+File not found: /usr/lib/code-server/lib/vscode/out/vsda.js
+File not found: /usr/lib/code-server/lib/vscode/out/vsda_bg.wasm
+[15:49:40] [10.118.200.56][9700c910][ManagementConnection] New connection established.
+[2024-04-29T13:49:41.526Z] debug Making request [38;2;140;140;140m{"uri":"https://api.github.com/repos/coder/code-server/releases/latest"}[0m
+[15:49:41] ComputeTargetPlatform: linux-x64
+[15:49:42] [10.118.200.56][3c12fdc7][ExtensionHostConnection] New connection established.
+[2024-04-29T13:49:42.791Z] debug got latest version [38;2;140;140;140m{"latest":"4.23.1"}[0m
+[2024-04-29T13:49:42.792Z] debug comparing versions [38;2;140;140;140m{"current":"4.22.1","latest":"4.23.1"}[0m
+[15:49:48] [10.118.200.56][3c12fdc7][ExtensionHostConnection] <451097> Launched Extension Host Process.
+[15:49:49] Terminal profile not validated fish [ 'fish' ]
+[15:49:49] Terminal profile not validated pwsh [ 'pwsh' ]
+[2024-04-29T13:49:49.555Z] debug Adding session to session registry: /tmp/vscode-ipc-b50dab3d-c11b-4bcd-a67d-8eed3f0a860b.sock
+[15:50:07] Terminal profile not validated fish [ 'fish' ]
+[15:50:07] Terminal profile not validated pwsh [ 'pwsh' ]
+[2024-04-29T13:50:35.788Z] debug 2 active connections
+[2024-04-29T13:50:35.788Z] debug heartbeat
+[2024-04-29T13:51:35.789Z] debug 2 active connections
+[2024-04-29T13:51:35.789Z] debug heartbeat
+[2024-04-29T13:52:35.790Z] debug 2 active connections
+[2024-04-29T13:52:35.790Z] debug heartbeat
+[2024-04-29T13:53:35.791Z] debug 2 active connections
+[2024-04-29T13:53:35.791Z] debug heartbeat
+[2024-04-29T13:54:35.792Z] debug 2 active connections
+[2024-04-29T13:54:35.792Z] debug heartbeat
+[2024-04-29T13:55:35.794Z] debug 2 active connections
+[2024-04-29T13:55:35.794Z] debug heartbeat
+[2024-04-29T13:56:35.795Z] debug 2 active connections
+[2024-04-29T13:56:35.795Z] debug heartbeat
+[2024-04-29T13:57:35.796Z] debug 2 active connections
+[2024-04-29T13:57:35.796Z] debug heartbeat
+[2024-04-29T13:58:35.798Z] debug 2 active connections
+[2024-04-29T13:58:35.798Z] debug heartbeat
+[2024-04-29T13:59:35.799Z] debug 2 active connections
+[2024-04-29T13:59:35.799Z] debug heartbeat
+[2024-04-29T14:00:35.800Z] debug 2 active connections
+[2024-04-29T14:00:35.800Z] debug heartbeat
+[2024-04-29T14:01:35.800Z] debug 2 active connections
+[2024-04-29T14:01:35.800Z] debug heartbeat
+[2024-04-29T14:02:35.802Z] debug 2 active connections
+[2024-04-29T14:02:35.802Z] debug heartbeat
+[2024-04-29T14:03:35.803Z] debug 2 active connections
+[2024-04-29T14:03:35.803Z] debug heartbeat
+[2024-04-29T14:04:35.803Z] debug 2 active connections
+[2024-04-29T14:04:35.804Z] debug heartbeat
+[2024-04-29T14:05:35.805Z] debug 2 active connections
+[2024-04-29T14:05:35.805Z] debug heartbeat
+[2024-04-29T14:06:35.805Z] debug 2 active connections
+[2024-04-29T14:06:35.805Z] debug heartbeat
+[2024-04-29T14:07:35.805Z] debug 2 active connections
+[2024-04-29T14:07:35.805Z] debug heartbeat
+[2024-04-29T14:08:35.805Z] debug 2 active connections
+[2024-04-29T14:08:35.805Z] debug heartbeat
+[2024-04-29T14:09:35.807Z] debug 2 active connections
+[2024-04-29T14:09:35.807Z] debug heartbeat
+[2024-04-29T14:10:35.808Z] debug 2 active connections
+[2024-04-29T14:10:35.808Z] debug heartbeat
+[2024-04-29T14:11:35.810Z] debug 2 active connections
+[2024-04-29T14:11:35.810Z] debug heartbeat
+[2024-04-29T14:12:35.811Z] debug 2 active connections
+[2024-04-29T14:12:35.811Z] debug heartbeat
+[2024-04-29T14:13:35.812Z] debug 2 active connections
+[2024-04-29T14:13:35.812Z] debug heartbeat
+[2024-04-29T14:14:35.813Z] debug 2 active connections
+[2024-04-29T14:14:35.814Z] debug heartbeat
+[2024-04-29T14:15:35.815Z] debug 2 active connections
+[2024-04-29T14:15:35.815Z] debug heartbeat
+[2024-04-29T14:16:35.816Z] debug 1 active connection
+[2024-04-29T14:16:35.816Z] debug heartbeat
+[2024-04-29T14:17:35.817Z] debug 1 active connection
+[2024-04-29T14:17:35.817Z] debug heartbeat
+[2024-04-29T14:18:35.818Z] debug 1 active connection
+[2024-04-29T14:18:35.818Z] debug heartbeat
+[2024-04-29T14:19:35.818Z] debug 1 active connection
+[2024-04-29T14:19:35.818Z] debug heartbeat
+[2024-04-29T14:20:35.820Z] debug 1 active connection
+[2024-04-29T14:20:35.820Z] debug heartbeat
+[2024-04-29T14:21:35.822Z] debug 1 active connection
+[2024-04-29T14:21:35.822Z] debug heartbeat
+[2024-04-29T14:22:35.824Z] debug 1 active connection
+[2024-04-29T14:22:35.824Z] debug heartbeat
+[2024-04-29T14:23:35.824Z] debug 1 active connection
+[2024-04-29T14:23:35.824Z] debug heartbeat
+[2024-04-29T14:24:35.825Z] debug 1 active connection
+[2024-04-29T14:24:35.825Z] debug heartbeat
+[2024-04-29T14:25:35.826Z] debug 1 active connection
+[2024-04-29T14:25:35.826Z] debug heartbeat
+[2024-04-29T14:26:35.827Z] debug 1 active connection
+[2024-04-29T14:26:35.827Z] debug heartbeat
+[2024-04-29T14:27:35.828Z] debug 1 active connection
+[2024-04-29T14:27:35.828Z] debug heartbeat
+[2024-04-29T14:28:35.829Z] debug 1 active connection
+[2024-04-29T14:28:35.829Z] debug heartbeat
+[2024-04-29T14:29:35.830Z] debug 1 active connection
+[2024-04-29T14:29:35.830Z] debug heartbeat
+[2024-04-29T14:30:35.830Z] debug 1 active connection
+[2024-04-29T14:30:35.830Z] debug heartbeat
+[2024-04-29T14:31:35.830Z] debug 1 active connection
+[2024-04-29T14:31:35.830Z] debug heartbeat
+[2024-04-29T14:32:35.831Z] debug 1 active connection
+[2024-04-29T14:32:35.831Z] debug heartbeat
+[2024-04-29T14:33:35.832Z] debug 1 active connection
+[2024-04-29T14:33:35.832Z] debug heartbeat
+[2024-04-29T14:34:35.833Z] debug 1 active connection
+[2024-04-29T14:34:35.833Z] debug heartbeat
+[2024-04-29T14:35:35.834Z] debug 1 active connection
+[2024-04-29T14:35:35.834Z] debug heartbeat
+[2024-04-29T14:36:35.835Z] debug 1 active connection
+[2024-04-29T14:36:35.835Z] debug heartbeat
+[2024-04-29T14:37:35.836Z] debug 1 active connection
+[2024-04-29T14:37:35.836Z] debug heartbeat
+[2024-04-29T14:38:35.839Z] debug 1 active connection
+[2024-04-29T14:38:35.839Z] debug heartbeat
+[16:38:46] [10.118.200.56][3c12fdc7][ExtensionHostConnection] The client has reconnected.
+[16:38:47] [10.118.200.56][9700c910][ManagementConnection] The client has reconnected.
+[2024-04-29T14:39:35.840Z] debug 2 active connections
+[2024-04-29T14:39:35.840Z] debug heartbeat
+[2024-04-29T14:40:35.841Z] debug 2 active connections
+[2024-04-29T14:40:35.841Z] debug heartbeat
+[2024-04-29T14:41:35.842Z] debug 2 active connections
+[2024-04-29T14:41:35.842Z] debug heartbeat
+[2024-04-29T14:42:35.843Z] debug 2 active connections
+[2024-04-29T14:42:35.843Z] debug heartbeat
+[2024-04-29T14:43:35.843Z] debug 2 active connections
+[2024-04-29T14:43:35.843Z] debug heartbeat
+[2024-04-29T14:44:35.844Z] debug 2 active connections
+[2024-04-29T14:44:35.844Z] debug heartbeat
+[2024-04-29T14:45:35.844Z] debug 2 active connections
+[2024-04-29T14:45:35.844Z] debug heartbeat
+[2024-04-29T14:46:35.844Z] debug 2 active connections
+[2024-04-29T14:46:35.844Z] debug heartbeat
+[2024-04-29T14:47:35.845Z] debug 2 active connections
+[2024-04-29T14:47:35.845Z] debug heartbeat
+[2024-04-29T14:48:35.845Z] debug 2 active connections
+[2024-04-29T14:48:35.845Z] debug heartbeat
+slurmstepd: error: *** JOB 61368468 ON s28c11n4 CANCELLED AT 2024-04-29T16:49:01 DUE TO TIME LIMIT ***

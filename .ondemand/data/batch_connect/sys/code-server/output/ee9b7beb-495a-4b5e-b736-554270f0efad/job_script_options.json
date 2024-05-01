@@ -1,0 +1,20 @@
+{
+  "job_name": "sys/dashboard/sys/code-server",
+  "workdir": "/data/leuven/362/vsc36251/.ondemand/data/batch_connect/sys/code-server/output/ee9b7beb-495a-4b5e-b736-554270f0efad",
+  "output_path": "/data/leuven/362/vsc36251/.ondemand/data/batch_connect/sys/code-server/output/ee9b7beb-495a-4b5e-b736-554270f0efad/output.log",
+  "shell_path": "/bin/bash",
+  "queue_name": "batch",
+  "wall_time": 3600,
+  "native": [
+    "-c",
+    "1",
+    "-N",
+    "1",
+    "--gpus-per-node",
+    "0",
+    "--mem-per-cpu",
+    "3400"
+  ],
+  "email_on_started": 0,
+  "accounting_id": "lp_edu_large_omics"
+}

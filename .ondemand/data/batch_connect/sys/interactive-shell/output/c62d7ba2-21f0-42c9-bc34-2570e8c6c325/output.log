@@ -1,0 +1,15 @@
+SLURM_JOB_ID: 61367969
+SLURM_JOB_USER: vsc36251
+SLURM_JOB_ACCOUNT: lp_edu_large_omics
+SLURM_JOB_NAME: sys/dashboard/sys/interactive-shell
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: s28c11n4
+SLURM_JOB_CPUS_PER_NODE: 1
+Date: Mon Apr 29 13:04:06 CEST 2024
+Walltime: 00-01:00:00
+========================================================================
+Script starting...
+Generating connection YAML file...
+slurmstepd: error: *** JOB 61367969 ON s28c11n4 CANCELLED AT 2024-04-29T14:04:30 DUE TO TIME LIMIT ***

@@ -1,0 +1,14 @@
+{
+  "cluster": "wice",
+  "account": "lp_edu_large_omics",
+  "auto_queues": "batch",
+  "bc_num_hours": "1",
+  "num_cores": "1",
+  "num_memory": "3400",
+  "bc_num_slots": "1",
+  "bc_num_gpu_slots": "0",
+  "reservation": "",
+  "bc_email_on_started": "0",
+  "prerun": "",
+  "log_crash": "0"
+}

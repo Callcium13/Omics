@@ -1,0 +1,39 @@
+2024-02-29 12:50:07.026 [info] 
+
+
+
+
+2024-02-29 12:50:07.026 [info] Extension host agent started.
+2024-02-29 12:50:07.026 [info] Started initializing default profile extensions in extensions installation folder. file:///data/leuven/362/vsc36251/.config/code-server/extensions
+2024-02-29 12:50:07.026 [debug] No uninstalled extensions found.
+2024-02-29 12:50:07.032 [debug] ComputeTargetPlatform: linux-x64
+2024-02-29 12:50:07.037 [info] Completed initializing default profile extensions in extensions installation folder. file:///data/leuven/362/vsc36251/.config/code-server/extensions
+2024-02-29 13:04:14.806 [info] [10.118.200.55][928a170c][ManagementConnection] New connection established.
+2024-02-29 13:04:16.507 [debug] Error while reading the extension cache file: /data/leuven/362/vsc36251/CachedProfilesData/__default__profile__/extensions.builtin.cache Unable to read file '/data/leuven/362/vsc36251/CachedProfilesData/__default__profile__/extensions.builtin.cache' (Error: Unable to resolve nonexistent file '/data/leuven/362/vsc36251/CachedProfilesData/__default__profile__/extensions.builtin.cache')
+2024-02-29 13:04:16.508 [debug] Error while reading the extension cache file: /data/leuven/362/vsc36251/CachedProfilesData/__default__profile__/extensions.user.cache Unable to read file '/data/leuven/362/vsc36251/CachedProfilesData/__default__profile__/extensions.user.cache' (Error: Unable to resolve nonexistent file '/data/leuven/362/vsc36251/CachedProfilesData/__default__profile__/extensions.user.cache')
+2024-02-29 13:04:19.771 [info] [10.118.200.55][8a34b423][ExtensionHostConnection] New connection established.
+2024-02-29 13:04:23.521 [info] [10.118.200.55][8a34b423][ExtensionHostConnection] <1737305> Launched Extension Host Process.
+2024-02-29 13:04:48.679 [debug] Terminal profile not validated fish ["fish"]
+2024-02-29 13:04:48.682 [debug] Terminal profile not validated pwsh ["pwsh"]
+2024-02-29 13:06:07.537 [info] [10.118.200.55][928a170c][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2024-02-29 13:06:07.574 [info] [10.118.200.55][8a34b423][ExtensionHostConnection] <1737305> Extension Host Process exited with code: 0, signal: null.
+2024-02-29 13:06:17.345 [info] [10.118.200.55][a34e8e1b][ManagementConnection] New connection established.
+2024-02-29 13:06:18.828 [debug] Using cached extensions scan result file:///usr/lib/code-server/lib/vscode/extensions
+2024-02-29 13:06:18.835 [debug] Using cached extensions scan result file:///data/leuven/362/vsc36251/.config/code-server/extensions/extensions.json
+2024-02-29 13:06:19.467 [info] [10.118.200.55][89be1c54][ExtensionHostConnection] New connection established.
+2024-02-29 13:06:19.475 [info] [10.118.200.55][89be1c54][ExtensionHostConnection] <1738700> Launched Extension Host Process.
+2024-02-29 13:06:22.185 [debug] Terminal profile not validated fish ["fish"]
+2024-02-29 13:06:22.186 [debug] Terminal profile not validated pwsh ["pwsh"]
+2024-02-29 13:07:02.355 [info] [10.118.200.55][a34e8e1b][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2024-02-29 13:07:02.394 [info] [10.118.200.55][89be1c54][ExtensionHostConnection] <1738700> Extension Host Process exited with code: 0, signal: null.
+2024-02-29 13:07:05.530 [info] [10.118.200.55][dc7d1b6b][ManagementConnection] New connection established.
+2024-02-29 13:07:06.205 [debug] Using cached extensions scan result file:///data/leuven/362/vsc36251/.config/code-server/extensions/extensions.json
+2024-02-29 13:07:06.232 [debug] Using cached extensions scan result file:///usr/lib/code-server/lib/vscode/extensions
+2024-02-29 13:07:06.978 [info] [10.118.200.55][1042e6cd][ExtensionHostConnection] New connection established.
+2024-02-29 13:07:07.004 [info] [10.118.200.55][1042e6cd][ExtensionHostConnection] <1739368> Launched Extension Host Process.
+2024-02-29 13:07:08.749 [debug] Terminal profile not validated fish ["fish"]
+2024-02-29 13:07:08.760 [debug] Terminal profile not validated pwsh ["pwsh"]
+2024-02-29 13:07:12.352 [debug] Terminal profile not validated fish ["fish"]
+2024-02-29 13:07:12.352 [debug] Terminal profile not validated pwsh ["pwsh"]
+2024-02-29 13:07:23.100 [info] [10.118.200.55][dc7d1b6b][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2024-02-29 13:07:23.137 [info] [10.118.200.55][1042e6cd][ExtensionHostConnection] <1739368> Extension Host Process exited with code: 0, signal: null.
