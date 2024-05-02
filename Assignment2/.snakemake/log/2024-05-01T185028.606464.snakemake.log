@@ -1,3 +1,0 @@
-TypeError in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 9:
-list indices must be integers or slices, not tuple
-  File "/vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile", line 9, in <module>

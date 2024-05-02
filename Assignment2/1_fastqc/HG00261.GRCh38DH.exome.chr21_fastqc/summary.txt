@@ -1,0 +1,10 @@
+PASS	Basic Statistics	HG00261.GRCh38DH.exome.chr21.fq.gz
+PASS	Per base sequence quality	HG00261.GRCh38DH.exome.chr21.fq.gz
+PASS	Per sequence quality scores	HG00261.GRCh38DH.exome.chr21.fq.gz
+PASS	Per base sequence content	HG00261.GRCh38DH.exome.chr21.fq.gz
+WARN	Per sequence GC content	HG00261.GRCh38DH.exome.chr21.fq.gz
+PASS	Per base N content	HG00261.GRCh38DH.exome.chr21.fq.gz
+PASS	Sequence Length Distribution	HG00261.GRCh38DH.exome.chr21.fq.gz
+PASS	Sequence Duplication Levels	HG00261.GRCh38DH.exome.chr21.fq.gz
+PASS	Overrepresented sequences	HG00261.GRCh38DH.exome.chr21.fq.gz
+PASS	Adapter Content	HG00261.GRCh38DH.exome.chr21.fq.gz

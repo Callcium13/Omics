@@ -1,0 +1,51 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 11
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+bwa                 11
+extract_snps         1
+fastqc              11
+snpeff               1
+total               27
+
+Select jobs to execute...
+
+[Wed May  1 21:55:39 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+    jobid: 9
+    reason: Missing output files: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 9 with external jobid 'Submitted batch job 61375789 on cluster wice'.
+
+[Wed May  1 21:55:40 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai
+    jobid: 15
+    reason: Missing output files: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+RuleException in rule bwa in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 85:
+AttributeError: '_IOFile' object has no attribute 'bai', when formatting the following:
+
+        echo "Performing BWA on: {wildcards.sample} "
+
+        bwa mem {params} {input}             | samtools sort -             > {output.bam}
+        samtools index {output.bam}
+
+        if [ -f {output.bam} ] && [ -f {output.bam.bai} ]; then
+            echo "BAM file created sucessfully."
+        else
+            echo "Error: BAM file missing: {output.bam}"
+            exit 0    
+        

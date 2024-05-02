@@ -1,0 +1,285 @@
+
+vsc_number = "36251"  # VSC number for filtering id's
+
+# get the list of names from the genomes folder
+sample_names, = glob_wildcards("/staging/leuven/stg_00079/teaching/1000genomes/{sample}.fq.gz")
+#filter that list based on the last digit
+sample_names = [id for id in sample_names if id[6] == vsc_number[-1]]
+
+#Additionally, to lighten the load further, we extracted fastq reads of just chromosome 21 for you to map
+BWA_DB_chr21 = '/lustre1/project/stg_00079/teaching/hg38_21/chr21.fa'
+
+#get the jar and data for SNPeff
+snpeff_jar = "/staging/leuven/stg_00079/teaching/I0U19a_conda_2024/share/snpeff-5.2-0/snpEff.jar"
+snpeff_genome = 'hg38'
+snpeff_db_folder = "/staging/leuven/stg_00079/teaching/1000genomes/hg38"
+
+localrules: all, SNP_calling, SNP_norm_filt, snpeff, extract_snps, snp_heatmap
+
+#rule stating what the end goal is, 
+#these endpoint will determine which graphs are actually checked for dependecies
+#anything not requested will have itself or its dependencies generated
+rule all:
+    input:
+        fastqc_zip=expand("1_fastqc/{sample}_fastqc.zip", sample=sample_names),
+        # summary_png=expand("1_fastqc/{sample}_fastqc/summary.png", sample=sample_names),
+        vcf="3_samtools/snps.vcf",
+        cleaned_vcf="4_cleaned/snps.cleaned.vcf",
+        snpeff = "5_snpeff/snps.annotated.vcf",       
+        genes_vcf="genes.vcf",
+        # heatmap_image="snps_heatmap.png"
+
+# Rule for performing FastQC
+rule fastqc:
+    input:
+        fq = "/staging/leuven/stg_00079/teaching/1000genomes/{sample}.fq.gz"
+
+    output:
+        fastqc_zip="1_fastqc/{sample}_fastqc.zip",
+        html="1_fastqc/{sample}_fastqc.html",
+        summarydata="1_fastqc/{sample}_fastqc/fastqc_data.txt",
+        rep1=report("1_fastqc/{sample}_fastqc/Images/per_base_quality.png", category="Fastqc",
+                    subcategory="Per base quality", labels={"sample": "{sample}"}),
+        rep2=report("1_fastqc/{sample}_fastqc/Images/per_base_sequence_content.png", category="Fastqc",
+                     subcategory="Per base sequence content", labels={"sample": "{sample}"}),
+        rep3=report("1_fastqc/{sample}_fastqc/summary.txt", category="Fastqc",
+                    subcategory="Summary text", labels={"sample": "{sample}"}),
+
+    shell:
+        """
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: {wildcards.sample} "
+
+        
+        
+        fastqc -o 1_fastqc {input} --extract
+
+        if grep FAIL {output.rep1}; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL {output.rep2}; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL {output.rep3}; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN {output.rep1}; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN {output.rep2}; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN {output.rep3}; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        """
+
+
+        # echo "Unzip the output"
+        # ( cd 1_fastqc ; unzip -o {wildcards.sample}_fastqc.zip )
+
+        #set -e  # This ensures that the shell script exits immediately if any command fails
+        # # Check if the line count is divisible by four
+        # line_count=$(zcat "$fq" | wc -l)
+        # if ! [ $((line_count % 4)) -eq 0 ]; then
+        #     echo "Number of lines in $fq is not divisible by four"
+        #     exit 1
+        # fi
+
+        # # Check if the file isn't cut off (fourth to last line starts with "@")
+        # if [[ $(zcat "$fq" | tail -n 4 | head -n 1) != "@"* ]]; then
+        #     echo "File $fq is cut short"
+        #     exit 1
+        # fi
+
+        # # Check if the third line starts with '+'
+        # if ! zcat "$fq" | awk 'NR==3 && /^+/ {exit 1} {exit 1}'; then
+        #     echo "Third line in $fq does not start with '+', not in FASTQ format"
+        #     exit 1
+        # fi  
+
+
+
+
+        # # Check if the HTML report is generated or if summary contains warnings
+        # if [ ! -f 1_fastqc/{wildcards.sample}_fastqc.html ]; then
+        #     echo "Error: HTML report not generated."
+        #     exit 1
+        # elif grep -q "WARN" 1_fastqc/{wildcards.sample}_fastqc/summary.txt; then
+        #     echo "Error: Summary text file contains warnings."
+        #     exit 1
+        # fi
+
+# Rule for performing BWA
+rule bwa:
+    input:
+        fq="/staging/leuven/stg_00079/teaching/1000genomes/{sample}.fq.gz",
+    output:
+        bam = "2_bwa/{sample}.bam",
+        bai = "2_bwa/{sample}.bam.bai",
+    params:
+        db=BWA_DB_chr21,
+    shell:
+        """
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+        echo "Performing BWA on: {wildcards.sample} "
+
+        bwa mem {params} {input} \
+            | samtools sort - \
+            > {output.bam}
+        samtools index {output.bam}
+
+  
+        """      
+
+# Rule for SNP calling using bcftools
+rule SNP_calling:
+    input:
+        db=BWA_DB_chr21,
+        bams=expand("2_bwa/{sample}.bam", sample=sample_names),
+    output:
+        vcf="3_samtools/snps.vcf",
+    shell:
+        """
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+        echo "Performing SNP calling"
+        bcftools mpileup -Ou -f {input.db} {input.bams} \
+             | bcftools call -mv -Ov -o {output.vcf}
+
+        # Check if the VCF file was created
+        if ! [ -f {output.vcf} ]; then
+            echo "Error: SNP calling failed"
+            exit 1
+        fi
+        """
+
+# Rule for SNP normalization & filtering
+rule SNP_norm_filt:
+    input:
+        db=BWA_DB_chr21,
+        vcf="3_samtools/snps.vcf"
+    output:
+        vcf="4_cleaned/snps.cleaned.vcf"
+    shell:
+        """
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+        echo "Normalizing and filtering"
+        ( cat {input.vcf} \
+           | vt decompose - \
+           | vt normalize -n -r {input.db} - \
+           | vt uniq - \
+           | vt view -f "QUAL>20" -h - \
+           > {output.vcf} )
+        """
+
+# Rule for SNP annotation using SNPeff
+rule snpeff:
+    input:
+        vcf = "4_cleaned/snps.cleaned.vcf",
+    params:
+        snpeff_db_folder = snpeff_db_folder,
+        snpeff_jar = snpeff_jar,
+        snpeff_genome = snpeff_genome,
+    log:
+        err="5_snpeff/snakemake.err",
+    output:
+        vcf = "5_snpeff/snps.annotated.vcf",
+        html = "5_snpeff/snpEff_summary.html",
+        genetxt = "5_snpeff/snpEff_genes.txt",
+    shell:
+        """
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+        echo "Annotating"
+        mkdir -p 5_snpeff
+
+        java -Xmx4096m -jar \
+            {params.snpeff_jar} eff hg38 \
+            -dataDir {params.snpeff_db_folder} \
+            {input.vcf} > {output.vcf}
+
+        # move output files to the snpeff output folder
+        mv snpEff_genes.txt snpEff_summary.html 5_snpeff
+
+        """
+
+
+
+# Rule for creating an image with a heatmap showing the number of SNPs per individual
+rule snp_heatmap:
+    input:
+        vcf="5_snpeff/snps.annotated.vcf",
+    output:
+        heatmap_image=report("snps_heatmap.png", category="SNP Heatmap",
+                subcategory="Summary text")
+    shell:
+        """
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+        bcftools query -l {input.vcf} > samples.txt
+        bcftools query -f '%CHROM\t%POS[\t%GT]\n' {input.vcf} | grep -v '#' | cut -f 3- > genotypes.txt
+        paste samples.txt genotypes.txt | awk '{print $1,$(NF-1),$NF}' | sort | uniq -c | awk '{print $2,$3,$1}' > snps_per_individual.txt
+        awk '{print $1}' snps_per_individual.txt > individuals.txt
+        awk '{print $2}' snps_per_individual.txt > snps.txt
+        python heatmap.py individuals.txt snps.txt {output.heatmap_image}
+        """
+
+# rule fastqc_report_image:
+#     input:
+#         summarytxt = "1_fastqc/{sample}_fastqc/summary.txt"
+#     output:
+#         statuspng = report("1_fastqc/{sample}_fastqc/summary.png",
+#                          category='Fastqc',
+#                          subcategory='Status',
+#                          labels={"sample": "{sample}"})
+
+#     run:
+#         import pandas as pd
+#         import seaborn as sns
+#         import matplotlib.pyplot as plt
+
+#         #load data
+#         data = pd.read_csv(input.summarytxt, sep="\t", header=None)
+#         data.columns = ['status', 'test', 'sample']
+
+#         #assign dummy x value for scatterplot
+#         data['x'] = 1
+
+#         #create image
+#         fig = plt.figure(figsize=(4,5))
+#         ax = plt.gca()
+#         sns.scatterplot(data, x='x', y='test', hue='status', s=200, ax=ax)
+#         ax.get_xaxis().set_visible(False)
+#         ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+#         plt.tight_layout()
+#         plt.title(wildcards.sample)
+#         plt.savefig(output.statuspng)
+
+# Rule for extracting SNPs associated with APP, SOD21, and DYRK1A into a new VCF file
+rule extract_snps:
+    input:
+        vcf="5_snpeff/snps.annotated.vcf",
+    output:
+        genes_vcf="genes.vcf",
+    shell:
+        """
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+        # Extract SNPs associated with APP, SOD21, and DYRK1A from the annotated VCF file
+        bcftools view -i 'INFO/ANN[*].Gene_Name="APP" || INFO/ANN[*].Gene_Name="SOD21" || INFO/ANN[*].Gene_Name="DYRK1A"' \
+            {input.vcf} -o {output.genes_vcf}
+        """

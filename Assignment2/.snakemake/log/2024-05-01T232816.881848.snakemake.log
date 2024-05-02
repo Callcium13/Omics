@@ -1,0 +1,470 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+extract_snps         1
+fastqc              11
+snpeff               1
+total               16
+
+Select jobs to execute...
+
+[Wed May  1 23:28:19 2024]
+localrule SNP_calling:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    output: 3_samtools/snps.vcf
+    jobid: 12
+    reason: Forced execution
+    resources: mem_mb=1040, mem_mib=992, disk_mb=1040, disk_mib=992, tmpdir=/tmp
+
+
+[Wed May  1 23:28:19 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00231.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00231.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 5
+    reason: Missing output files: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 61376358 on cluster wice'.
+
+[Wed May  1 23:28:20 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG04301.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG04301.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 7
+    reason: Code has changed since last execution
+    wildcards: sample=HG04301.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 7 with external jobid 'Submitted batch job 61376359 on cluster wice'.
+
+[Wed May  1 23:28:21 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00251.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 9
+    reason: Code has changed since last execution
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 9 with external jobid 'Submitted batch job 61376360 on cluster wice'.
+
+[Wed May  1 23:28:22 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00151.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00151.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 11
+    reason: Code has changed since last execution
+    wildcards: sample=HG00151.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 11 with external jobid 'Submitted batch job 61376361 on cluster wice'.
+
+[Wed May  1 23:28:23 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 1
+    reason: Code has changed since last execution
+    wildcards: sample=HG00141.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 61376362 on cluster wice'.
+
+[Wed May  1 23:28:25 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00131.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00131.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 4
+    reason: Code has changed since last execution
+    wildcards: sample=HG00131.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 61376363 on cluster wice'.
+
+[Wed May  1 23:28:26 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG01791.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 6
+    reason: Code has changed since last execution
+    wildcards: sample=HG01791.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 6 with external jobid 'Submitted batch job 61376364 on cluster wice'.
+
+[Wed May  1 23:28:27 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00121.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 8
+    reason: Code has changed since last execution
+    wildcards: sample=HG00121.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 8 with external jobid 'Submitted batch job 61376365 on cluster wice'.
+
+[Wed May  1 23:28:28 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00101.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00101.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 10
+    reason: Code has changed since last execution
+    wildcards: sample=HG00101.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 10 with external jobid 'Submitted batch job 61376366 on cluster wice'.
+
+[Wed May  1 23:28:29 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00261.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00261.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 2
+    reason: Code has changed since last execution
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 61376367 on cluster wice'.
+
+[Wed May  1 23:28:30 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00111.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00111.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 3
+    reason: Code has changed since last execution
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 61376368 on cluster wice'.
+[Wed May  1 23:28:49 2024]
+Error in rule fastqc:
+    jobid: 5
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00231.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00231.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        set -e  # This ensures that the shell script exits immediately if any command fails
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00231.GRCh38DH.exome.chr21 "
+
+
+        
+        
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00231.GRCh38DH.exome.chr21_fastqc.zip )
+
+
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376358 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 5, external: Submitted batch job 61376358 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.drw3zjkz/snakejob.fastqc.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:28:49 2024]
+Error in rule fastqc:
+    jobid: 7
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG04301.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG04301.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        set -e  # This ensures that the shell script exits immediately if any command fails
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG04301.GRCh38DH.exome.chr21 "
+
+
+        
+        
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG04301.GRCh38DH.exome.chr21_fastqc.zip )
+
+
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376359 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 7, external: Submitted batch job 61376359 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.drw3zjkz/snakejob.fastqc.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:28:49 2024]
+Error in rule fastqc:
+    jobid: 9
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00251.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        set -e  # This ensures that the shell script exits immediately if any command fails
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00251.GRCh38DH.exome.chr21 "
+
+
+        
+        
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00251.GRCh38DH.exome.chr21_fastqc.zip )
+
+
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376360 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 9, external: Submitted batch job 61376360 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.drw3zjkz/snakejob.fastqc.9.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:28:49 2024]
+Error in rule fastqc:
+    jobid: 11
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00151.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00151.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        set -e  # This ensures that the shell script exits immediately if any command fails
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00151.GRCh38DH.exome.chr21 "
+
+
+        
+        
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00151.GRCh38DH.exome.chr21_fastqc.zip )
+
+
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376361 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 11, external: Submitted batch job 61376361 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.drw3zjkz/snakejob.fastqc.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:28:49 2024]
+Error in rule fastqc:
+    jobid: 1
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        set -e  # This ensures that the shell script exits immediately if any command fails
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00141.GRCh38DH.exome.chr21 "
+
+
+        
+        
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00141.GRCh38DH.exome.chr21_fastqc.zip )
+
+
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376362 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 1, external: Submitted batch job 61376362 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.drw3zjkz/snakejob.fastqc.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:29:00 2024]
+Error in rule fastqc:
+    jobid: 4
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00131.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00131.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        set -e  # This ensures that the shell script exits immediately if any command fails
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00131.GRCh38DH.exome.chr21 "
+
+
+        
+        
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00131.GRCh38DH.exome.chr21_fastqc.zip )
+
+
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376363 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 4, external: Submitted batch job 61376363 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.drw3zjkz/snakejob.fastqc.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:29:00 2024]
+Error in rule fastqc:
+    jobid: 8
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00121.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        set -e  # This ensures that the shell script exits immediately if any command fails
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00121.GRCh38DH.exome.chr21 "
+
+
+        
+        
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00121.GRCh38DH.exome.chr21_fastqc.zip )
+
+
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376365 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 8, external: Submitted batch job 61376365 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.drw3zjkz/snakejob.fastqc.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:29:00 2024]
+Error in rule fastqc:
+    jobid: 10
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00101.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00101.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        set -e  # This ensures that the shell script exits immediately if any command fails
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00101.GRCh38DH.exome.chr21 "
+
+
+        
+        
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00101.GRCh38DH.exome.chr21_fastqc.zip )
+
+
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376366 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 10, external: Submitted batch job 61376366 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.drw3zjkz/snakejob.fastqc.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:29:00 2024]
+Error in rule fastqc:
+    jobid: 2
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00261.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00261.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        set -e  # This ensures that the shell script exits immediately if any command fails
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00261.GRCh38DH.exome.chr21 "
+
+
+        
+        
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00261.GRCh38DH.exome.chr21_fastqc.zip )
+
+
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376367 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 2, external: Submitted batch job 61376367 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.drw3zjkz/snakejob.fastqc.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:29:31 2024]
+Error in rule fastqc:
+    jobid: 6
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG01791.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        set -e  # This ensures that the shell script exits immediately if any command fails
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG01791.GRCh38DH.exome.chr21 "
+
+
+        
+        
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG01791.GRCh38DH.exome.chr21_fastqc.zip )
+
+
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376364 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 6, external: Submitted batch job 61376364 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.drw3zjkz/snakejob.fastqc.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:29:31 2024]
+Error in rule fastqc:
+    jobid: 3
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00111.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00111.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        set -e  # This ensures that the shell script exits immediately if any command fails
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00111.GRCh38DH.exome.chr21 "
+
+
+        
+        
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00111.GRCh38DH.exome.chr21_fastqc.zip )
+
+
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376368 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 3, external: Submitted batch job 61376368 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.drw3zjkz/snakejob.fastqc.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:34:39 2024]
+Finished job 12.
+1 of 16 steps (6%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-01T232816.881848.snakemake.log

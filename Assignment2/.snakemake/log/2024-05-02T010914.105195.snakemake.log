@@ -1,0 +1,1207 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+bwa                 11
+extract_snps         1
+fastqc              11
+snpeff               1
+total               27
+
+Select jobs to execute...
+
+[Thu May  2 01:09:15 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00151.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam.bai
+    jobid: 22
+    reason: Missing output files: 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00151.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 22 with external jobid 'Submitted batch job 61377020 on cluster wice'.
+
+[Thu May  2 01:09:16 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 7
+    reason: Missing output files: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG04301.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 7 with external jobid 'Submitted batch job 61377021 on cluster wice'.
+
+[Thu May  2 01:09:17 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam.bai
+    jobid: 15
+    reason: Missing output files: 2_bwa/HG00131.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00131.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 15 with external jobid 'Submitted batch job 61377022 on cluster wice'.
+
+[Thu May  2 01:09:17 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 8
+    reason: Missing output files: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00121.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 8 with external jobid 'Submitted batch job 61377023 on cluster wice'.
+
+[Thu May  2 01:09:18 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam.bai
+    jobid: 16
+    reason: Missing output files: 2_bwa/HG00231.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 16 with external jobid 'Submitted batch job 61377024 on cluster wice'.
+
+[Thu May  2 01:09:19 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 2
+    reason: Missing output files: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 61377025 on cluster wice'.
+
+[Thu May  2 01:09:20 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 9
+    reason: Missing output files: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 9 with external jobid 'Submitted batch job 61377026 on cluster wice'.
+
+[Thu May  2 01:09:21 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam.bai
+    jobid: 17
+    reason: Missing output files: 2_bwa/HG01791.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG01791.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 17 with external jobid 'Submitted batch job 61377027 on cluster wice'.
+
+[Thu May  2 01:09:22 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 1
+    reason: Missing output files: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00141.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 61377028 on cluster wice'.
+
+[Thu May  2 01:09:23 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 10
+    reason: Missing output files: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00101.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 10 with external jobid 'Submitted batch job 61377029 on cluster wice'.
+
+[Thu May  2 01:09:24 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam.bai
+    jobid: 18
+    reason: Missing output files: 2_bwa/HG04301.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG04301.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 18 with external jobid 'Submitted batch job 61377030 on cluster wice'.
+
+[Thu May  2 01:09:24 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 3
+    reason: Missing output files: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+[Thu May  2 01:09:25 2024]
+Error in rule bwa:
+    jobid: 22
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00151.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00151.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 "$params.db"/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if ! ls "$params.db"/cytoBand* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if ! ls "$params.db"/pwms* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if ! ls "$params.db"/snpEffectPredictor* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377020 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 22, external: Submitted batch job 61377020 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.bwa.22.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:25 2024]
+Error in rule fastqc:
+    jobid: 7
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG04301.GRCh38DH.exome.chr21 "
+        
+        # Check if it is in FASTQ format
+        first_line=$(head -n 1 "$input.fq")
+        third_line=$(sed -n '3p' "$input.fq")
+
+        if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
+            echo "File is not in FASTQ format."
+            false
+        fi
+
+        #check that file is not truncated
+        if ! [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
+            echo "Fourth last line does not begin with '@'!"
+            false
+        fi
+
+        #extract the fastqc
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        #these warnings arent severe as bias can be introduced by the adapters used
+        if grep WARN 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains warnings!"
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377021 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 7, external: Submitted batch job 61377021 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.fastqc.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:25 2024]
+Error in rule bwa:
+    jobid: 15
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00131.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 "$params.db"/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if ! ls "$params.db"/cytoBand* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if ! ls "$params.db"/pwms* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if ! ls "$params.db"/snpEffectPredictor* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00131.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00131.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377022 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 15, external: Submitted batch job 61377022 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.bwa.15.sh). For error details see the cluster log and the log files of the involved rule(s).
+Submitted job 3 with external jobid 'Submitted batch job 61377031 on cluster wice'.
+
+[Thu May  2 01:09:25 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 11
+    reason: Missing output files: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00151.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 11 with external jobid 'Submitted batch job 61377032 on cluster wice'.
+
+[Thu May  2 01:09:26 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam.bai
+    jobid: 19
+    reason: Missing output files: 2_bwa/HG00121.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00121.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 19 with external jobid 'Submitted batch job 61377033 on cluster wice'.
+
+[Thu May  2 01:09:27 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 4
+    reason: Missing output files: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00131.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 61377034 on cluster wice'.
+
+[Thu May  2 01:09:28 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam.bai
+    jobid: 12
+    reason: Missing output files: 2_bwa/HG00141.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00141.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 12 with external jobid 'Submitted batch job 61377035 on cluster wice'.
+
+[Thu May  2 01:09:29 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam.bai
+    jobid: 20
+    reason: Missing output files: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 20 with external jobid 'Submitted batch job 61377036 on cluster wice'.
+
+[Thu May  2 01:09:29 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 5
+    reason: Missing output files: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 61377037 on cluster wice'.
+
+[Thu May  2 01:09:30 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam.bai
+    jobid: 13
+    reason: Missing output files: 2_bwa/HG00261.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 13 with external jobid 'Submitted batch job 61377038 on cluster wice'.
+
+[Thu May  2 01:09:31 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam.bai
+    jobid: 21
+    reason: Missing output files: 2_bwa/HG00101.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00101.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 21 with external jobid 'Submitted batch job 61377039 on cluster wice'.
+
+[Thu May  2 01:09:32 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 6
+    reason: Missing output files: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG01791.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 6 with external jobid 'Submitted batch job 61377040 on cluster wice'.
+
+[Thu May  2 01:09:33 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai
+    jobid: 14
+    reason: Missing output files: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 14 with external jobid 'Submitted batch job 61377041 on cluster wice'.
+[Thu May  2 01:09:36 2024]
+Error in rule fastqc:
+    jobid: 3
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00111.GRCh38DH.exome.chr21 "
+        
+        # Check if it is in FASTQ format
+        first_line=$(head -n 1 "$input.fq")
+        third_line=$(sed -n '3p' "$input.fq")
+
+        if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
+            echo "File is not in FASTQ format."
+            false
+        fi
+
+        #check that file is not truncated
+        if ! [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
+            echo "Fourth last line does not begin with '@'!"
+            false
+        fi
+
+        #extract the fastqc
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        #these warnings arent severe as bias can be introduced by the adapters used
+        if grep WARN 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains warnings!"
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377031 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 3, external: Submitted batch job 61377031 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.fastqc.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:36 2024]
+Error in rule fastqc:
+    jobid: 8
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00121.GRCh38DH.exome.chr21 "
+        
+        # Check if it is in FASTQ format
+        first_line=$(head -n 1 "$input.fq")
+        third_line=$(sed -n '3p' "$input.fq")
+
+        if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
+            echo "File is not in FASTQ format."
+            false
+        fi
+
+        #check that file is not truncated
+        if ! [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
+            echo "Fourth last line does not begin with '@'!"
+            false
+        fi
+
+        #extract the fastqc
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        #these warnings arent severe as bias can be introduced by the adapters used
+        if grep WARN 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains warnings!"
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377023 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 8, external: Submitted batch job 61377023 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.fastqc.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:36 2024]
+Error in rule fastqc:
+    jobid: 2
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00261.GRCh38DH.exome.chr21 "
+        
+        # Check if it is in FASTQ format
+        first_line=$(head -n 1 "$input.fq")
+        third_line=$(sed -n '3p' "$input.fq")
+
+        if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
+            echo "File is not in FASTQ format."
+            false
+        fi
+
+        #check that file is not truncated
+        if ! [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
+            echo "Fourth last line does not begin with '@'!"
+            false
+        fi
+
+        #extract the fastqc
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        #these warnings arent severe as bias can be introduced by the adapters used
+        if grep WARN 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains warnings!"
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377025 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 2, external: Submitted batch job 61377025 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.fastqc.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:36 2024]
+Error in rule bwa:
+    jobid: 17
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG01791.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 "$params.db"/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if ! ls "$params.db"/cytoBand* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if ! ls "$params.db"/pwms* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if ! ls "$params.db"/snpEffectPredictor* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG01791.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG01791.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377027 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 17, external: Submitted batch job 61377027 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.bwa.17.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:36 2024]
+Error in rule fastqc:
+    jobid: 1
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00141.GRCh38DH.exome.chr21 "
+        
+        # Check if it is in FASTQ format
+        first_line=$(head -n 1 "$input.fq")
+        third_line=$(sed -n '3p' "$input.fq")
+
+        if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
+            echo "File is not in FASTQ format."
+            false
+        fi
+
+        #check that file is not truncated
+        if ! [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
+            echo "Fourth last line does not begin with '@'!"
+            false
+        fi
+
+        #extract the fastqc
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        #these warnings arent severe as bias can be introduced by the adapters used
+        if grep WARN 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains warnings!"
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377028 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 1, external: Submitted batch job 61377028 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.fastqc.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:36 2024]
+Error in rule fastqc:
+    jobid: 11
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00151.GRCh38DH.exome.chr21 "
+        
+        # Check if it is in FASTQ format
+        first_line=$(head -n 1 "$input.fq")
+        third_line=$(sed -n '3p' "$input.fq")
+
+        if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
+            echo "File is not in FASTQ format."
+            false
+        fi
+
+        #check that file is not truncated
+        if ! [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
+            echo "Fourth last line does not begin with '@'!"
+            false
+        fi
+
+        #extract the fastqc
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        #these warnings arent severe as bias can be introduced by the adapters used
+        if grep WARN 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains warnings!"
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377032 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 11, external: Submitted batch job 61377032 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.fastqc.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:37 2024]
+Error in rule bwa:
+    jobid: 19
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00121.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 "$params.db"/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if ! ls "$params.db"/cytoBand* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if ! ls "$params.db"/pwms* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if ! ls "$params.db"/snpEffectPredictor* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00121.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00121.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377033 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 19, external: Submitted batch job 61377033 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.bwa.19.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:37 2024]
+Error in rule fastqc:
+    jobid: 4
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00131.GRCh38DH.exome.chr21 "
+        
+        # Check if it is in FASTQ format
+        first_line=$(head -n 1 "$input.fq")
+        third_line=$(sed -n '3p' "$input.fq")
+
+        if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
+            echo "File is not in FASTQ format."
+            false
+        fi
+
+        #check that file is not truncated
+        if ! [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
+            echo "Fourth last line does not begin with '@'!"
+            false
+        fi
+
+        #extract the fastqc
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        #these warnings arent severe as bias can be introduced by the adapters used
+        if grep WARN 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains warnings!"
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377034 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 4, external: Submitted batch job 61377034 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.fastqc.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:37 2024]
+Error in rule bwa:
+    jobid: 12
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00141.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 "$params.db"/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if ! ls "$params.db"/cytoBand* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if ! ls "$params.db"/pwms* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if ! ls "$params.db"/snpEffectPredictor* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00141.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00141.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377035 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 12, external: Submitted batch job 61377035 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.bwa.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:37 2024]
+Error in rule bwa:
+    jobid: 13
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00261.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 "$params.db"/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if ! ls "$params.db"/cytoBand* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if ! ls "$params.db"/pwms* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if ! ls "$params.db"/snpEffectPredictor* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00261.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00261.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377038 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 13, external: Submitted batch job 61377038 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.bwa.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:47 2024]
+Error in rule bwa:
+    jobid: 16
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00231.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 "$params.db"/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if ! ls "$params.db"/cytoBand* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if ! ls "$params.db"/pwms* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if ! ls "$params.db"/snpEffectPredictor* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00231.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00231.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377024 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 16, external: Submitted batch job 61377024 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.bwa.16.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:47 2024]
+Error in rule fastqc:
+    jobid: 9
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00251.GRCh38DH.exome.chr21 "
+        
+        # Check if it is in FASTQ format
+        first_line=$(head -n 1 "$input.fq")
+        third_line=$(sed -n '3p' "$input.fq")
+
+        if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
+            echo "File is not in FASTQ format."
+            false
+        fi
+
+        #check that file is not truncated
+        if ! [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
+            echo "Fourth last line does not begin with '@'!"
+            false
+        fi
+
+        #extract the fastqc
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        #these warnings arent severe as bias can be introduced by the adapters used
+        if grep WARN 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains warnings!"
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377026 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 9, external: Submitted batch job 61377026 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.fastqc.9.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:47 2024]
+Error in rule fastqc:
+    jobid: 10
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00101.GRCh38DH.exome.chr21 "
+        
+        # Check if it is in FASTQ format
+        first_line=$(head -n 1 "$input.fq")
+        third_line=$(sed -n '3p' "$input.fq")
+
+        if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
+            echo "File is not in FASTQ format."
+            false
+        fi
+
+        #check that file is not truncated
+        if ! [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
+            echo "Fourth last line does not begin with '@'!"
+            false
+        fi
+
+        #extract the fastqc
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        #these warnings arent severe as bias can be introduced by the adapters used
+        if grep WARN 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains warnings!"
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377029 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 10, external: Submitted batch job 61377029 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.fastqc.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:47 2024]
+Error in rule bwa:
+    jobid: 18
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG04301.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 "$params.db"/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if ! ls "$params.db"/cytoBand* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if ! ls "$params.db"/pwms* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if ! ls "$params.db"/snpEffectPredictor* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG04301.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG04301.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377030 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 18, external: Submitted batch job 61377030 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.bwa.18.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:47 2024]
+Error in rule bwa:
+    jobid: 20
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00251.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 "$params.db"/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if ! ls "$params.db"/cytoBand* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if ! ls "$params.db"/pwms* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if ! ls "$params.db"/snpEffectPredictor* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00251.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00251.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377036 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 20, external: Submitted batch job 61377036 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.bwa.20.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:47 2024]
+Error in rule fastqc:
+    jobid: 5
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00231.GRCh38DH.exome.chr21 "
+        
+        # Check if it is in FASTQ format
+        first_line=$(head -n 1 "$input.fq")
+        third_line=$(sed -n '3p' "$input.fq")
+
+        if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
+            echo "File is not in FASTQ format."
+            false
+        fi
+
+        #check that file is not truncated
+        if ! [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
+            echo "Fourth last line does not begin with '@'!"
+            false
+        fi
+
+        #extract the fastqc
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        #these warnings arent severe as bias can be introduced by the adapters used
+        if grep WARN 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains warnings!"
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377037 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 5, external: Submitted batch job 61377037 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.fastqc.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:47 2024]
+Error in rule bwa:
+    jobid: 21
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00101.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 "$params.db"/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if ! ls "$params.db"/cytoBand* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if ! ls "$params.db"/pwms* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if ! ls "$params.db"/snpEffectPredictor* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00101.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00101.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377039 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 21, external: Submitted batch job 61377039 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.bwa.21.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:47 2024]
+Error in rule fastqc:
+    jobid: 6
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG01791.GRCh38DH.exome.chr21 "
+        
+        # Check if it is in FASTQ format
+        first_line=$(head -n 1 "$input.fq")
+        third_line=$(sed -n '3p' "$input.fq")
+
+        if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
+            echo "File is not in FASTQ format."
+            false
+        fi
+
+        #check that file is not truncated
+        if ! [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
+            echo "Fourth last line does not begin with '@'!"
+            false
+        fi
+
+        #extract the fastqc
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        #these warnings arent severe as bias can be introduced by the adapters used
+        if grep WARN 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Summary contains warnings!"
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377040 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 6, external: Submitted batch job 61377040 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.fastqc.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 01:09:47 2024]
+Error in rule bwa:
+    jobid: 14
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00111.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 "$params.db"/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if ! ls "$params.db"/cytoBand* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if ! ls "$params.db"/pwms* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if ! ls "$params.db"/snpEffectPredictor* >/dev/null 2>&1; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61377041 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 14, external: Submitted batch job 61377041 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.r1_gh3wm/snakejob.bwa.14.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-02T010914.105195.snakemake.log

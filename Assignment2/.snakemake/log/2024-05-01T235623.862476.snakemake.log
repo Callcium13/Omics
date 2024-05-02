@@ -1,0 +1,809 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job             count
+------------  -------
+all                 1
+extract_snps        1
+fastqc             11
+total              13
+
+Select jobs to execute...
+
+[Wed May  1 23:56:25 2024]
+localrule extract_snps:
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    jobid: 26
+    reason: Missing output files: genes.vcf
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+
+[Wed May  1 23:56:25 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 5
+    reason: Missing output files: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+[Wed May  1 23:56:25 2024]
+Error in rule extract_snps:
+    jobid: 26
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+        # Extract SNPs associated with APP, SOD21, and DYRK1A from the annotated VCF file
+        bcftools view -i 'INFO/ANN[*].Gene_Name="APP" || INFO/ANN[*].Gene_Name="SOD21" || INFO/ANN[*].Gene_Name="DYRK1A"'             5_snpeff/snps.annotated.vcf -o genes.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Submitted job 5 with external jobid 'Submitted batch job 61376619 on cluster wice'.
+
+[Wed May  1 23:56:26 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 7
+    reason: Missing output files: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG04301.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 7 with external jobid 'Submitted batch job 61376620 on cluster wice'.
+
+[Wed May  1 23:56:27 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 9
+    reason: Missing output files: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 9 with external jobid 'Submitted batch job 61376621 on cluster wice'.
+
+[Wed May  1 23:56:28 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 11
+    reason: Missing output files: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG00151.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 11 with external jobid 'Submitted batch job 61376622 on cluster wice'.
+
+[Wed May  1 23:56:29 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 1
+    reason: Missing output files: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00141.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 61376623 on cluster wice'.
+
+[Wed May  1 23:56:30 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 4
+    reason: Missing output files: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG00131.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 61376624 on cluster wice'.
+
+[Wed May  1 23:56:31 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 6
+    reason: Missing output files: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG01791.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 6 with external jobid 'Submitted batch job 61376625 on cluster wice'.
+
+[Wed May  1 23:56:32 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 8
+    reason: Missing output files: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG00121.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 8 with external jobid 'Submitted batch job 61376626 on cluster wice'.
+
+[Wed May  1 23:56:33 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 10
+    reason: Missing output files: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG00101.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 10 with external jobid 'Submitted batch job 61376627 on cluster wice'.
+
+[Wed May  1 23:56:33 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 2
+    reason: Missing output files: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 61376628 on cluster wice'.
+
+[Wed May  1 23:56:34 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 3
+    reason: Missing output files: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 61376629 on cluster wice'.
+Removing output files of failed job extract_snps since they might be corrupted:
+genes.vcf
+[Wed May  1 23:56:45 2024]
+Error in rule fastqc:
+    jobid: 5
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00231.GRCh38DH.exome.chr21 "
+
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if grep -q "WARN" 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376619 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 5, external: Submitted batch job 61376619 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.h13yjy20/snakejob.fastqc.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:56:45 2024]
+Error in rule fastqc:
+    jobid: 7
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG04301.GRCh38DH.exome.chr21 "
+
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if grep -q "WARN" 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376620 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 7, external: Submitted batch job 61376620 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.h13yjy20/snakejob.fastqc.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:56:45 2024]
+Error in rule fastqc:
+    jobid: 11
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00151.GRCh38DH.exome.chr21 "
+
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if grep -q "WARN" 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376622 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 11, external: Submitted batch job 61376622 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.h13yjy20/snakejob.fastqc.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:56:45 2024]
+Error in rule fastqc:
+    jobid: 1
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00141.GRCh38DH.exome.chr21 "
+
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if grep -q "WARN" 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376623 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 1, external: Submitted batch job 61376623 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.h13yjy20/snakejob.fastqc.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:56:56 2024]
+Error in rule fastqc:
+    jobid: 9
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00251.GRCh38DH.exome.chr21 "
+
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if grep -q "WARN" 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376621 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 9, external: Submitted batch job 61376621 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.h13yjy20/snakejob.fastqc.9.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:56:56 2024]
+Error in rule fastqc:
+    jobid: 8
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00121.GRCh38DH.exome.chr21 "
+
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if grep -q "WARN" 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376626 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 8, external: Submitted batch job 61376626 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.h13yjy20/snakejob.fastqc.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:56:56 2024]
+Error in rule fastqc:
+    jobid: 2
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00261.GRCh38DH.exome.chr21 "
+
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if grep -q "WARN" 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376628 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 2, external: Submitted batch job 61376628 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.h13yjy20/snakejob.fastqc.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:56:56 2024]
+Error in rule fastqc:
+    jobid: 3
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00111.GRCh38DH.exome.chr21 "
+
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if grep -q "WARN" 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376629 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 3, external: Submitted batch job 61376629 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.h13yjy20/snakejob.fastqc.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:57:26 2024]
+Error in rule fastqc:
+    jobid: 4
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00131.GRCh38DH.exome.chr21 "
+
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if grep -q "WARN" 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376624 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 4, external: Submitted batch job 61376624 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.h13yjy20/snakejob.fastqc.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:57:26 2024]
+Error in rule fastqc:
+    jobid: 6
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG01791.GRCh38DH.exome.chr21 "
+
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if grep -q "WARN" 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376625 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 6, external: Submitted batch job 61376625 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.h13yjy20/snakejob.fastqc.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 23:57:27 2024]
+Error in rule fastqc:
+    jobid: 10
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: HG00101.GRCh38DH.exome.chr21 "
+
+        
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz --extract
+
+        if grep FAIL 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi        
+        
+        if grep FAIL 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+
+        if grep FAIL 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "FAILED!"
+            # false yields a non-zero return code - which is an error
+            false
+        fi
+        if grep WARN 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi        
+        
+        if grep WARN 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+        
+        if grep WARN 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            # Found a fail! -
+            echo "Warning!"
+        fi
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if grep -q "WARN" 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61376627 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 10, external: Submitted batch job 61376627 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.h13yjy20/snakejob.fastqc.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-01T235623.862476.snakemake.log

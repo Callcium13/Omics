@@ -1,0 +1,61 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job             count
+------------  -------
+all                 1
+extract_snps        1
+fastqc             11
+total              13
+
+Select jobs to execute...
+
+[Thu May  2 00:09:12 2024]
+localrule extract_snps:
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    jobid: 26
+    reason: Missing output files: genes.vcf
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+
+[Thu May  2 00:09:12 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 5
+    reason: Missing output files: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+RuleException in rule fastqc in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 33:
+ValueError: expected ':' after conversion specifier, when formatting the following:
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: {wildcards.sample} "
+
+        zcat "$fq" | {
+            line_count=$(wc -l)
+            if ! [ $((line_count % 4)) -eq 0 ]; then
+                echo "Number of lines in $fq is not divisible by four"
+                false
+            fi
+            if ! tail -n 4 | head -n 1 | grep -q "^@"; then
+                echo "File $fq is cut short"
+                false
+            fi
+        }
+        
+        fastqc -o 1_fastqc {input} --extract
+
+        if grep FAIL {output.rep3}; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        
+        if grep WARN {output.rep3}; then
+            echo "Summary contains warnings!"
+        fi
+        

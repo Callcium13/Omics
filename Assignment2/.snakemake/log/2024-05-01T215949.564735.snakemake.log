@@ -1,0 +1,473 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 11
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+bwa                 11
+extract_snps         1
+fastqc              11
+snpeff               1
+total               27
+
+Select jobs to execute...
+
+[Wed May  1 21:59:50 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+    jobid: 9
+    reason: Missing output files: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 9 with external jobid 'Submitted batch job 61375822 on cluster wice'.
+
+[Wed May  1 21:59:51 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai
+    jobid: 15
+    reason: Missing output files: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 15 with external jobid 'Submitted batch job 61375823 on cluster wice'.
+
+[Wed May  1 21:59:51 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam.bai
+    jobid: 17
+    reason: Missing output files: 2_bwa/HG00231.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 17 with external jobid 'Submitted batch job 61375824 on cluster wice'.
+
+[Wed May  1 21:59:52 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+    jobid: 3
+    reason: Missing output files: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 61375825 on cluster wice'.
+
+[Wed May  1 21:59:53 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam.bai
+    jobid: 21
+    reason: Missing output files: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 21 with external jobid 'Submitted batch job 61375826 on cluster wice'.
+
+[Wed May  1 21:59:54 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+    jobid: 6
+    reason: Missing output files: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG01791.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 6 with external jobid 'Submitted batch job 61375827 on cluster wice'.
+
+[Wed May  1 21:59:55 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00151.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam.bai
+    jobid: 23
+    reason: Missing output files: 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00151.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 23 with external jobid 'Submitted batch job 61375828 on cluster wice'.
+
+[Wed May  1 21:59:55 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+    jobid: 8
+    reason: Missing output files: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00121.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 8 with external jobid 'Submitted batch job 61375829 on cluster wice'.
+
+[Wed May  1 21:59:56 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam.bai
+    jobid: 14
+    reason: Missing output files: 2_bwa/HG00261.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 14 with external jobid 'Submitted batch job 61375830 on cluster wice'.
+
+[Wed May  1 21:59:57 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam.bai
+    jobid: 16
+    reason: Missing output files: 2_bwa/HG00131.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00131.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 16 with external jobid 'Submitted batch job 61375831 on cluster wice'.
+
+[Wed May  1 21:59:58 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+    jobid: 1
+    reason: Missing output files: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip
+    wildcards: sample=HG00141.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 61375832 on cluster wice'.
+[Wed May  1 21:59:59 2024]
+Error in rule fastqc:
+    jobid: 9
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+    shell:
+        
+        echo "Input Fastq: HG00251.GRCh38DH.exome.chr21 "
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00251.GRCh38DH.exome.chr21_fastqc.zip )
+
+        # grep WARN 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt && false
+                # Check if the HTML report is generated
+        if [ ! -f 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.html ]; then
+            echo "Error: HTML report not generated."
+            exit 0
+        fi
+
+        # Check if the summary data file is present
+        if [ ! -f 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt ]; then
+            echo "Error: Summary data file not generated."
+            exit 0
+        fi
+
+        # Check if the required images are generated
+        if [ ! -f 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png ] ||            [ ! -f 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png ]; then
+            echo "Error: Required images not generated."
+            exit 0
+        fi
+
+        # Check if the summary text file is generated and contains no warnings
+        if [ ! -f 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt ]; then
+            echo "Error: Summary text file not generated."
+            exit 0
+        elif grep -q "WARN" 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            exit 0
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61375822 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 9, external: Submitted batch job 61375822 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.4l6lfalj/snakejob.fastqc.9.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 22:00:00 2024]
+Error in rule bwa:
+    jobid: 15
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        echo "Performing BWA on: HG00111.GRCh38DH.exome.chr21 "
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61375823 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 15, external: Submitted batch job 61375823 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.4l6lfalj/snakejob.bwa.15.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 22:00:00 2024]
+Error in rule bwa:
+    jobid: 21
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        echo "Performing BWA on: HG00251.GRCh38DH.exome.chr21 "
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00251.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00251.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61375826 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 21, external: Submitted batch job 61375826 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.4l6lfalj/snakejob.bwa.21.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 22:00:11 2024]
+Error in rule bwa:
+    jobid: 17
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        echo "Performing BWA on: HG00231.GRCh38DH.exome.chr21 "
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00231.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00231.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61375824 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 17, external: Submitted batch job 61375824 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.4l6lfalj/snakejob.bwa.17.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 22:00:11 2024]
+Error in rule fastqc:
+    jobid: 3
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+    shell:
+        
+        echo "Input Fastq: HG00111.GRCh38DH.exome.chr21 "
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00111.GRCh38DH.exome.chr21_fastqc.zip )
+
+        # grep WARN 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt && false
+                # Check if the HTML report is generated
+        if [ ! -f 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.html ]; then
+            echo "Error: HTML report not generated."
+            exit 0
+        fi
+
+        # Check if the summary data file is present
+        if [ ! -f 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt ]; then
+            echo "Error: Summary data file not generated."
+            exit 0
+        fi
+
+        # Check if the required images are generated
+        if [ ! -f 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png ] ||            [ ! -f 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png ]; then
+            echo "Error: Required images not generated."
+            exit 0
+        fi
+
+        # Check if the summary text file is generated and contains no warnings
+        if [ ! -f 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt ]; then
+            echo "Error: Summary text file not generated."
+            exit 0
+        elif grep -q "WARN" 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            exit 0
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61375825 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 3, external: Submitted batch job 61375825 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.4l6lfalj/snakejob.fastqc.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 22:00:11 2024]
+Error in rule fastqc:
+    jobid: 6
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+    shell:
+        
+        echo "Input Fastq: HG01791.GRCh38DH.exome.chr21 "
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG01791.GRCh38DH.exome.chr21_fastqc.zip )
+
+        # grep WARN 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt && false
+                # Check if the HTML report is generated
+        if [ ! -f 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.html ]; then
+            echo "Error: HTML report not generated."
+            exit 0
+        fi
+
+        # Check if the summary data file is present
+        if [ ! -f 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt ]; then
+            echo "Error: Summary data file not generated."
+            exit 0
+        fi
+
+        # Check if the required images are generated
+        if [ ! -f 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png ] ||            [ ! -f 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png ]; then
+            echo "Error: Required images not generated."
+            exit 0
+        fi
+
+        # Check if the summary text file is generated and contains no warnings
+        if [ ! -f 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt ]; then
+            echo "Error: Summary text file not generated."
+            exit 0
+        elif grep -q "WARN" 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            exit 0
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61375827 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 6, external: Submitted batch job 61375827 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.4l6lfalj/snakejob.fastqc.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 22:00:11 2024]
+Error in rule bwa:
+    jobid: 23
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00151.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        echo "Performing BWA on: HG00151.GRCh38DH.exome.chr21 "
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61375828 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 23, external: Submitted batch job 61375828 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.4l6lfalj/snakejob.bwa.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 22:00:11 2024]
+Error in rule fastqc:
+    jobid: 8
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+    shell:
+        
+        echo "Input Fastq: HG00121.GRCh38DH.exome.chr21 "
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00121.GRCh38DH.exome.chr21_fastqc.zip )
+
+        # grep WARN 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt && false
+                # Check if the HTML report is generated
+        if [ ! -f 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.html ]; then
+            echo "Error: HTML report not generated."
+            exit 0
+        fi
+
+        # Check if the summary data file is present
+        if [ ! -f 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt ]; then
+            echo "Error: Summary data file not generated."
+            exit 0
+        fi
+
+        # Check if the required images are generated
+        if [ ! -f 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png ] ||            [ ! -f 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png ]; then
+            echo "Error: Required images not generated."
+            exit 0
+        fi
+
+        # Check if the summary text file is generated and contains no warnings
+        if [ ! -f 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt ]; then
+            echo "Error: Summary text file not generated."
+            exit 0
+        elif grep -q "WARN" 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            exit 0
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61375829 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 8, external: Submitted batch job 61375829 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.4l6lfalj/snakejob.fastqc.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 22:00:11 2024]
+Error in rule bwa:
+    jobid: 14
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        echo "Performing BWA on: HG00261.GRCh38DH.exome.chr21 "
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00261.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00261.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61375830 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 14, external: Submitted batch job 61375830 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.4l6lfalj/snakejob.bwa.14.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 22:00:11 2024]
+Error in rule bwa:
+    jobid: 16
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        echo "Performing BWA on: HG00131.GRCh38DH.exome.chr21 "
+
+        bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00131.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00131.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61375831 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 16, external: Submitted batch job 61375831 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.4l6lfalj/snakejob.bwa.16.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May  1 22:00:11 2024]
+Error in rule fastqc:
+    jobid: 1
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+    shell:
+        
+        echo "Input Fastq: HG00141.GRCh38DH.exome.chr21 "
+        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o HG00141.GRCh38DH.exome.chr21_fastqc.zip )
+
+        # grep WARN 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt && false
+                # Check if the HTML report is generated
+        if [ ! -f 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.html ]; then
+            echo "Error: HTML report not generated."
+            exit 0
+        fi
+
+        # Check if the summary data file is present
+        if [ ! -f 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt ]; then
+            echo "Error: Summary data file not generated."
+            exit 0
+        fi
+
+        # Check if the required images are generated
+        if [ ! -f 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png ] ||            [ ! -f 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png ]; then
+            echo "Error: Required images not generated."
+            exit 0
+        fi
+
+        # Check if the summary text file is generated and contains no warnings
+        if [ ! -f 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt ]; then
+            echo "Error: Summary text file not generated."
+            exit 0
+        elif grep -q "WARN" 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            exit 0
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61375832 on cluster wice
+
+Error executing rule fastqc on cluster (jobid: 1, external: Submitted batch job 61375832 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.4l6lfalj/snakejob.fastqc.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-01T215949.564735.snakemake.log

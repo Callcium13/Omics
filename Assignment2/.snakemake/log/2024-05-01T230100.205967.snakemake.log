@@ -1,0 +1,77 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+extract_snps         1
+fastqc              11
+snpeff               1
+total               16
+
+Select jobs to execute...
+
+[Wed May  1 23:01:02 2024]
+localrule SNP_calling:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    output: 3_samtools/snps.vcf
+    jobid: 12
+    reason: Forced execution
+    resources: mem_mb=1040, mem_mib=992, disk_mb=1040, disk_mib=992, tmpdir=/tmp
+
+
+[Wed May  1 23:01:02 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/html/HG00231.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/summary/HG00231.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 5
+    reason: Missing output files: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip; Code has changed since last execution
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+RuleException in rule fastqc in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 33:
+NameError: The name 'exit 1' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: {wildcards.sample} "
+
+        # Check if the line count is divisible by four
+        line_count=$(zcat "$fq" | wc -l)
+        if ! [ $((line_count % 4)) -eq 0 ]; then
+            echo "Number of lines in $fq is not divisible by four"
+            exit 1
+        fi
+
+        # Check if the file isn't cut off (fourth to last line starts with "@")
+        if [[ $(zcat "$fq" | tail -n 4 | head -n 1) != "@"* ]]; then
+            echo "File $fq is cut short"
+            exit 1
+        fi
+
+        # Check if the third line starts with '+'
+        if ! zcat "$fq" | awk 'NR==3 && /^+/ {exit 1} {exit 1}'; then
+            echo "Third line in $fq does not start with '+', not in FASTQ format"
+            exit 1
+        fi
+        
+        
+        
+        fastqc -o 1_fastqc {input} --extract
+
+        echo "Unzip the output"
+        ( cd 1_fastqc ; unzip -o {wildcards.sample}_fastqc.zip )
+
+
+        # Check if the HTML report is generated or if summary contains warnings
+        if [ ! -f 1_fastqc/{wildcards.sample}_fastqc.html ]; then
+            echo "Error: HTML report not generated."
+            exit 1
+        elif grep -q "WARN" 1_fastqc/{wildcards.sample}_fastqc/summary.txt; then
+            echo "Error: Summary text file contains warnings."
+            exit 1
+        fi
+        

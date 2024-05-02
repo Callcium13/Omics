@@ -11,5 +11,8 @@ export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/:$PATH
 
 snakemake --unlock
 
-snakemake -c1 --report
-
+#--keep-going is used so that if a sample fails to pass checks on the cluster
+#due to missing files etc. 
+#instead of crashing the workflow it will continue without those samples
+snakemake --rerun-incomplete --keep-going --cluster 'sbatch -o ./slurmLog/{rule}/{wildcards}.out -n 1 -N 1 -p batch --account lp_edu_large_omics --cluster wice -t '00:10:00'' --jobs 22 --jobname {rule}{jobid}_{wildcards.sample}
+snakemake --report

@@ -1,0 +1,81 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job             count
+------------  -------
+all                 1
+extract_snps        1
+fastqc             11
+total              13
+
+Select jobs to execute...
+
+[Thu May  2 00:01:45 2024]
+localrule extract_snps:
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    jobid: 26
+    reason: Missing output files: genes.vcf
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 00:01:45 2024]
+Error in rule extract_snps:
+    jobid: 26
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+        # Extract SNPs associated with APP, SOD21, and DYRK1A from the annotated VCF file
+        bcftools view -i 'INFO/ANN[*].Gene_Name="APP" || INFO/ANN[*].Gene_Name="SOD21" || INFO/ANN[*].Gene_Name="DYRK1A"'             5_snpeff/snps.annotated.vcf -o genes.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Thu May  2 00:01:45 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 5
+    reason: Code has changed since last execution
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+RuleException in rule fastqc in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 33:
+NameError: The name 'exit 1' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Input Fastq: {wildcards.sample} "
+
+        # Check if the line count is divisible by four
+        line_count=$(zcat "$fq" | wc -l)
+        if ! [ $((line_count % 4)) -eq 0 ]; then
+            echo "Number of lines in $fq is not divisible by four"
+            false
+        fi
+
+        # Check if the file isn't cut off (fourth to last line starts with "@")
+        if [[ $(zcat "$fq" | tail -n 4 | head -n 1) != "@"* ]]; then
+            echo "File $fq is cut short"
+            false
+        fi
+
+        # Check if the third line starts with '+'
+        if ! zcat "$fq" | awk 'NR==3 && /^+/ {exit 1} {exit 1}'; then
+            echo "Third line in $fq does not start with '+', not in FASTQ format"
+            false
+        fi  
+        
+        fastqc -o 1_fastqc {input} --extract
+
+        if grep FAIL {output.rep3}; then
+            echo "Summary contains Fails!"
+            false
+        fi
+        
+        if grep WARN {output.rep3}; then
+            echo "Summary contains warnings!"
+        fi
+        

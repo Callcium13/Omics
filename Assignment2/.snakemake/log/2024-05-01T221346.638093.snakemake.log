@@ -1,0 +1,81 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 11
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+extract_snps         1
+snpeff               1
+total                5
+
+Select jobs to execute...
+
+[Wed May  1 22:13:48 2024]
+localrule SNP_calling:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    output: 3_samtools/snps.vcf
+    jobid: 12
+    reason: Code has changed since last execution
+    resources: mem_mb=1040, mem_mib=992, disk_mb=1040, disk_mib=992, tmpdir=/tmp
+
+[Wed May  1 22:20:07 2024]
+Finished job 12.
+1 of 5 steps (20%) done
+Select jobs to execute...
+
+[Wed May  1 22:20:07 2024]
+localrule SNP_norm_filt:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 3_samtools/snps.vcf
+    output: 4_cleaned/snps.cleaned.vcf
+    jobid: 24
+    reason: Input files updated by another job: 3_samtools/snps.vcf
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Wed May  1 22:20:10 2024]
+Finished job 24.
+2 of 5 steps (40%) done
+Select jobs to execute...
+
+[Wed May  1 22:20:10 2024]
+localrule snpeff:
+    input: 4_cleaned/snps.cleaned.vcf
+    output: 5_snpeff/snps.annotated.vcf, 5_snpeff/snpEff_summary.html, 5_snpeff/snpEff_genes.txt
+    log: 5_snpeff/snakemake.err
+    jobid: 25
+    reason: Input files updated by another job: 4_cleaned/snps.cleaned.vcf
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Wed May  1 22:20:56 2024]
+Finished job 25.
+3 of 5 steps (60%) done
+Select jobs to execute...
+
+[Wed May  1 22:20:56 2024]
+localrule extract_snps:
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    jobid: 26
+    reason: Missing output files: genes.vcf; Input files updated by another job: 5_snpeff/snps.annotated.vcf
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Wed May  1 22:20:56 2024]
+Error in rule extract_snps:
+    jobid: 26
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    shell:
+        
+        export PATH=export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+        # Extract SNPs associated with APP, SOD21, and DYRK1A from the annotated VCF file
+        bcftools view -i 'INFO/ANN[*].Gene_Name="APP" || INFO/ANN[*].Gene_Name="SOD21" || INFO/ANN[*].Gene_Name="DYRK1A"'             5_snpeff/snps.annotated.vcf -o genes.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job extract_snps since they might be corrupted:
+genes.vcf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-01T221346.638093.snakemake.log
