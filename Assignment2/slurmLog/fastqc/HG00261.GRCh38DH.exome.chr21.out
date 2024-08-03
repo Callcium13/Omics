@@ -1,0 +1,56 @@
+SLURM_JOB_ID: 61379187
+SLURM_JOB_USER: vsc36251
+SLURM_JOB_ACCOUNT: lp_edu_large_omics
+SLURM_JOB_NAME: 2_fastqc_HG00261.GRCh38DH.exome.chr21
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: s28c11n3
+SLURM_JOB_CPUS_PER_NODE: 1
+Date: Thu May  2 14:28:07 CEST 2024
+Walltime: 00-00:10:00
+========================================================================
+Building DAG of jobs...
+Falling back to greedy scheduler because no default solver is found for pulp (you have to install either coincbc or glpk).
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, cpu=1
+Select jobs to execute...
+
+[Thu May  2 14:28:07 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp, cpu=1
+
+Input Fastq: HG00261.GRCh38DH.exome.chr21 
+application/gzip
+Started analysis of HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 5% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 10% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 15% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 20% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 25% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 30% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 35% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 40% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 45% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 50% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 55% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 60% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 65% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 70% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 75% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 80% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 85% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 90% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Approx 95% complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Analysis complete for HG00261.GRCh38DH.exome.chr21.fq.gz
+Summary contains warnings!
+[Thu May  2 14:28:17 2024]
+Finished job 0.
+1 of 1 steps (100%) done

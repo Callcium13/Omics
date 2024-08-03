@@ -1,0 +1,1 @@
+WARN	Per sequence GC content	HG00121.GRCh38DH.exome.chr21.fq.gz

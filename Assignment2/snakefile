@@ -1,3 +1,14 @@
+# this workflow performs
+# - FastQC Analysis: Assess the quality of input FASTQ files.
+# - BWA Alignment: Align FASTQ reads to the reference genome using BWA.
+# - SNP Calling: Identify single nucleotide polymorphisms (SNPs) using bcftools.
+# - SNP Normalization and Filtering: Normalize and filter SNP variants.
+# - SNP Annotation: Annotate SNPs using SNPeff.
+# - SNP Extraction: Extract SNPs associated with specific genes.
+# - SNP Heatmap Generation: Generate a heatmap showing the distribution of SNPs among individuals.
+# - FastQC Report Image: Create an image summarizing the FastQC results.
+
+#critical errors crash the workflow, noncritical errors such as sequence GC content on fastqc files are echoed
 
 vsc_number = "36251"  # VSC number for filtering id's
 
@@ -15,7 +26,7 @@ snpeff_genome = 'hg38'
 snpeff_db_folder = "/staging/leuven/stg_00079/teaching/1000genomes/hg38"
 
 #rules that will run on main job instead of the cluster,generally dont benefit from parallisation
-localrules: all, SNP_calling, SNP_norm_filt, snpeff, extract_snps, snp_heatmap
+localrules: all, SNP_norm_filt, snpeff, extract_snps, snp_heatmap, fastqc_report_image
 
 #rule stating what the end goal is, 
 #these endpoint will determine which graphs are actually checked for dependecies
@@ -24,11 +35,11 @@ rule all:
     input:
         fastqc_zip=expand("1_fastqc/{sample}_fastqc.zip", sample=sample_names),
         BWA=expand("2_bwa/{sample}.bam", sample=sample_names),
-        # summary_png=expand("1_fastqc/{sample}_fastqc/summary.png", sample=sample_names),
+        summary_png=expand("1_fastqc/{sample}_fastqc/summary.png", sample=sample_names),
         vcf="3_samtools/snps.vcf",
         snpeff = "5_snpeff/snps.annotated.vcf",       
         genes_vcf="genes.vcf",
-        # heatmap_image="snps_heatmap.png"
+        heatmap="snp_heatmap.png"
 
 # Rule for performing FastQC
 rule fastqc:
@@ -44,7 +55,12 @@ rule fastqc:
         rep2=report("1_fastqc/{sample}_fastqc/Images/per_base_sequence_content.png", category="Fastqc",
                      subcategory="Per base sequence content", labels={"sample": "{sample}"}),
         rep3=report("1_fastqc/{sample}_fastqc/summary.txt", category="Fastqc",
-                    subcategory="Summary text", labels={"sample": "{sample}"}),
+                    subcategory="Summary text", labels={"sample": "{sample}"})
+    resources:
+        cpu=1,  # Specify the number of CPU cores needed
+    params:
+        jobname=lambda wildcards: f"fastqc_{wildcards.sample}",
+        outname=lambda wildcards: f"fastqc/{wildcards.sample}",
 
     shell:
         """
@@ -69,13 +85,13 @@ rule fastqc:
         #     echo "Fourth last line does not begin with '@'!"
         #     false
         # fi
-
-        if grep FAIL {output.rep3}; then
-            echo "Summary contains Fails!"
-            false
-        fi
+        
         #these warnings arent severe as bias can be introduced by the adapters used
-        if grep WARN {output.rep3}; then
+        # Check for errors and warnings in the summary file
+        if grep -q "FAIL" {output.rep3}; then
+            echo "Summary contains fails!"
+        fi
+        if grep -q "WARN" {output.rep3}; then
             echo "Summary contains warnings!"
         fi
         """
@@ -88,8 +104,12 @@ rule bwa:
     output:
         bam = "2_bwa/{sample}.bam",
         bai = "2_bwa/{sample}.bam.bai",
+    resources:
+        cpu=1,  # Specify the number of CPU cores needed
     params:
         db=BWA_DB_chr21,
+        jobname=lambda wildcards: f"bwa_{wildcards.sample}",
+        outname=lambda wildcards: f"bwa/{wildcards.sample}",
     shell:
         """
         export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
@@ -133,18 +153,29 @@ rule SNP_calling:
     input:
         db=BWA_DB_chr21,
         bams=expand("2_bwa/{sample}.bam", sample=sample_names),
+        
     output:
         vcf="3_samtools/snps.vcf",
+
+    resources:
+        cpu=4,  # number of cpu's
+
+    params:
+        jobname = "SNP_calling",
+        outname = "SNP_calling",
+
     shell:
         """
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
         echo "Performing SNP calling"
         bcftools mpileup -Ou -f {input.db} {input.bams} \
-             | bcftools call -mv -Ov -o {output.vcf}
+            | bcftools call -mv -Ov -o {output.vcf} --threads {resources.cpu}
 
-        # Check if the VCF file was created
-        if ! [ -f {output.vcf} ]; then
-            echo "Error: SNP calling failed"
-            exit 1
+        #check that the foutput file is not empty
+        #snakemake checks files exist but not if they have contents
+        if ! [ -s {output.vcf} ]; then
+            echo "Error: Output file size is 0kb"
+            false
         fi
         """
 
@@ -164,6 +195,20 @@ rule SNP_norm_filt:
            | vt uniq - \
            | vt view -f "QUAL>20" -h - \
            > {output.vcf} )
+
+            
+        #check that the foutput file is not empty
+        if ! [ -s {output.vcf} ]; then
+            echo "Error: Output file size is 0kb"
+            false
+        fi
+
+        #check that ouput is smaller or equal to input
+        if ! [ $(stat -c %s {output.vcf}) -le $(stat -c %s {input.vcf}) ]; then
+            echo "Error: Output file size is larger than input file size"
+            false
+        fi
+
         """
 
 # Rule for SNP annotation using SNPeff
@@ -195,36 +240,7 @@ rule snpeff:
 
         """
 
-# rule fastqc_report_image:
-#     input:
-#         summarytxt = "1_fastqc/{sample}_fastqc/summary.txt"
-#     output:
-#         statuspng = report("1_fastqc/{sample}_fastqc/summary.png",
-#                          category='Fastqc',
-#                          subcategory='Status',
-#                          labels={"sample": "{sample}"})
 
-#     run:
-#         import pandas as pd
-#         import seaborn as sns
-#         import matplotlib.pyplot as plt
-
-#         #load data
-#         data = pd.read_csv(input.summarytxt, sep="\t", header=None)
-#         data.columns = ['status', 'test', 'sample']
-
-#         #assign dummy x value for scatterplot
-#         data['x'] = 1
-
-#         #create image
-#         fig = plt.figure(figsize=(4,5))
-#         ax = plt.gca()
-#         sns.scatterplot(data, x='x', y='test', hue='status', s=200, ax=ax)
-#         ax.get_xaxis().set_visible(False)
-#         ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-#         plt.tight_layout()
-#         plt.title(wildcards.sample)
-#         plt.savefig(output.statuspng)
 
 # Rule for extracting SNPs associated with APP, SOD21, and DYRK1A into a new VCF file
 rule extract_snps:
@@ -232,28 +248,84 @@ rule extract_snps:
         vcf="5_snpeff/snps.annotated.vcf",
     output:
         genes_vcf="genes.vcf",
-    shell:
-        """
-        # Extract SNPs associated with APP, SOD21, and DYRK1A from the annotated VCF file
-        grep -E '^(#|.*\b(APP|SOD21|DYRK1A)\b)' {input.vcf} > {output.genes_vcf}
-        """
-        
-        # bcftools view -i 'INFO/ANN[*].Gene_Name="APP" || INFO/ANN[*].Gene_Name="SOD21" || INFO/ANN[*].Gene_Name="DYRK1A"' \
-        #     {input.vcf} -o {output.genes_vcf}    
 
-# Rule for creating an image with a heatmap showing the number of SNPs per individual
-rule snp_heatmap:
-    input:
-        vcf="5_snpeff/snps.annotated.vcf",
-    output:
-        heatmap_image=report("snps_heatmap.png", category="SNP Heatmap",
-                subcategory="Summary text")
     shell:
         """
-        bcftools query -l {input.vcf} > samples.txt
-        bcftools query -f '%CHROM\t%POS[\t%GT]\n' {input.vcf} | grep -v '#' | cut -f 3- > genotypes.txt
-        paste samples.txt genotypes.txt | awk '{print $1,$(NF-1),$NF}' | sort | uniq -c | awk '{print $2,$3,$1}' > snps_per_individual.txt
-        awk '{print $1}' snps_per_individual.txt > individuals.txt
-        awk '{print $2}' snps_per_individual.txt > snps.txt
-        python heatmap.py individuals.txt snps.txt {output.heatmap_image}
-        """    
+        bcftools view -i 'INFO/ANN ~ "|APP-" | INFO/ANN ~ "|SOD21-" | INFO/ANN ~ "|DYRK1A-" | INFO/ANN ~ "-APP|" | INFO/ANN ~ "-SOD21|" | INFO/ANN ~ "-DYRK1A|"' {input.vcf} > {output.genes_vcf}
+        
+        # Check if there are more lines than just the header in the output VCF file
+        num_lines=$(wc -l < {output.genes_vcf})
+        if [ "$num_lines" -le 35 ]; then
+            echo "Error: Number of lines in the output VCF file is not greater than 35"
+            false
+        fi
+        
+        """
+
+# # Rule for creating an image with a heatmap showing the number of SNPs per individual
+# rule snp_heatmap:
+#     input:
+#         vcf="genes.vcf",
+#     output:
+#         heatmap="snp_heatmap.png",  # Output image path
+#         report("snp_heatmap.png", category='SNP Analysis', subcategory='Heatmap')  # Report for the heatmap
+#     run:
+#         import pandas as pd
+#         import seaborn as sns
+#         import matplotlib.pyplot as plt
+
+#         # Load SNP data
+#         snp_df = pd.read_csv(input.vcf, sep="\t", skiprows=2)  # Skip the first two rows which are header lines
+
+#         # Extract relevant columns for SNP counts
+#         snp_counts = snp_df.iloc[:, 9:]  # Assuming SNP counts start from 10th column (index 9)
+
+#         # Add 'Sample' column to SNP counts dataframe
+#         sample_names = snp_df.columns[9:]  # Assuming sample names start from 10th column
+#         snp_counts['Sample'] = sample_names
+
+#         # Melt the dataframe to have 'Sample', 'Gene', and 'SNP_Count' columns
+#         snp_counts_melted = snp_counts.melt(id_vars='Sample', var_name='Gene', value_name='SNP_Count')
+
+#         # Pivot the data to create a matrix with samples as rows, genes as columns, and SNP counts as values
+#         snp_matrix = snp_counts_melted.pivot(index='Sample', columns='Gene', values='SNP_Count')
+
+#         # Create the heatmap
+#         plt.figure(figsize=(8, 6))  # Adjust the figure size as needed
+#         sns.heatmap(snp_matrix, cmap="YlGnBu", annot=True, fmt="d")  # Adjust the color map and annotation format as needed
+#         plt.title("SNP Counts per Gene per Individual")
+#         plt.xlabel("Gene")
+#         plt.ylabel("Individual")
+#         plt.savefig(output.heatmap)  # Save the heatmap image
+
+#generate some images for the report
+rule fastqc_report_image:
+    input:
+        summarytxt = "1_fastqc/{sample}_fastqc/summary.txt"
+    output:
+        statuspng = report("1_fastqc/{sample}_fastqc/summary.png",
+                         category='Fastqc',
+                         subcategory='Status',
+                         labels={"sample": "{sample}"})
+
+    run:
+        import pandas as pd
+        import seaborn as sns
+        import matplotlib.pyplot as plt
+
+        #load data
+        data = pd.read_csv(input.summarytxt, sep="\t", header=None)
+        data.columns = ['status', 'test', 'sample']
+
+        #assign dummy x value for scatterplot
+        data['x'] = 1
+
+        #create image
+        fig = plt.figure(figsize=(4,5))
+        ax = plt.gca()
+        sns.scatterplot(data, x='x', y='test', hue='status', s=200, ax=ax)
+        ax.get_xaxis().set_visible(False)
+        ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+        plt.tight_layout()
+        plt.title(wildcards.sample)
+        plt.savefig(output.statuspng)

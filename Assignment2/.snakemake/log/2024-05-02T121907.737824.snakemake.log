@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job                    count
+-------------------  -------
+SNP_calling                1
+SNP_norm_filt              1
+all                        1
+extract_snps               1
+fastqc_report_image       11
+snp_heatmap                1
+snpeff                     1
+total                     17
+
+Select jobs to execute...
+
+[Thu May  2 12:19:10 2024]
+rule fastqc_report_image:
+    input: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 24
+    reason: Missing output files: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+RuleException in rule fastqc_report_image in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 371:
+AttributeError: 'Params' object has no attribute 'jobname', when formatting the following:
+{jobid}_{params.jobname}

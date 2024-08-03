@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job             count
+------------  -------
+all                 1
+extract_snps        1
+snp_heatmap         1
+total               3
+
+Select jobs to execute...
+
+[Thu May  2 13:51:43 2024]
+localrule extract_snps:
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    jobid: 37
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+RuleException in rule extract_snps in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 248:
+NameError: The name 'gene' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        # Construct the bcftools view command dynamically
+        bcftools_cmd = "bcftools view -i '"
+        
+        # Construct the filter expression based on gene names
+        filter_expr = " | ".join([f'INFO/ANN ~ "|{gene}-" | INFO/ANN ~ "-{gene}|" for gene in gene_names])
+        
+        # Complete the bcftools command
+        bcftools_cmd += filter_expr + "' {input.vcf} > {output.genes_vcf}"
+        
+        # Execute the constructed command
+        {bcftools_cmd}
+        

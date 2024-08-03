@@ -1,0 +1,2 @@
+WARN	Per base sequence content	HG04301.GRCh38DH.exome.chr21.fq.gz
+WARN	Per sequence GC content	HG04301.GRCh38DH.exome.chr21.fq.gz

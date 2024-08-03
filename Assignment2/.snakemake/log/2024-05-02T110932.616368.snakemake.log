@@ -1,0 +1,64 @@
+Building DAG of jobs...
+Creating report...
+Adding per_base_quality.png (0.053 MB).
+Adding per_base_sequence_content.png (0.061 MB).
+Adding summary.txt (0.00064 MB).
+Adding errors.txt (0.00013 MB).
+Adding per_base_quality.png (0.045 MB).
+Adding per_base_sequence_content.png (0.052 MB).
+Adding summary.txt (0.00064 MB).
+Adding errors.txt (6.4e-05 MB).
+Adding per_base_quality.png (0.047 MB).
+Adding per_base_sequence_content.png (0.052 MB).
+Adding summary.txt (0.00064 MB).
+Adding errors.txt (6.4e-05 MB).
+Adding per_base_quality.png (0.038 MB).
+Adding per_base_sequence_content.png (0.05 MB).
+Adding summary.txt (0.00064 MB).
+Adding errors.txt (0.0002 MB).
+Missing metadata for file 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.html. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/errors.txt. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Adding per_base_quality.png (0.051 MB).
+Adding per_base_sequence_content.png (0.059 MB).
+Adding summary.txt (0.00064 MB).
+Adding errors.txt (0.00013 MB).
+Adding per_base_quality.png (0.044 MB).
+Adding per_base_sequence_content.png (0.051 MB).
+Adding summary.txt (0.00064 MB).
+Adding errors.txt (6.4e-05 MB).
+Missing metadata for file 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.html. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/errors.txt. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Adding per_base_quality.png (0.049 MB).
+Adding per_base_sequence_content.png (0.058 MB).
+Adding summary.txt (0.00064 MB).
+Adding errors.txt (0.00013 MB).
+Adding per_base_quality.png (0.046 MB).
+Adding per_base_sequence_content.png (0.051 MB).
+Adding summary.txt (0.00064 MB).
+Adding errors.txt (6.4e-05 MB).
+Adding per_base_quality.png (0.044 MB).
+Adding per_base_sequence_content.png (0.053 MB).
+Adding summary.txt (0.00064 MB).
+Adding errors.txt (6.4e-05 MB).
+Adding per_base_quality.png (0.051 MB).
+Adding per_base_sequence_content.png (0.058 MB).
+Adding summary.txt (0.00064 MB).
+Adding errors.txt (0.00013 MB).
+Adding per_base_quality.png (0.05 MB).
+Adding per_base_sequence_content.png (0.058 MB).
+Adding summary.txt (0.00064 MB).
+Adding errors.txt (0.00013 MB).
+Missing metadata for file 3_samtools/snps.vcf. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file genes.vcf. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+WorkflowError:
+File snps_heatmap.png marked for report but does not exist.

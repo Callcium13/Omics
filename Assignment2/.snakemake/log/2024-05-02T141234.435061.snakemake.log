@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job             count
+------------  -------
+all                 1
+extract_snps        1
+total               2
+
+Select jobs to execute...
+
+[Thu May  2 14:12:37 2024]
+localrule extract_snps:
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    jobid: 37
+    reason: Missing output files: genes.vcf
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 14:12:38 2024]
+Finished job 37.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Thu May  2 14:12:38 2024]
+localrule all:
+    input: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.zip, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.png, 3_samtools/snps.vcf, 5_snpeff/snps.annotated.vcf, genes.vcf
+    jobid: 0
+    reason: Input files updated by another job: genes.vcf
+    resources: mem_mb=1068, mem_mib=1019, disk_mb=1068, disk_mib=1019, tmpdir=/tmp
+
+[Thu May  2 14:12:38 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-05-02T141234.435061.snakemake.log

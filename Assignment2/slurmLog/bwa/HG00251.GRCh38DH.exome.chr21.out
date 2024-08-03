@@ -1,0 +1,61 @@
+SLURM_JOB_ID: 61378289
+SLURM_JOB_USER: vsc36251
+SLURM_JOB_ACCOUNT: lp_edu_large_omics
+SLURM_JOB_NAME: 20_bwa_HG00251.GRCh38DH.exome.chr21
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: m33c22n2
+SLURM_JOB_CPUS_PER_NODE: 10
+Date: Thu May  2 11:57:57 CEST 2024
+Walltime: 00-00:10:00
+========================================================================
+Building DAG of jobs...
+Falling back to greedy scheduler because no default solver is found for pulp (you have to install either coincbc or glpk).
+Using shell: /bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, threads=1
+Select jobs to execute...
+
+[Thu May  2 11:57:58 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam.bai
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp, threads=1
+
+Performing BWA on: HG00251.GRCh38DH.exome.chr21 
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 111112 sequences (10000080 bp)...
+[M::process] read 111112 sequences (10000080 bp)...
+[M::mem_process_seqs] Processed 111112 reads in 5.154 CPU sec, 5.032 real sec
+[M::process] read 111112 sequences (10000080 bp)...
+[M::mem_process_seqs] Processed 111112 reads in 4.901 CPU sec, 4.753 real sec
+[M::process] read 111112 sequences (10000080 bp)...
+[M::mem_process_seqs] Processed 111112 reads in 4.019 CPU sec, 3.875 real sec
+[M::process] read 111112 sequences (10000080 bp)...
+[M::mem_process_seqs] Processed 111112 reads in 4.658 CPU sec, 4.520 real sec
+[M::process] read 111112 sequences (10000080 bp)...
+[M::mem_process_seqs] Processed 111112 reads in 4.005 CPU sec, 3.862 real sec
+[M::process] read 111112 sequences (10000080 bp)...
+[M::mem_process_seqs] Processed 111112 reads in 4.115 CPU sec, 3.973 real sec
+[M::process] read 111112 sequences (10000080 bp)...
+[M::mem_process_seqs] Processed 111112 reads in 4.286 CPU sec, 4.143 real sec
+[M::process] read 111112 sequences (10000080 bp)...
+[M::mem_process_seqs] Processed 111112 reads in 4.336 CPU sec, 4.190 real sec
+[M::process] read 111112 sequences (10000080 bp)...
+[M::mem_process_seqs] Processed 111112 reads in 4.162 CPU sec, 4.016 real sec
+[M::process] read 111112 sequences (10000080 bp)...
+[M::mem_process_seqs] Processed 111112 reads in 4.730 CPU sec, 4.585 real sec
+[M::process] read 12861 sequences (1157490 bp)...
+[M::mem_process_seqs] Processed 111112 reads in 4.406 CPU sec, 4.369 real sec
+[M::mem_process_seqs] Processed 12861 reads in 0.504 CPU sec, 0.469 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+[main] Real time: 47.955 sec; CPU: 49.440 sec
+[Thu May  2 11:58:55 2024]
+Finished job 0.
+1 of 1 steps (100%) done

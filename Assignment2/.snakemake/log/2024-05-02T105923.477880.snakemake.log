@@ -1,0 +1,216 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+extract_snps         1
+fastqc              11
+snp_heatmap          1
+snpeff               1
+total               17
+
+Select jobs to execute...
+
+[Thu May  2 10:59:25 2024]
+localrule SNP_calling:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    output: 3_samtools/snps.vcf
+    jobid: 23
+    reason: Missing output files: 3_samtools/snps.vcf
+    resources: mem_mb=1040, mem_mib=992, disk_mb=1040, disk_mib=992, tmpdir=/tmp
+
+
+[Thu May  2 10:59:25 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 4
+    reason: Code has changed since last execution
+    wildcards: sample=HG00131.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 61377899 on cluster wice'.
+
+[Thu May  2 10:59:26 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 6
+    reason: Code has changed since last execution
+    wildcards: sample=HG01791.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 6 with external jobid 'Submitted batch job 61377900 on cluster wice'.
+
+[Thu May  2 10:59:27 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 8
+    reason: Code has changed since last execution
+    wildcards: sample=HG00121.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 8 with external jobid 'Submitted batch job 61377901 on cluster wice'.
+
+[Thu May  2 10:59:28 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 10
+    reason: Code has changed since last execution
+    wildcards: sample=HG00101.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 10 with external jobid 'Submitted batch job 61377902 on cluster wice'.
+
+[Thu May  2 10:59:30 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 2
+    reason: Code has changed since last execution
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 61377903 on cluster wice'.
+
+[Thu May  2 10:59:31 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 3
+    reason: Code has changed since last execution
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 61377904 on cluster wice'.
+
+[Thu May  2 10:59:32 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 5
+    reason: Code has changed since last execution
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 61377905 on cluster wice'.
+
+[Thu May  2 10:59:33 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 7
+    reason: Code has changed since last execution
+    wildcards: sample=HG04301.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 7 with external jobid 'Submitted batch job 61377906 on cluster wice'.
+
+[Thu May  2 10:59:34 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 9
+    reason: Code has changed since last execution
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 9 with external jobid 'Submitted batch job 61377907 on cluster wice'.
+
+[Thu May  2 10:59:35 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 11
+    reason: Code has changed since last execution
+    wildcards: sample=HG00151.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 11 with external jobid 'Submitted batch job 61377908 on cluster wice'.
+
+[Thu May  2 10:59:36 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 1
+    reason: Code has changed since last execution
+    wildcards: sample=HG00141.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 61377909 on cluster wice'.
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule fastqc in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 37:
+Job 4  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.zip
+1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc.html
+1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png
+1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png
+1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt
+1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/errors.txt
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule fastqc in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 37:
+Job 6  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.zip
+1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc.html
+1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt
+1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png
+1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png
+1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt
+1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/errors.txt
+[Thu May  2 11:00:42 2024]
+Finished job 8.
+1 of 17 steps (6%) done
+[Thu May  2 11:00:43 2024]
+Finished job 10.
+2 of 17 steps (12%) done
+[Thu May  2 11:00:43 2024]
+Finished job 2.
+3 of 17 steps (18%) done
+[Thu May  2 11:00:43 2024]
+Finished job 3.
+4 of 17 steps (24%) done
+[Thu May  2 11:00:43 2024]
+Finished job 5.
+5 of 17 steps (29%) done
+[Thu May  2 11:00:44 2024]
+Finished job 7.
+6 of 17 steps (35%) done
+[Thu May  2 11:00:44 2024]
+Finished job 9.
+7 of 17 steps (41%) done
+[Thu May  2 11:00:44 2024]
+Finished job 11.
+8 of 17 steps (47%) done
+[Thu May  2 11:00:44 2024]
+Finished job 1.
+9 of 17 steps (53%) done
+[Thu May  2 11:05:47 2024]
+Error in rule SNP_calling:
+    jobid: 23
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    output: 3_samtools/snps.vcf
+    shell:
+        
+        echo "Performing SNP calling"
+        bcftools mpileup -Ou -f /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa 2_bwa/HG00141.GRCh38DH.exome.chr21.bam 2_bwa/HG00261.GRCh38DH.exome.chr21.bam 2_bwa/HG00111.GRCh38DH.exome.chr21.bam 2_bwa/HG00131.GRCh38DH.exome.chr21.bam 2_bwa/HG00231.GRCh38DH.exome.chr21.bam 2_bwa/HG01791.GRCh38DH.exome.chr21.bam 2_bwa/HG04301.GRCh38DH.exome.chr21.bam 2_bwa/HG00121.GRCh38DH.exome.chr21.bam 2_bwa/HG00251.GRCh38DH.exome.chr21.bam 2_bwa/HG00101.GRCh38DH.exome.chr21.bam 2_bwa/HG00151.GRCh38DH.exome.chr21.bam              | bcftools call -mv -Ov -o 3_samtools/snps.vcf
+
+        #check that the foutput file is not empty
+        #snakemake checks files exist but not if they have contents
+        if ! [ -s $output_size ]; then
+            echo "Error: Output file size is 0kb"
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job SNP_calling since they might be corrupted:
+3_samtools/snps.vcf
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-02T105923.477880.snakemake.log

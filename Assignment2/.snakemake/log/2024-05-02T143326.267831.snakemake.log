@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job            count
+-----------  -------
+all                1
+snp_heatmap        1
+total              2
+
+Select jobs to execute...
+
+[Thu May  2 14:33:28 2024]
+localrule snp_heatmap:
+    input: genes.vcf
+    output: snp_heatmap_png, snp_heatmap.png
+    jobid: 38
+    reason: Missing output files: snp_heatmap_png
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-02T143326.267831.snakemake.log

@@ -14,5 +14,5 @@ snakemake --unlock
 #--keep-going is used so that if a sample fails to pass checks on the cluster
 #due to missing files etc. 
 #instead of crashing the workflow it will continue without those samples
-snakemake --rerun-incomplete --keep-going --cluster 'sbatch -o ./slurmLog/{rule}/{wildcards}.out -n 1 -N 1 -p batch --account lp_edu_large_omics --cluster wice -t '00:10:00'' --jobs 22 --jobname {rule}{jobid}_{wildcards.sample}
+snakemake --rerun-incomplete --cluster 'sbatch -o ./slurmLog/{params.outname}.out -n {resources.cpu} -N 1 -p batch --account lp_edu_large_omics --cluster wice -t '00:10:00'' --jobs 22 --jobname {jobid}_{params.jobname}
 snakemake --report

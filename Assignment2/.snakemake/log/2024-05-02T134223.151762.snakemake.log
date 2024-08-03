@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job             count
+------------  -------
+all                 1
+extract_snps        1
+snp_heatmap         1
+total               3
+
+Select jobs to execute...
+
+[Thu May  2 13:42:25 2024]
+localrule extract_snps:
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    jobid: 37
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+RuleException in rule extract_snps in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 248:
+NameError: The name 'strings' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        # Copy header lines to new file
+        bcftools view -h {input.vcf} > {output.genes_vcf}
+
+        # Define a function to generate strings for each gene name
+        generate_strings() {{
+            local gene_names=("$@")
+            for gene_name in "${{gene_names[@]}}"; do
+                echo "|${{gene_name}}-" "-${{gene_name}}|"
+            done
+        }}
+
+        # Generate strings for each gene name
+        strings=($(generate_strings "${{params.gene_names[@]}}"))
+
+        # Extract SNPs associated with specified genes and append to new file
+        for string in "${strings[@]}"; do
+            bcftools view -Ov -e "INFO/ANN~"(${string:1:-1})"" {input.vcf} >> {output.genes_vcf}
+        done
+        

@@ -1,0 +1,496 @@
+SLURM_JOB_ID: 62109616
+SLURM_JOB_USER: vsc36251
+SLURM_JOB_ACCOUNT: lp_edu_large_omics
+SLURM_JOB_NAME: sys/dashboard/sys/code-server
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: s28c11n3
+SLURM_JOB_CPUS_PER_NODE: 1
+Date: Fri Aug  2 19:57:56 CEST 2024
+Walltime: 00-01:00:00
+========================================================================
+Script starting...
+Fri Aug  2 19:57:57 CEST 2024: Waiting for Code Server to open port 33909...
+
+#exec prerun
+node_arch=$(cat /sys/devices/cpu/caps/pmu_name)
+++ cat /sys/devices/cpu/caps/pmu_name
++ node_arch=icelake
+
+
+USER_HOME=$(getent passwd $(whoami) | cut -d: -f6)
+++ cut -d: -f6
++++ whoami
+++ getent passwd vsc36251
++ USER_HOME=/user/leuven/362/vsc36251
+USER_DATA_DIR="${USER_HOME/\/user\///data/}"
++ USER_DATA_DIR=/data/leuven/362/vsc36251
+mkdir -p "${USER_DATA_DIR}/.config/code-server/extensions"
++ mkdir -p /data/leuven/362/vsc36251/.config/code-server/extensions
+code-server \
+    --auth="password" \
+    --bind-addr="0.0.0.0:${port}" \
+    --disable-telemetry \
+    --extensions-dir="${USER_DATA_DIR}/.config/code-server/extensions" \
+    --user-data-dir="${USER_DATA_DIR}" \
+    --log debug
++ code-server --auth=password --bind-addr=0.0.0.0:33909 --disable-telemetry --extensions-dir=/data/leuven/362/vsc36251/.config/code-server/extensions --user-data-dir=/data/leuven/362/vsc36251 --log debug
+[2024-08-02T17:58:00.185Z] debug parent:2680219 spawned child process 2680378
+[2024-08-02T17:58:01.193Z] debug child:2680378 initiating handshake
+[2024-08-02T17:58:01.200Z] debug parent:2680219 got message [38;2;140;140;140m{"message":{"type":"handshake"}}[0m
+[2024-08-02T17:58:01.216Z] debug child:2680378 got message [38;2;140;140;140m{"message":{"type":"handshake","args":{"bind-addr":"0.0.0.0:33909","auth":"password","password":"<redacted>","config":"/user/leuven/362/vsc36251/.config/code-server/config.yaml","disable-telemetry":true,"extensions-dir":"/data/leuven/362/vsc36251/.config/code-server/extensions","user-data-dir":"/data/leuven/362/vsc36251","log":"debug","session-socket":"/data/leuven/362/vsc36251/code-server-ipc.sock","verbose":false,"host":"0.0.0.0","port":33909,"proxy-domain":[],"_":[],"usingEnvPassword":true,"usingEnvHashedPassword":false}}}[0m
+[2024-08-02T17:58:01.217Z] info  code-server 4.90.3 26c763485b9101fcae2ce56fc0903f0e2d48abe3
+[2024-08-02T17:58:01.217Z] info  Using user-data-dir /data/leuven/362/vsc36251
+[2024-08-02T17:58:01.217Z] debug Using extensions-dir /data/leuven/362/vsc36251/.config/code-server/extensions
+[2024-08-02T17:58:01.242Z] info  Using config file /user/leuven/362/vsc36251/.config/code-server/config.yaml
+[2024-08-02T17:58:01.242Z] info  HTTP server listening on http://0.0.0.0:33909/
+[2024-08-02T17:58:01.242Z] info    - Authentication is enabled
+[2024-08-02T17:58:01.243Z] info      - Using password from $PASSWORD
+[2024-08-02T17:58:01.243Z] info    - Not serving HTTPS
+[2024-08-02T17:58:01.243Z] info  Session server listening on /data/leuven/362/vsc36251/code-server-ipc.sock
+Fri Aug  2 19:58:01 CEST 2024: Discovered code-server listening on port 33909!
+Generating connection YAML file...
+[2024-08-02T18:00:46.684Z] debug heartbeat
+[2024-08-02T18:00:46.871Z] debug got cookie domain [38;2;140;140;140m{"host":"s28c11n3.tier2.hpc.kuleuven.be"}[0m
+[2024-08-02T18:00:46.873Z] debug redirecting from /login to ./
+[20:00:47] 
+
+
+
+
+[20:00:47] Extension host agent started.
+[20:00:47] No uninstalled extensions found.
+[2024-08-02T18:00:47.450Z] debug redirecting from / to ./?folder=/user/leuven/362/vsc36251
+File not found: /usr/lib/code-server/lib/vscode/out/vsda_bg.wasm
+File not found: /usr/lib/code-server/lib/vscode/out/vsda.js
+[20:00:53] [10.118.200.55][f816e6f6][ManagementConnection] New connection established.
+[2024-08-02T18:00:55.197Z] debug Making request [38;2;140;140;140m{"uri":"https://api.github.com/repos/coder/code-server/releases/latest"}[0m
+[20:00:55] ComputeTargetPlatform: linux-x64
+[2024-08-02T18:00:56.133Z] debug got latest version [38;2;140;140;140m{"latest":"4.91.1"}[0m
+[2024-08-02T18:00:56.133Z] debug comparing versions [38;2;140;140;140m{"current":"4.90.3","latest":"4.91.1"}[0m
+[20:00:56] [10.118.200.55][d1b01edc][ExtensionHostConnection] New connection established.
+[20:01:02] [10.118.200.55][d1b01edc][ExtensionHostConnection] <2693927> Launched Extension Host Process.
+[20:01:02] Terminal profile not validated fish [ 'fish' ]
+[20:01:02] Terminal profile not validated pwsh [ 'pwsh' ]
+[2024-08-02T18:01:03.522Z] debug Adding session to session registry: /tmp/vscode-ipc-4d0b4001-a66a-4433-ae12-748f322a9791.sock
+File not found: /usr/lib/code-server/lib/vscode/node_modules/vscode-regexp-languagedetection/dist/index.js
+[2024-08-02T18:01:46.686Z] debug 2 active connections
+[2024-08-02T18:01:46.686Z] debug heartbeat
+[2024-08-02T18:02:46.686Z] debug 2 active connections
+[2024-08-02T18:02:46.686Z] debug heartbeat
+[2024-08-02T18:03:46.686Z] debug 2 active connections
+[2024-08-02T18:03:46.686Z] debug heartbeat
+[2024-08-02T18:04:46.687Z] debug 2 active connections
+[2024-08-02T18:04:46.687Z] debug heartbeat
+[2024-08-02T18:05:46.688Z] debug 2 active connections
+[2024-08-02T18:05:46.688Z] debug heartbeat
+[2024-08-02T18:06:46.689Z] debug 2 active connections
+[2024-08-02T18:06:46.689Z] debug heartbeat
+[2024-08-02T18:07:46.690Z] debug 2 active connections
+[2024-08-02T18:07:46.690Z] debug heartbeat
+[2024-08-02T18:08:46.690Z] debug 2 active connections
+[2024-08-02T18:08:46.690Z] debug heartbeat
+[2024-08-02T18:09:46.692Z] debug 2 active connections
+[2024-08-02T18:09:46.692Z] debug heartbeat
+[2024-08-02T18:10:46.692Z] debug 2 active connections
+[2024-08-02T18:10:46.692Z] debug heartbeat
+[2024-08-02T18:11:46.693Z] debug 2 active connections
+[2024-08-02T18:11:46.693Z] debug heartbeat
+[2024-08-02T18:12:46.694Z] debug 2 active connections
+[2024-08-02T18:12:46.694Z] debug heartbeat
+[20:13:43] Terminal profile not validated fish [ 'fish' ]
+[20:13:43] Terminal profile not validated pwsh [ 'pwsh' ]
+[20:13:43] Terminal process launching on remote agent {
+  shellLaunchConfig: {
+    name: undefined,
+    executable: '/bin/bash',
+    args: [],
+    cwd: '/user/leuven/362/vsc36251',
+    env: undefined,
+    useShellEnvironment: true,
+    reconnectionProperties: undefined,
+    type: undefined,
+    isFeatureTerminal: undefined
+  },
+  initialCwd: '/user/leuven/362/vsc36251',
+  cols: 71,
+  rows: 16,
+  env: {
+    SLURM_MEM_PER_CPU: '3400',
+    VSC_QUOTE: 'TRUE',
+    SLURM_NODEID: '0',
+    SLURM_TASK_PID: '2679832',
+    _ModuleTable002_: 'bmFsIiwKfSwKfSwKbXBhdGhBID0gewoiL2FwcHMvbGV1dmVuL2V0Yy9tb2R1bGVzIiwgIi9hcHBzL2xldXZlbi9yb2NreTgvaWNlbGFrZS8yMDIzYS9tb2R1bGVzL2FsbCIKLCAiL2FwcHMvbGV1dmVuL3JvY2t5OC9pY2VsYWtlLzIwMjJiL21vZHVsZXMvYWxsIgosICIvYXBwcy9sZXV2ZW4vcm9ja3k4L2ljZWxha2UvMjAyMmEvbW9kdWxlcy9hbGwiCiwgIi9hcHBzL2xldXZlbi9yb2NreTgvaWNlbGFrZS8yMDIxYS9tb2R1bGVzL2FsbCIKLCAiL2FwcHMvbGV1dmVuL2NvbW1vbi9tb2R1bGVzL2FsbCIsICIvZXRjL21vZHVsZWZpbGVzIgosICIvdXNyL3NoYXJlL21vZHVsZWZpbGVzIiwgIi91c3Ivc2hhcmUvbW9kdWxlZmlsZXMvTGludXgiCiwgIi91c3Ivc2hhcmUvbW9kdWxl',
+    SLURM_PRIO_PROCESS: '0',
+    VSC_INSTITUTE_TIER: '',
+    VSC_INSTITUTE: 'leuven',
+    VSC_DATA_VO_USER: '/does/not/exist/vsc36251',
+    LANG: 'en_US.UTF-8',
+    SLURM_SUBMIT_DIR: '/var/www/ood/apps/sys/dashboard',
+    HISTCONTROL: 'ignoredups',
+    HISTTIMEFORMAT: '%F %T ',
+    HOSTNAME: 's28c11n3',
+    OLDPWD: '/vsc-hard-mounts/leuven-data/362/vsc36251/.ondemand/data/batch_connect/sys/code-server/output/a1be6916-179d-4487-8357-27a2ebada3dc',
+    GQUOTE_DIR: '/apps/leuven/goldreports/',
+    SLURM_CPUS_PER_TASK: '1',
+    ENVIRONMENT: 'BATCH',
+    SLURM_GPUS_PER_NODE: '0',
+    VSC_SCRATCH: '/scratch/leuven/362/vsc36251',
+    SLURM_PROCID: '0',
+    SLURM_JOB_GID: '2536251',
+    SLURMD_NODENAME: 's28c11n3',
+    SLURM_JOB_END_TIME: '1722625074',
+    SSH_AUTH_SOCK: '/var/run/cert-inject/agent2438763268',
+    SLURM_TASKS_PER_NODE: '1',
+    S_COLORS: 'auto',
+    VSC_INSTITUTE_CLUSTER: 'wice',
+    which_declare: 'declare -f',
+    USER: 'vsc36251',
+    SLURM_NNODES: '1',
+    SLURM_GET_USER_ENV: '1',
+    VSC_SCRATCH_GLOBAL: '/site_scratch',
+    SLURM_JOB_START_TIME: '1722621474',
+    VSC_SCRATCH_NODE: '/tmp',
+    __LMOD_REF_COUNT_MODULEPATH: '/apps/leuven/etc/modules:6;/apps/leuven/rocky8/icelake/2023a/modules/all:1;/apps/leuven/rocky8/icelake/2022b/modules/all:1;/apps/leuven/rocky8/icelake/2022a/modules/all:1;/apps/leuven/rocky8/icelake/2021a/modules/all:1;/apps/leuven/common/modules/all:3;/etc/modulefiles:1;/usr/share/modulefiles:1;/usr/share/modulefiles/Linux:1;/usr/share/modulefiles/Core:1;/usr/share/lmod/lmod/modulefiles/Core:1',
+    LT_SCRATCH: '/scratch/leuven_lt/362/vsc36251',
+    PWD: '/data/leuven/362/vsc36251/.ondemand/data/batch_connect/sys/code-server/output/a1be6916-179d-4487-8357-27a2ebada3dc',
+    SLURM_JOB_NODELIST: 's28c11n3',
+    HOME: '/user/leuven/362/vsc36251',
+    SLURM_CLUSTER_NAME: 'wice',
+    SLURM_NODELIST: 's28c11n3',
+    SSH_AGENT_PID: '2679551',
+    LMOD_VERSION: '8.7.32',
+    VSC_ARCH_SUFFIX: '',
+    SLURM_JOB_CPUS_PER_NODE: '1',
+    BASH_ENV: '/usr/share/lmod/lmod/init/bash',
+    SLURM_TOPOLOGY_ADDR: 'spine_icelake.nqs28.s28.s28c11n3',
+    host: 's28c11n3.tier2.hpc.kuleuven.be',
+    SLURM_WORKING_CLUSTER: 'wice:tier2-p-slurm-3:6817:9984:109',
+    SLURM_JOB_NAME: 'sys/dashboard/sys/code-server',
+    TMPDIR: '/tmp',
+    VSC_OS_LOCAL: 'rocky8',
+    LMOD_sys: 'Linux',
+    SLURM_JOBID: '62109616',
+    _ModuleTable001_: 'X01vZHVsZVRhYmxlXyA9IHsKTVR2ZXJzaW9uID0gMywKY19yZWJ1aWxkVGltZSA9IGZhbHNlLApjX3Nob3J0VGltZSA9IGZhbHNlLApkZXB0aFQgPSB7fSwKZmFtaWx5ID0gewpjbHVzdGVyID0gImNsdXN0ZXIvd2ljZSIsCn0sCm1UID0gewpbImNsdXN0ZXIvd2ljZSJdID0gewpmbiA9ICIvYXBwcy9sZXV2ZW4vZXRjL21vZHVsZXMvY2x1c3Rlci93aWNlL2JhdGNoLmx1YSIsCmZ1bGxOYW1lID0gImNsdXN0ZXIvd2ljZS9iYXRjaCIsCmxvYWRPcmRlciA9IDEsCnByb3BUID0gewpsbW9kID0gewpzdGlja3kgPSAxLAp9LAp9LApzdGFja0RlcHRoID0gMCwKc3RhdHVzID0gImFjdGl2ZSIsCnVzZXJOYW1lID0gImNsdXN0ZXIvd2ljZS9iYXRjaCIsCndWID0gIipiYXRjaC4qemZp',
+    IBUTILS_NODE_NAME_MAP_FILE_PATH: '/etc/rdma/ib-node-name-map',
+    SLURM_CONF: '/etc/slurm/slurm.conf',
+    VSC_DATA: '/data/leuven/362/vsc36251',
+    LOADEDMODULES: 'cluster/wice/batch',
+    VSC_SCRATCH_SITE: '/scratch/leuven/362/vsc36251',
+    _ModuleTable003_: 'ZmlsZXMvQ29yZSIsICIvdXNyL3NoYXJlL2xtb2QvbG1vZC9tb2R1bGVmaWxlcy9Db3JlIiwKfSwKc3lzdGVtQmFzZU1QQVRIID0gIi9ldGMvbW9kdWxlZmlsZXM6L3Vzci9zaGFyZS9tb2R1bGVmaWxlczovdXNyL3NoYXJlL21vZHVsZWZpbGVzL0xpbnV4Oi91c3Ivc2hhcmUvbW9kdWxlZmlsZXMvQ29yZTovdXNyL3NoYXJlL2xtb2QvbG1vZC9tb2R1bGVmaWxlcy9Db3JlIiwKfQo=',
+    SLURM_NODE_ALIASES: '(null)',
+    LMOD_ROOT: '/usr/share/lmod',
+    SLURM_JOB_QOS: 'lp_edu_large_omics',
+    SLURM_TOPOLOGY_ADDR_PATTERN: 'switch.switch.switch.node',
+    VSC_ARCH_LOCAL: 'icelake',
+    MAIL: '/user/leuven/362/vsc36251/inbox',
+    SLURM_CPUS_ON_NODE: '1',
+    VISUAL: 'vim',
+    SLURM_JOB_NUM_NODES: '1',
+    SHELL: '/bin/bash',
+    _ModuleTable_Sz_: '3',
+    SLURM_JOB_UID: '2536251',
+    SLURM_JOB_PARTITION: 'batch',
+    SLURM_SCRIPT_CONTEXT: 'prolog_task',
+    port: '33909',
+    VSC_DATA_VO: '/does/not/exist',
+    UCX_NET_DEVICES: 'mlx5_0:1',
+    SLURM_JOB_USER: 'vsc36251',
+    SHLVL: '4',
+    SLURM_SUBMIT_HOST: 'ondemand.hpc.kuleuven.be',
+    SLURM_JOB_ACCOUNT: 'lp_edu_large_omics',
+    MANPATH: '/usr/share/lmod/lmod/share/man::/opt/puppetlabs/puppet/share/man',
+    SLURM_EXPORT_ENV: 'NONE',
+    VSC_HOME: '/user/leuven/362/vsc36251',
+    MODULEPATH: '/apps/leuven/etc/modules:/apps/leuven/rocky8/icelake/2023a/modules/all:/apps/leuven/rocky8/icelake/2022b/modules/all:/apps/leuven/rocky8/icelake/2022a/modules/all:/apps/leuven/rocky8/icelake/2021a/modules/all:/apps/leuven/common/modules/all:/etc/modulefiles:/usr/share/modulefiles:/usr/share/modulefiles/Linux:/usr/share/modulefiles/Core:/usr/share/lmod/lmod/modulefiles/Core',
+    SLURM_GTIDS: '0',
+    XDG_CACHE_HOME: '/data/leuven/362/vsc36251/.cache',
+    LOGNAME: 'vsc36251',
+    DBUS_SESSION_BUS_ADDRESS: 'unix:path=/run/user/2536251/bus',
+    VSC_INSTITUTE_LOCAL: 'leuven',
+    MODULEPATH_ROOT: '/usr/share/modulefiles',
+    PATH: '/usr/lib/code-server/lib/vscode/bin/remote-cli:/apps/leuven/bin:/usr/local/bin:/usr/lpp/mmfs/bin/:.:/apps/leuven/bin:/usr/local/bin:/usr/lpp/mmfs/bin/:.:/apps/leuven/bin:/usr/local/bin:/usr/lpp/mmfs/bin/:.:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/puppetlabs/bin',
+    SLURM_JOB_ID: '62109616',
+    _LMFILES_: '/apps/leuven/etc/modules/cluster/wice/batch.lua',
+    LMOD_FAMILY_CLUSTER: 'cluster/wice',
+    DEBUGINFOD_URLS: 'https://debuginfod.centos.org/ ',
+    MODULESHOME: '/usr/share/lmod/lmod',
+    LMOD_SETTARG_FULL_SUPPORT: 'no',
+    VSC_CLUSTER_TOOLCHAIN_VERSION: '2021a',
+    HISTSIZE: '1000',
+    LMOD_PKG: '/usr/share/lmod/lmod',
+    password: 'NYhejwY8ibs2qAiP',
+    LMOD_FAMILY_CLUSTER_VERSION: 'batch',
+    LMOD_CMD: '/usr/share/lmod/lmod/libexec/lmod',
+    SLURM_LOCALID: '0',
+    LESSOPEN: '||/usr/bin/lesspipe.sh %s',
+    LMOD_DIR: '/usr/share/lmod/lmod/libexec',
+    'BASH_FUNC_create_passwd%%': "() {  tr -cd 'a-zA-Z0-9' < /dev/urandom 2> /dev/null | head -c${1:-8}\n}",
+    'BASH_FUNC_which%%': '() {  ( alias;\n' +
+      ' eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@\n' +
+      '}',
+    'BASH_FUNC_module%%': '() {  if [ -z "${LMOD_SH_DBG_ON+x}" ]; then\n' +
+      ' case "$-" in \n' +
+      ' *v*x*)\n' +
+      " __lmod_sh_dbg='vx'\n" +
+      ' ;;\n' +
+      ' *v*)\n' +
+      " __lmod_sh_dbg='v'\n" +
+      ' ;;\n' +
+      ' *x*)\n' +
+      " __lmod_sh_dbg='x'\n" +
+      ' ;;\n' +
+      ' esac;\n' +
+      ' fi;\n' +
+      ' if [ -n "${__lmod_sh_dbg:-}" ]; then\n' +
+      ' set +$__lmod_sh_dbg;\n' +
+      ` echo "Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output" 1>&2;\n` +
+      ' fi;\n' +
+      ' eval "$($LMOD_CMD shell "$@")" && eval "$(${LMOD_SETTARG_CMD:-:} -s sh)";\n' +
+      ' __lmod_my_status=$?;\n' +
+      ' if [ -n "${__lmod_sh_dbg:-}" ]; then\n' +
+      ' echo "Shell debugging restarted" 1>&2;\n' +
+      ' set -$__lmod_sh_dbg;\n' +
+      ' fi;\n' +
+      ' unset __lmod_sh_dbg;\n' +
+      ' return $__lmod_my_status\n' +
+      '}',
+    'BASH_FUNC_wait_until_port_used%%': '() {  local port="${1}";\n' +
+      ' local time="${2:-30}";\n' +
+      ' for ((i=1; i<=time*2; i++))\n' +
+      ' do\n' +
+      ' port_used "${port}";\n' +
+      ' port_status=$?;\n' +
+      ' if [ "$port_status" == "0" ]; then\n' +
+      ' return 0;\n' +
+      ' else\n' +
+      ' if [ "$port_status" == "127" ]; then\n' +
+      ' echo "commands to find port were either not found or inaccessible.";\n' +
+      ` echo "command options are lsof, nc, bash's /dev/tcp, or python (or python3) with socket lib.";\n` +
+      ' return 127;\n' +
+      ' fi;\n' +
+      ' fi;\n' +
+      ' sleep 0.5;\n' +
+      ' done;\n' +
+      ' return 1\n' +
+      '}',
+    'BASH_FUNC_find_port%%': '() {  local host="${1:-localhost}";\n' +
+      ' local min_port=${2:-2000};\n' +
+      ' local max_port=${3:-65535};\n' +
+      ' local port_range=($(shuf -i ${min_port}-${max_port}));\n' +
+      ' local retries=1;\n' +
+      ' for ((attempt=0; attempt<=$retries; attempt++))\n' +
+      ' do\n' +
+      ' for port in "${port_range[@]}";\n' +
+      ' do\n' +
+      ' if port_used "${host}:${port}"; then\n' +
+      ' continue;\n' +
+      ' fi;\n' +
+      ' echo "${port}";\n' +
+      ' return 0;\n' +
+      ' done;\n' +
+      ' done;\n' +
+      ' echo "error: failed to find available port in range ${min_port}..${max_port}" 1>&2;\n' +
+      ' return 1\n' +
+      '}',
+    'BASH_FUNC_port_used%%': '() {  local port="${1#*:}";\n' +
+      ' local host=$((expr "${1}" : \'\\(.*\\):\' || echo "localhost") | awk \'END{print $NF}\');\n' +
+      ' local port_strategies=(port_used_nc port_used_lsof port_used_bash port_used_python port_used_python3);\n' +
+      ' for strategy in ${port_strategies[@]};\n' +
+      ' do\n' +
+      ' $strategy $host $port;\n' +
+      ' status=$?;\n' +
+      ' if [[ "$status" == "0" ]] || [[ "$status" == "1" ]]; then\n' +
+      ' return $status;\n' +
+      ' fi;\n' +
+      ' done;\n' +
+      ' return 127\n' +
+      '}',
+    'BASH_FUNC_random_number%%': '() {  shuf -i ${1}-${2} -n 1\n}',
+    'BASH_FUNC_source_helpers%%': '() {  function random_number () \n' +
+      ' { \n' +
+      ' shuf -i ${1}-${2} -n 1\n' +
+      ' };\n' +
+      ' export -f random_number;\n' +
+      ' function port_used_python () \n' +
+      ' { \n' +
+      ` python -c "import socket; socket.socket().connect(('$1',$2))" > /dev/null 2>&1\n` +
+      ' };\n' +
+      ' function port_used_python3 () \n' +
+      ' { \n' +
+      ` python3 -c "import socket; socket.socket().connect(('$1',$2))" > /dev/null 2>&1\n` +
+      ' };\n' +
+      ' function port_used_nc () \n' +
+      ' { \n' +
+      ' nc -w 2 "$1" "$2" < /dev/null > /dev/null 2>&1\n' +
+      ' };\n' +
+      ' function port_used_lsof () \n' +
+      ' { \n' +
+      ' lsof -i :"$2" > /dev/null 2>&1\n' +
+      ' };\n' +
+      ' function port_used_bash () \n' +
+      ' { \n' +
+      ' local bash_supported=$(strings /bin/bash 2>/dev/null | grep tcp);\n' +
+      ' if [ "$bash_supported" == "/dev/tcp/*/*" ]; then\n' +
+      ' ( : < /dev/tcp/$1/$2 ) > /dev/null 2>&1;\n' +
+      ' else\n' +
+      ' return 127;\n' +
+      ' fi\n' +
+      ' };\n' +
+      ' function port_used () \n' +
+      ' { \n' +
+      ' local port="${1#*:}";\n' +
+      ' local host=$((expr "${1}" : \'\\(.*\\):\' || echo "localhost") | awk \'END{print $NF}\');\n' +
+      ' local port_strategies=(port_used_nc port_used_lsof port_used_bash port_used_python port_used_python3);\n' +
+      ' for strategy in ${port_strategies[@]};\n' +
+      ' do\n' +
+      ' $strategy $host $port;\n' +
+      ' status=$?;\n' +
+      ' if [[ "$status" == "0" ]] || [[ "$status" == "1" ]]; then\n' +
+      ' return $status;\n' +
+      ' fi;\n' +
+      ' done;\n' +
+      ' return 127\n' +
+      ' };\n' +
+      ' export -f port_used;\n' +
+      ' function find_port () \n' +
+      ' { \n' +
+      ' local host="${1:-localhost}";\n' +
+      ' local min_port=${2:-2000};\n' +
+      ' local max_port=${3:-65535};\n' +
+      ' local port_range=($(shuf -i ${min_port}-${max_port}));\n' +
+      ' local retries=1;\n' +
+      ' for ((attempt=0; attempt<=$retries; attempt++))\n' +
+      ' do\n' +
+      ' for port in "${port_range[@]}";\n' +
+      ' do\n' +
+      ' if port_used "${host}:${port}"; then\n' +
+      ' continue;\n' +
+      ' fi;\n' +
+      ' echo "${port}";\n' +
+      ' return 0;\n' +
+      ' done;\n' +
+      ' done;\n' +
+      ' echo "error: failed to find available port in range ${min_port}..${max_port}" 1>&2;\n' +
+      ' return 1\n' +
+      ' };\n' +
+      ' export -f find_port;\n' +
+      ' function wait_until_port_used () \n' +
+      ' { \n' +
+      ' local port="${1}";\n' +
+      ' local time="${2:-30}";\n' +
+      ' for ((i=1; i<=time*2; i++))\n' +
+      ' do\n' +
+      ' port_used "${port}";\n' +
+      ' port_status=$?;\n' +
+      ' if [ "$port_status" == "0" ]; then\n' +
+      ' return 0;\n' +
+      ' else\n' +
+      ' if [ "$port_status" == "127" ]; then\n' +
+      ' echo "commands to find port were either not found or inaccessible.";\n' +
+      ` echo "command options are lsof, nc, bash's /dev/tcp, or python (or python3) with socket lib.";\n` +
+      ' return 127;\n' +
+      ' fi;\n' +
+      ' fi;\n' +
+      ' sleep 0.5;\n' +
+      ' done;\n' +
+      ' return 1\n' +
+      ' };\n' +
+      ' export -f wait_until_port_used;\n' +
+      ' function create_passwd () \n' +
+      ' { \n' +
+      " tr -cd 'a-zA-Z0-9' < /dev/urandom 2> /dev/null | head -c${1:-8}\n" +
+      ' };\n' +
+      ' export -f create_passwd\n' +
+      '}',
+    'BASH_FUNC_ml%%': '() {  eval "$($LMOD_DIR/ml_cmd "$@")"\n}',
+    LOG_LEVEL: 'debug',
+    NODE_EXEC_PATH: '/usr/lib/code-server/lib/node',
+    _: '/usr/lib/code-server/lib/node',
+    VSCODE_PROXY_URI: 'https://ondemand.hpc.kuleuven.be/rnode/s28c11n3.tier2.hpc.kuleuven.be/33909/proxy/{{port}}/',
+    BROWSER: '/usr/lib/code-server/lib/vscode/bin/helpers/browser.sh',
+    TERM_PROGRAM: 'vscode',
+    TERM_PROGRAM_VERSION: '1.90.2',
+    COLORTERM: 'truecolor',
+    GIT_ASKPASS: '/usr/lib/code-server/lib/vscode/extensions/git/dist/askpass.sh',
+    VSCODE_GIT_ASKPASS_NODE: '/usr/lib/code-server/lib/node',
+    VSCODE_GIT_ASKPASS_EXTRA_ARGS: '',
+    VSCODE_GIT_ASKPASS_MAIN: '/usr/lib/code-server/lib/vscode/extensions/git/dist/askpass-main.js',
+    VSCODE_GIT_IPC_HANDLE: '/tmp/vscode-git-7f097eb255.sock'
+  }
+}
+[2024-08-02T18:13:46.695Z] debug 2 active connections
+[2024-08-02T18:13:46.695Z] debug heartbeat
+[2024-08-02T18:14:46.696Z] debug 2 active connections
+[2024-08-02T18:14:46.696Z] debug heartbeat
+[2024-08-02T18:15:46.696Z] debug 2 active connections
+[2024-08-02T18:15:46.696Z] debug heartbeat
+[2024-08-02T18:16:46.697Z] debug 2 active connections
+[2024-08-02T18:16:46.697Z] debug heartbeat
+[2024-08-02T18:17:46.698Z] debug 2 active connections
+[2024-08-02T18:17:46.698Z] debug heartbeat
+[2024-08-02T18:18:46.698Z] debug 2 active connections
+[2024-08-02T18:18:46.698Z] debug heartbeat
+[2024-08-02T18:19:46.698Z] debug 2 active connections
+[2024-08-02T18:19:46.698Z] debug heartbeat
+[2024-08-02T18:20:46.698Z] debug 2 active connections
+[2024-08-02T18:20:46.699Z] debug heartbeat
+[2024-08-02T18:21:46.699Z] debug 2 active connections
+[2024-08-02T18:21:46.699Z] debug heartbeat
+[2024-08-02T18:22:46.700Z] debug 2 active connections
+[2024-08-02T18:22:46.700Z] debug heartbeat
+[2024-08-02T18:23:46.702Z] debug 2 active connections
+[2024-08-02T18:23:46.702Z] debug heartbeat
+[2024-08-02T18:24:46.702Z] debug 2 active connections
+[2024-08-02T18:24:46.702Z] debug heartbeat
+[2024-08-02T18:25:46.702Z] debug 2 active connections
+[2024-08-02T18:25:46.702Z] debug heartbeat
+[2024-08-02T18:26:46.703Z] debug 2 active connections
+[2024-08-02T18:26:46.703Z] debug heartbeat
+[2024-08-02T18:27:46.703Z] debug 2 active connections
+[2024-08-02T18:27:46.703Z] debug heartbeat
+[2024-08-02T18:28:46.703Z] debug 2 active connections
+[2024-08-02T18:28:46.703Z] debug heartbeat
+[2024-08-02T18:29:46.703Z] debug 2 active connections
+[2024-08-02T18:29:46.703Z] debug heartbeat
+[2024-08-02T18:30:46.703Z] debug 2 active connections
+[2024-08-02T18:30:46.703Z] debug heartbeat
+[2024-08-02T18:31:46.704Z] debug 2 active connections
+[2024-08-02T18:31:46.704Z] debug heartbeat
+[2024-08-02T18:32:46.705Z] debug 2 active connections
+[2024-08-02T18:32:46.705Z] debug heartbeat
+[2024-08-02T18:33:46.706Z] debug 2 active connections
+[2024-08-02T18:33:46.707Z] debug heartbeat
+[2024-08-02T18:34:46.707Z] debug 2 active connections
+[2024-08-02T18:34:46.707Z] debug heartbeat
+[2024-08-02T18:35:46.708Z] debug 2 active connections
+[2024-08-02T18:35:46.708Z] debug heartbeat
+[2024-08-02T18:36:46.708Z] debug 2 active connections
+[2024-08-02T18:36:46.708Z] debug heartbeat
+[2024-08-02T18:37:46.708Z] debug 2 active connections
+[2024-08-02T18:37:46.708Z] debug heartbeat
+[2024-08-02T18:38:46.709Z] debug 2 active connections
+[2024-08-02T18:38:46.709Z] debug heartbeat
+[2024-08-02T18:39:46.710Z] debug 2 active connections
+[2024-08-02T18:39:46.710Z] debug heartbeat
+[2024-08-02T18:40:46.711Z] debug 2 active connections
+[2024-08-02T18:40:46.711Z] debug heartbeat
+[2024-08-02T18:41:46.712Z] debug 2 active connections
+[2024-08-02T18:41:46.712Z] debug heartbeat
+[2024-08-02T18:42:46.712Z] debug 2 active connections
+[2024-08-02T18:42:46.712Z] debug heartbeat
+[2024-08-02T18:43:46.712Z] debug 2 active connections
+[2024-08-02T18:43:46.712Z] debug heartbeat
+[2024-08-02T18:44:46.714Z] debug 2 active connections
+[2024-08-02T18:44:46.714Z] debug heartbeat
+[2024-08-02T18:45:46.715Z] debug 2 active connections
+[2024-08-02T18:45:46.715Z] debug heartbeat
+[2024-08-02T18:46:46.715Z] debug 2 active connections
+[2024-08-02T18:46:46.715Z] debug heartbeat
+[2024-08-02T18:47:46.716Z] debug 2 active connections
+[2024-08-02T18:47:46.716Z] debug heartbeat
+[20:48:44] [10.118.200.55][f816e6f6][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[20:48:44] [10.118.200.55][d1b01edc][ExtensionHostConnection] <2693927> Extension Host Process exited with code: 0, signal: null.
+[2024-08-02T18:48:51.717Z] debug Node failed to respond with connections; assuming zero
+slurmstepd: error: *** JOB 62109616 ON s28c11n3 CANCELLED AT 2024-08-02T20:58:04 DUE TO TIME LIMIT ***

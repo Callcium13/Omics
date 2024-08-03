@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job             count
+------------  -------
+all                 1
+extract_snps        1
+snp_heatmap         1
+total               3
+
+Select jobs to execute...
+
+[Thu May  2 12:49:21 2024]
+localrule extract_snps:
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    jobid: 37
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+RuleException in rule extract_snps in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 248:
+NameError: The name "'|'" is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        # Extract SNPs associated with specific patterns from the annotated VCF file
+        grep "^#" {input.vcf} > {output.genes_vcf}  # Copy header lines to new file
+
+        grep -E '{'|'.join(params.snp_patterns)}' {input.vcf} >> {output.genes_vcf}  # Append lines containing the specified patterns to new file
+        

@@ -1,0 +1,2 @@
+SyntaxError in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 258:
+Command must be given as string after the shell keyword. (snakefile, line 258)

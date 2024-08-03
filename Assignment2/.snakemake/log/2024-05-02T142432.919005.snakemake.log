@@ -1,0 +1,2 @@
+SyntaxError in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 104:
+Multiple run/shell/script/notebook/wrapper/template_engine/cwl keywords in rule fastqc. (snakefile, line 104)

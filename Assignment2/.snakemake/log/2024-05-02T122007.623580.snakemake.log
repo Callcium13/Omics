@@ -1,0 +1,201 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job                    count
+-------------------  -------
+SNP_calling                1
+SNP_norm_filt              1
+all                        1
+extract_snps               1
+fastqc_report_image       11
+snp_heatmap                1
+snpeff                     1
+total                     17
+
+Select jobs to execute...
+
+[Thu May  2 12:20:09 2024]
+localrule fastqc_report_image:
+    input: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 24
+    reason: Missing output files: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:20:09 2024]
+localrule fastqc_report_image:
+    input: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 26
+    reason: Missing output files: 1_fastqc/HG00131.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG00131.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:20:09 2024]
+localrule fastqc_report_image:
+    input: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 28
+    reason: Missing output files: 1_fastqc/HG01791.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG01791.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:20:09 2024]
+localrule fastqc_report_image:
+    input: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 30
+    reason: Missing output files: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG00121.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:20:10 2024]
+localrule fastqc_report_image:
+    input: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 32
+    reason: Missing output files: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG00101.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:20:10 2024]
+localrule fastqc_report_image:
+    input: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 23
+    reason: Missing output files: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG00141.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:20:10 2024]
+localrule fastqc_report_image:
+    input: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 25
+    reason: Missing output files: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:20:10 2024]
+localrule fastqc_report_image:
+    input: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 27
+    reason: Missing output files: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:20:10 2024]
+localrule fastqc_report_image:
+    input: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 29
+    reason: Missing output files: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG04301.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:20:10 2024]
+localrule fastqc_report_image:
+    input: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 31
+    reason: Missing output files: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:20:10 2024]
+localrule fastqc_report_image:
+    input: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt
+    output: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.png
+    jobid: 33
+    reason: Missing output files: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.png
+    wildcards: sample=HG00151.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:20:10 2024]
+rule SNP_calling:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    output: 3_samtools/snps.vcf
+    jobid: 34
+    reason: Missing output files: 3_samtools/snps.vcf
+    resources: mem_mb=1040, mem_mib=992, disk_mb=1040, disk_mib=992, tmpdir=<TBD>, cpu=4
+
+Submitted job 34 with external jobid 'Submitted batch job 61378343 on cluster wice'.
+[Thu May  2 12:20:54 2024]
+Finished job 26.
+1 of 17 steps (6%) done
+[Thu May  2 12:20:55 2024]
+Finished job 23.
+2 of 17 steps (12%) done
+[Thu May  2 12:20:55 2024]
+Finished job 24.
+3 of 17 steps (18%) done
+[Thu May  2 12:20:55 2024]
+Finished job 32.
+4 of 17 steps (24%) done
+[Thu May  2 12:20:55 2024]
+Finished job 30.
+5 of 17 steps (29%) done
+[Thu May  2 12:20:55 2024]
+Finished job 28.
+6 of 17 steps (35%) done
+[Thu May  2 12:21:08 2024]
+Finished job 25.
+7 of 17 steps (41%) done
+[Thu May  2 12:21:08 2024]
+Finished job 27.
+8 of 17 steps (47%) done
+[Thu May  2 12:21:09 2024]
+Finished job 31.
+9 of 17 steps (53%) done
+[Thu May  2 12:21:09 2024]
+Finished job 29.
+10 of 17 steps (59%) done
+[Thu May  2 12:21:09 2024]
+Finished job 33.
+11 of 17 steps (65%) done
+[Thu May  2 12:26:20 2024]
+Finished job 34.
+12 of 17 steps (71%) done
+Select jobs to execute...
+
+[Thu May  2 12:26:20 2024]
+localrule SNP_norm_filt:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 3_samtools/snps.vcf
+    output: 4_cleaned/snps.cleaned.vcf
+    jobid: 36
+    reason: Missing output files: 4_cleaned/snps.cleaned.vcf; Input files updated by another job: 3_samtools/snps.vcf; Code has changed since last execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:26:23 2024]
+Error in rule SNP_norm_filt:
+    jobid: 36
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 3_samtools/snps.vcf
+    output: 4_cleaned/snps.cleaned.vcf
+    shell:
+        
+        echo "Normalizing and filtering"
+        ( cat 3_samtools/snps.vcf            | vt decompose -            | vt normalize -n -r /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa -            | vt uniq -            | vt view -f "QUAL>20" -h -            > 4_cleaned/snps.cleaned.vcf )
+
+            
+        #check that the foutput file is not empty
+        if ! [ -s $output_size ]; then
+            echo "Error: Output file size is 0kb"
+            false
+        fi
+
+        #check that ouput is smaller or equal to input
+        if ! [ $(stat -c %s 4_cleaned/snps.cleaned.vcf) -ge $(stat -c %s 3_samtools/snps.vcf) ]; then
+            echo "Error: Output file size is larger than input file size"
+            false
+        fi
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job SNP_norm_filt since they might be corrupted:
+4_cleaned/snps.cleaned.vcf
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-02T122007.623580.snakemake.log

@@ -1,0 +1,3 @@
+NameError in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 153:
+name 'SNP_calling' is not defined
+  File "/vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile", line 153, in <module>

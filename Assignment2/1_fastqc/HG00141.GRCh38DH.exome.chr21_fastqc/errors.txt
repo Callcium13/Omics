@@ -1,0 +1,2 @@
+FAIL	Per base sequence content	HG00141.GRCh38DH.exome.chr21.fq.gz
+WARN	Per sequence GC content	HG00141.GRCh38DH.exome.chr21.fq.gz

@@ -1,0 +1,10 @@
+cp -r /staging/leuven/stg_00079/teaching/mock_exam_2024 /data/leuven/362/vsc36251
+
+Question 1: snakemake
+
+
+Question 2: 
+
+
+Question 3: Visualisation
+

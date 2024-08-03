@@ -1,0 +1,3 @@
+WARN	Per base sequence quality	HG00131.GRCh38DH.exome.chr21.fq.gz
+WARN	Per sequence GC content	HG00131.GRCh38DH.exome.chr21.fq.gz
+WARN	Sequence Length Distribution	HG00131.GRCh38DH.exome.chr21.fq.gz

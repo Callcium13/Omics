@@ -1,0 +1,181 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+bwa                 11
+extract_snps         1
+snp_heatmap          1
+snpeff               1
+total               17
+
+Select jobs to execute...
+
+[Thu May  2 11:57:54 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam.bai
+    jobid: 20
+    reason: Missing output files: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1
+
+Submitted job 20 with external jobid 'Submitted batch job 61378289 on cluster wice'.
+
+[Thu May  2 11:57:55 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00151.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam.bai
+    jobid: 22
+    reason: Missing output files: 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00151.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1
+
+Submitted job 22 with external jobid 'Submitted batch job 61378291 on cluster wice'.
+
+[Thu May  2 11:57:55 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam.bai
+    jobid: 13
+    reason: Missing output files: 2_bwa/HG00261.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1
+
+Submitted job 13 with external jobid 'Submitted batch job 61378292 on cluster wice'.
+
+[Thu May  2 11:57:56 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam.bai
+    jobid: 15
+    reason: Missing output files: 2_bwa/HG00131.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00131.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1
+
+Submitted job 15 with external jobid 'Submitted batch job 61378293 on cluster wice'.
+
+[Thu May  2 11:57:57 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam.bai
+    jobid: 17
+    reason: Missing output files: 2_bwa/HG01791.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG01791.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1
+
+Submitted job 17 with external jobid 'Submitted batch job 61378294 on cluster wice'.
+
+[Thu May  2 11:57:58 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam.bai
+    jobid: 19
+    reason: Missing output files: 2_bwa/HG00121.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00121.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1
+
+Submitted job 19 with external jobid 'Submitted batch job 61378295 on cluster wice'.
+
+[Thu May  2 11:57:59 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam.bai
+    jobid: 21
+    reason: Missing output files: 2_bwa/HG00101.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00101.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1
+
+Submitted job 21 with external jobid 'Submitted batch job 61378296 on cluster wice'.
+
+[Thu May  2 11:58:00 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam.bai
+    jobid: 12
+    reason: Missing output files: 2_bwa/HG00141.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00141.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1
+
+Submitted job 12 with external jobid 'Submitted batch job 61378297 on cluster wice'.
+
+[Thu May  2 11:58:01 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai
+    jobid: 14
+    reason: Missing output files: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1
+
+Submitted job 14 with external jobid 'Submitted batch job 61378298 on cluster wice'.
+
+[Thu May  2 11:58:02 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam.bai
+    jobid: 16
+    reason: Missing output files: 2_bwa/HG00231.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1
+
+Submitted job 16 with external jobid 'Submitted batch job 61378299 on cluster wice'.
+
+[Thu May  2 11:58:02 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam.bai
+    jobid: 18
+    reason: Missing output files: 2_bwa/HG04301.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG04301.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, threads=1
+
+Submitted job 18 with external jobid 'Submitted batch job 61378300 on cluster wice'.
+[Thu May  2 11:58:35 2024]
+Finished job 22.
+1 of 17 steps (6%) done
+[Thu May  2 11:59:07 2024]
+Finished job 20.
+2 of 17 steps (12%) done
+[Thu May  2 11:59:07 2024]
+Finished job 13.
+3 of 17 steps (18%) done
+[Thu May  2 11:59:07 2024]
+Finished job 17.
+4 of 17 steps (24%) done
+[Thu May  2 11:59:07 2024]
+Finished job 19.
+5 of 17 steps (29%) done
+[Thu May  2 11:59:07 2024]
+Finished job 21.
+6 of 17 steps (35%) done
+[Thu May  2 11:59:08 2024]
+Finished job 14.
+7 of 17 steps (41%) done
+[Thu May  2 11:59:38 2024]
+Finished job 12.
+8 of 17 steps (47%) done
+[Thu May  2 11:59:38 2024]
+Finished job 16.
+9 of 17 steps (53%) done
+[Thu May  2 11:59:38 2024]
+Finished job 18.
+10 of 17 steps (59%) done
+[Thu May  2 12:01:08 2024]
+Finished job 15.
+11 of 17 steps (65%) done
+Select jobs to execute...
+
+[Thu May  2 12:01:08 2024]
+rule SNP_calling:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    output: 3_samtools/snps.vcf
+    jobid: 23
+    reason: Forced execution
+    resources: mem_mb=1040, mem_mib=992, disk_mb=1040, disk_mib=992, tmpdir=<TBD>, threads=8
+
+Submitted job 23 with external jobid 'Submitted batch job 61378305 on cluster wice'.

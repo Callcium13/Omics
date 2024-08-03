@@ -1,0 +1,49 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+extract_snps         1
+snp_heatmap          1
+snpeff               1
+total                6
+
+Select jobs to execute...
+
+[Thu May  2 12:04:26 2024]
+rule SNP_calling:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    output: 3_samtools/snps.vcf
+    jobid: 23
+    reason: Forced execution
+    resources: mem_mb=1040, mem_mib=992, disk_mb=1040, disk_mib=992, tmpdir=<TBD>, cpu=8
+
+Submitted job 23 with external jobid 'Submitted batch job 61378312 on cluster wice'.
+[Thu May  2 12:04:36 2024]
+Error in rule SNP_calling:
+    jobid: 23
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    output: 3_samtools/snps.vcf
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+        echo "Performing SNP calling"
+        bcftools mpileup -Ou -f /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa 2_bwa/HG00141.GRCh38DH.exome.chr21.bam 2_bwa/HG00261.GRCh38DH.exome.chr21.bam 2_bwa/HG00111.GRCh38DH.exome.chr21.bam 2_bwa/HG00131.GRCh38DH.exome.chr21.bam 2_bwa/HG00231.GRCh38DH.exome.chr21.bam 2_bwa/HG01791.GRCh38DH.exome.chr21.bam 2_bwa/HG04301.GRCh38DH.exome.chr21.bam 2_bwa/HG00121.GRCh38DH.exome.chr21.bam 2_bwa/HG00251.GRCh38DH.exome.chr21.bam 2_bwa/HG00101.GRCh38DH.exome.chr21.bam 2_bwa/HG00151.GRCh38DH.exome.chr21.bam              | bcftools call -mv -Ov -o 3_samtools/snps.vcf -@ 8
+
+        #check that the foutput file is not empty
+        #snakemake checks files exist but not if they have contents
+        if ! [ -s $output_size ]; then
+            echo "Error: Output file size is 0kb"
+            false
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378312 on cluster wice
+
+Error executing rule SNP_calling on cluster (jobid: 23, external: Submitted batch job 61378312 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.opvg3uv2/23_SNP_calling). For error details see the cluster log and the log files of the involved rule(s).
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-02T120423.829105.snakemake.log

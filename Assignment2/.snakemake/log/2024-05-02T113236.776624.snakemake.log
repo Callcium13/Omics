@@ -1,0 +1,750 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job              count
+-------------  -------
+SNP_calling          1
+SNP_norm_filt        1
+all                  1
+bwa                 11
+extract_snps         1
+fastqc               9
+snp_heatmap          1
+snpeff               1
+total               26
+
+Select jobs to execute...
+
+[Thu May  2 11:32:39 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00151.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam.bai
+    jobid: 22
+    reason: Missing output files: 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00151.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 22 with external jobid 'Submitted batch job 61378149 on cluster wice'.
+
+[Thu May  2 11:32:40 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG04301.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 7
+    reason: Params have changed since last execution
+    wildcards: sample=HG04301.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 7 with external jobid 'Submitted batch job 61378150 on cluster wice'.
+
+[Thu May  2 11:32:41 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam.bai
+    jobid: 15
+    reason: Missing output files: 2_bwa/HG00131.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00131.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 15 with external jobid 'Submitted batch job 61378151 on cluster wice'.
+
+[Thu May  2 11:32:42 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00121.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 8
+    reason: Params have changed since last execution
+    wildcards: sample=HG00121.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 8 with external jobid 'Submitted batch job 61378152 on cluster wice'.
+
+[Thu May  2 11:32:43 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam.bai
+    jobid: 16
+    reason: Missing output files: 2_bwa/HG00231.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 16 with external jobid 'Submitted batch job 61378153 on cluster wice'.
+
+[Thu May  2 11:32:44 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 1
+    reason: Params have changed since last execution
+    wildcards: sample=HG00141.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 61378154 on cluster wice'.
+
+[Thu May  2 11:32:45 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00251.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 9
+    reason: Params have changed since last execution
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 9 with external jobid 'Submitted batch job 61378155 on cluster wice'.
+
+[Thu May  2 11:32:46 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam.bai
+    jobid: 17
+    reason: Missing output files: 2_bwa/HG01791.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG01791.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 17 with external jobid 'Submitted batch job 61378156 on cluster wice'.
+
+[Thu May  2 11:32:47 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00111.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 3
+    reason: Params have changed since last execution
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 61378157 on cluster wice'.
+
+[Thu May  2 11:32:48 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00101.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 10
+    reason: Params have changed since last execution
+    wildcards: sample=HG00101.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 10 with external jobid 'Submitted batch job 61378158 on cluster wice'.
+
+[Thu May  2 11:32:49 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam.bai
+    jobid: 18
+    reason: Missing output files: 2_bwa/HG04301.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG04301.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+[Thu May  2 11:32:49 2024]
+Error in rule bwa:
+    jobid: 22
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00151.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00151.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 BWA_DB_chr21/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if test -e "$BWA_DB_chr21/cytoBand"*; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if test -e "$BWA_DB_chr21/pwms"*; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if test -e "$BWA_DB_chr21/snpEffectPredictor"*; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem BWA_DB_chr21 /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378149 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 22, external: Submitted batch job 61378149 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.713flk1x/22_bwa_HG00151.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
+Submitted job 18 with external jobid 'Submitted batch job 61378159 on cluster wice'.
+
+[Thu May  2 11:32:50 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00261.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 2
+    reason: Params have changed since last execution
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 61378160 on cluster wice'.
+
+[Thu May  2 11:32:51 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00151.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00151.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 11
+    reason: Params have changed since last execution
+    wildcards: sample=HG00151.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 11 with external jobid 'Submitted batch job 61378161 on cluster wice'.
+
+[Thu May  2 11:32:52 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam.bai
+    jobid: 19
+    reason: Missing output files: 2_bwa/HG00121.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00121.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 19 with external jobid 'Submitted batch job 61378162 on cluster wice'.
+
+[Thu May  2 11:32:53 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam.bai
+    jobid: 12
+    reason: Missing output files: 2_bwa/HG00141.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00141.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 12 with external jobid 'Submitted batch job 61378163 on cluster wice'.
+
+[Thu May  2 11:32:53 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam.bai
+    jobid: 20
+    reason: Missing output files: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00251.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 20 with external jobid 'Submitted batch job 61378164 on cluster wice'.
+
+[Thu May  2 11:32:54 2024]
+rule fastqc:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/summary.txt, 1_fastqc/HG00231.GRCh38DH.exome.chr21_fastqc/errors.txt
+    jobid: 5
+    reason: Params have changed since last execution
+    wildcards: sample=HG00231.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 61378165 on cluster wice'.
+
+[Thu May  2 11:32:55 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam.bai
+    jobid: 13
+    reason: Missing output files: 2_bwa/HG00261.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00261.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 13 with external jobid 'Submitted batch job 61378166 on cluster wice'.
+
+[Thu May  2 11:32:56 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam.bai
+    jobid: 21
+    reason: Missing output files: 2_bwa/HG00101.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00101.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 21 with external jobid 'Submitted batch job 61378167 on cluster wice'.
+
+[Thu May  2 11:32:57 2024]
+rule bwa:
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai
+    jobid: 14
+    reason: Missing output files: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+    wildcards: sample=HG00111.GRCh38DH.exome.chr21
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 14 with external jobid 'Submitted batch job 61378168 on cluster wice'.
+[Thu May  2 11:32:59 2024]
+Error in rule bwa:
+    jobid: 15
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00131.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 BWA_DB_chr21/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if test -e "$BWA_DB_chr21/cytoBand"*; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if test -e "$BWA_DB_chr21/pwms"*; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if test -e "$BWA_DB_chr21/snpEffectPredictor"*; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem BWA_DB_chr21 /staging/leuven/stg_00079/teaching/1000genomes/HG00131.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00131.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00131.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378151 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 15, external: Submitted batch job 61378151 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.713flk1x/15_bwa_HG00131.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 11:33:00 2024]
+Finished job 7.
+1 of 26 steps (4%) done
+[Thu May  2 11:33:00 2024]
+Error in rule bwa:
+    jobid: 16
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00231.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 BWA_DB_chr21/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if test -e "$BWA_DB_chr21/cytoBand"*; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if test -e "$BWA_DB_chr21/pwms"*; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if test -e "$BWA_DB_chr21/snpEffectPredictor"*; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem BWA_DB_chr21 /staging/leuven/stg_00079/teaching/1000genomes/HG00231.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00231.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00231.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378153 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 16, external: Submitted batch job 61378153 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.713flk1x/16_bwa_HG00231.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 11:33:01 2024]
+Finished job 8.
+2 of 26 steps (8%) done
+[Thu May  2 11:33:01 2024]
+Error in rule bwa:
+    jobid: 17
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG01791.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 BWA_DB_chr21/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if test -e "$BWA_DB_chr21/cytoBand"*; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if test -e "$BWA_DB_chr21/pwms"*; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if test -e "$BWA_DB_chr21/snpEffectPredictor"*; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem BWA_DB_chr21 /staging/leuven/stg_00079/teaching/1000genomes/HG01791.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG01791.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG01791.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378156 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 17, external: Submitted batch job 61378156 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.713flk1x/17_bwa_HG01791.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 11:33:01 2024]
+Error in rule bwa:
+    jobid: 18
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG04301.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 BWA_DB_chr21/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if test -e "$BWA_DB_chr21/cytoBand"*; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if test -e "$BWA_DB_chr21/pwms"*; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if test -e "$BWA_DB_chr21/snpEffectPredictor"*; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem BWA_DB_chr21 /staging/leuven/stg_00079/teaching/1000genomes/HG04301.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG04301.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG04301.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378159 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 18, external: Submitted batch job 61378159 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.713flk1x/18_bwa_HG04301.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 11:33:01 2024]
+Error in rule bwa:
+    jobid: 19
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00121.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 BWA_DB_chr21/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if test -e "$BWA_DB_chr21/cytoBand"*; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if test -e "$BWA_DB_chr21/pwms"*; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if test -e "$BWA_DB_chr21/snpEffectPredictor"*; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem BWA_DB_chr21 /staging/leuven/stg_00079/teaching/1000genomes/HG00121.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00121.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00121.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378162 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 19, external: Submitted batch job 61378162 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.713flk1x/19_bwa_HG00121.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 11:33:01 2024]
+Error in rule bwa:
+    jobid: 12
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00141.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 BWA_DB_chr21/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if test -e "$BWA_DB_chr21/cytoBand"*; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if test -e "$BWA_DB_chr21/pwms"*; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if test -e "$BWA_DB_chr21/snpEffectPredictor"*; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem BWA_DB_chr21 /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00141.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00141.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378163 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 12, external: Submitted batch job 61378163 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.713flk1x/12_bwa_HG00141.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 11:33:13 2024]
+Finished job 1.
+3 of 26 steps (12%) done
+[Thu May  2 11:33:13 2024]
+Finished job 9.
+4 of 26 steps (15%) done
+[Thu May  2 11:33:14 2024]
+Finished job 10.
+5 of 26 steps (19%) done
+[Thu May  2 11:33:14 2024]
+Finished job 2.
+6 of 26 steps (23%) done
+[Thu May  2 11:33:15 2024]
+Finished job 11.
+7 of 26 steps (27%) done
+[Thu May  2 11:33:15 2024]
+Error in rule bwa:
+    jobid: 13
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00261.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 BWA_DB_chr21/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if test -e "$BWA_DB_chr21/cytoBand"*; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if test -e "$BWA_DB_chr21/pwms"*; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if test -e "$BWA_DB_chr21/snpEffectPredictor"*; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem BWA_DB_chr21 /staging/leuven/stg_00079/teaching/1000genomes/HG00261.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00261.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00261.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378166 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 13, external: Submitted batch job 61378166 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.713flk1x/13_bwa_HG00261.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 11:33:15 2024]
+Finished job 5.
+8 of 26 steps (31%) done
+[Thu May  2 11:33:15 2024]
+Error in rule bwa:
+    jobid: 21
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00101.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 BWA_DB_chr21/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if test -e "$BWA_DB_chr21/cytoBand"*; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if test -e "$BWA_DB_chr21/pwms"*; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if test -e "$BWA_DB_chr21/snpEffectPredictor"*; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem BWA_DB_chr21 /staging/leuven/stg_00079/teaching/1000genomes/HG00101.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00101.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00101.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378167 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 21, external: Submitted batch job 61378167 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.713flk1x/21_bwa_HG00101.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 11:33:15 2024]
+Error in rule bwa:
+    jobid: 14
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00111.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 BWA_DB_chr21/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if test -e "$BWA_DB_chr21/cytoBand"*; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if test -e "$BWA_DB_chr21/pwms"*; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if test -e "$BWA_DB_chr21/snpEffectPredictor"*; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem BWA_DB_chr21 /staging/leuven/stg_00079/teaching/1000genomes/HG00111.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00111.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378168 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 14, external: Submitted batch job 61378168 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.713flk1x/14_bwa_HG00111.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 11:33:25 2024]
+Error in rule bwa:
+    jobid: 20
+    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz
+    output: 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam.bai
+    shell:
+        
+        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
+
+        echo "Performing BWA on: HG00251.GRCh38DH.exome.chr21 "
+
+        # Check if there are at least 24 files in the params.db beginning with "sequence"
+        if [ $(ls -1 BWA_DB_chr21/sequence* 2>/dev/null | wc -l) -ge 24 ]; then
+            echo "Error: Less than 24 files beginning with 'sequence' found."
+            false
+        fi
+
+        # Check if a file beginning with "cytoBand" exists
+        if test -e "$BWA_DB_chr21/cytoBand"*; then
+            echo "Error: No file beginning with 'cytoBand' found."
+            false
+        fi
+
+        # Check if a file beginning with "pwms" exists
+        if test -e "$BWA_DB_chr21/pwms"*; then
+            echo "Error: No file beginning with 'pwms' found."
+            false
+        fi
+
+        # Check if a file beginning with "snpEffectPredictor" exists
+        if test -e "$BWA_DB_chr21/snpEffectPredictor"*; then
+            echo "Error: No file beginning with 'snpEffectPredictor' found."
+            false
+        fi
+
+        bwa mem BWA_DB_chr21 /staging/leuven/stg_00079/teaching/1000genomes/HG00251.GRCh38DH.exome.chr21.fq.gz             | samtools sort -             > 2_bwa/HG00251.GRCh38DH.exome.chr21.bam
+        samtools index 2_bwa/HG00251.GRCh38DH.exome.chr21.bam
+
+  
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 61378164 on cluster wice
+
+Error executing rule bwa on cluster (jobid: 20, external: Submitted batch job 61378164 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.713flk1x/20_bwa_HG00251.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  2 11:33:26 2024]
+Finished job 3.
+9 of 26 steps (35%) done
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-02T113236.776624.snakemake.log

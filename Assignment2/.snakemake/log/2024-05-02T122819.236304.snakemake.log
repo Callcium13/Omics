@@ -1,0 +1,53 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job              count
+-------------  -------
+SNP_norm_filt        1
+all                  1
+extract_snps         1
+snp_heatmap          1
+snpeff               1
+total                5
+
+Select jobs to execute...
+
+[Thu May  2 12:28:23 2024]
+localrule SNP_norm_filt:
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 3_samtools/snps.vcf
+    output: 4_cleaned/snps.cleaned.vcf
+    jobid: 36
+    reason: Missing output files: 4_cleaned/snps.cleaned.vcf
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+[Thu May  2 12:28:26 2024]
+Error in rule SNP_norm_filt:
+    jobid: 36
+    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 3_samtools/snps.vcf
+    output: 4_cleaned/snps.cleaned.vcf
+    shell:
+        
+        echo "Normalizing and filtering"
+        ( cat 3_samtools/snps.vcf            | vt decompose -            | vt normalize -n -r /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa -            | vt uniq -            | vt view -f "QUAL>20" -h -            > 4_cleaned/snps.cleaned.vcf )
+
+            
+        #check that the foutput file is not empty
+        if ! [ -s 4_cleaned/snps.cleaned.vcf ]; then
+            echo "Error: Output file size is 0kb"
+            false
+        fi
+
+        #check that ouput is smaller or equal to input
+        if ! [ $(stat -c %s 4_cleaned/snps.cleaned.vcf) -ge $(stat -c %s 3_samtools/snps.vcf) ]; then
+            echo "Error: Output file size is larger than input file size"
+            false
+        fi
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job SNP_norm_filt since they might be corrupted:
+4_cleaned/snps.cleaned.vcf
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-02T122819.236304.snakemake.log

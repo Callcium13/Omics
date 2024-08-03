@@ -1,0 +1,111 @@
+2024-08-02 20:13:44.061 [debug] MutationLogger "Persistent process "1" interaction state" set to "None", reason: initialized
+2024-08-02 20:13:44.265 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:13:44.266 [debug] CommandDetectionCapability#handlePromptStart 0 0
+2024-08-02 20:13:44.267 [debug] CommandDetectionCapability#handleCommandStart 10 0
+2024-08-02 20:13:46.559 [debug] MutationLogger "Persistent process "1" interaction state" set to "Session", reason: input
+2024-08-02 20:13:49.907 [debug] CommandDetectionCapability#setCommandLine ssh-keygen true
+2024-08-02 20:13:49.908 [debug] CommandDetectionCapability#handleCommandExecuted 0 1
+2024-08-02 20:13:51.932 [debug] ChildProcessMonitor: Has child processes changed true
+2024-08-02 20:13:54.650 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ssh-keygen [object Object]
+2024-08-02 20:13:54.656 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:13:54.657 [debug] CommandDetectionCapability#handlePromptStart 0 4
+2024-08-02 20:13:54.657 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:13:54.657 [debug] CommandDetectionCapability#handleCommandStart 10 4
+2024-08-02 20:13:56.670 [debug] ChildProcessMonitor: Has child processes changed false
+2024-08-02 20:14:06.939 [debug] CommandDetectionCapability#setCommandLine ssh-keygen -1 -f id_rsa true
+2024-08-02 20:14:06.940 [debug] CommandDetectionCapability#handleCommandExecuted 0 5
+2024-08-02 20:14:06.947 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ssh-keygen -1 -f id_rsa [object Object]
+2024-08-02 20:14:06.947 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:14:06.947 [debug] CommandDetectionCapability#handlePromptStart 0 37
+2024-08-02 20:14:06.947 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:14:06.948 [debug] CommandDetectionCapability#handleCommandStart 10 37
+2024-08-02 20:14:20.717 [debug] CommandDetectionCapability#setCommandLine ssh-keygen -l -f id_rsa true
+2024-08-02 20:14:20.718 [debug] CommandDetectionCapability#handleCommandExecuted 0 38
+2024-08-02 20:14:20.722 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ssh-keygen -l -f id_rsa [object Object]
+2024-08-02 20:14:20.722 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:14:20.722 [debug] CommandDetectionCapability#handlePromptStart 0 39
+2024-08-02 20:14:20.722 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:14:20.723 [debug] CommandDetectionCapability#handleCommandStart 10 39
+2024-08-02 20:14:31.736 [debug] CommandDetectionCapability#handlePromptStart 0 64
+2024-08-02 20:14:31.736 [debug] CommandDetectionCapability#handleCommandStart 10 64
+2024-08-02 20:14:44.546 [debug] CommandDetectionCapability#setCommandLine cd .ssh true
+2024-08-02 20:14:44.546 [debug] CommandDetectionCapability#handleCommandExecuted 0 65
+2024-08-02 20:14:44.546 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined cd .ssh [object Object]
+2024-08-02 20:14:44.546 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:14:44.551 [debug] CommandDetectionCapability#handlePromptStart adjusted commandFinished 65 -> 66
+2024-08-02 20:14:44.551 [debug] CommandDetectionCapability#handlePromptStart 0 66
+2024-08-02 20:14:44.551 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:14:44.551 [debug] CommandDetectionCapability#handleCommandStart 10 65
+2024-08-02 20:14:48.733 [debug] CommandDetectionCapability#setCommandLine ls true
+2024-08-02 20:14:48.733 [debug] CommandDetectionCapability#handleCommandExecuted 0 66
+2024-08-02 20:14:48.733 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ls [object Object]
+2024-08-02 20:14:48.741 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:14:48.741 [debug] CommandDetectionCapability#handlePromptStart 0 68
+2024-08-02 20:14:48.741 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:14:48.741 [debug] CommandDetectionCapability#handleCommandStart 10 68
+2024-08-02 20:14:51.769 [debug] CommandDetectionCapability#setCommandLine ssh-keygen -l -f id_rsa true
+2024-08-02 20:14:51.769 [debug] CommandDetectionCapability#handleCommandExecuted 0 69
+2024-08-02 20:14:51.776 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ssh-keygen -l -f id_rsa [object Object]
+2024-08-02 20:14:51.776 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:14:51.776 [debug] CommandDetectionCapability#handlePromptStart 0 72
+2024-08-02 20:14:51.776 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:14:51.776 [debug] CommandDetectionCapability#handleCommandStart 10 72
+2024-08-02 20:14:58.364 [debug] CommandDetectionCapability#setCommandLine ssh-keygen -l -f id_rsa.pub true
+2024-08-02 20:14:58.364 [debug] CommandDetectionCapability#handleCommandExecuted 0 74
+2024-08-02 20:14:58.364 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ssh-keygen -l -f id_rsa.pub [object Object]
+2024-08-02 20:14:58.372 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:14:58.372 [debug] CommandDetectionCapability#handlePromptStart 0 77
+2024-08-02 20:14:58.372 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:14:58.373 [debug] CommandDetectionCapability#handleCommandStart 10 77
+2024-08-02 20:32:31.184 [debug] CommandDetectionCapability#handlePromptStart 0 77
+2024-08-02 20:32:31.185 [debug] CommandDetectionCapability#handleCommandStart 10 77
+2024-08-02 20:32:32.210 [debug] CommandDetectionCapability#setCommandLine ssh-keygen -l -f id_rsa1.pub true
+2024-08-02 20:32:32.210 [debug] CommandDetectionCapability#handleCommandExecuted 0 79
+2024-08-02 20:32:32.217 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ssh-keygen -l -f id_rsa1.pub [object Object]
+2024-08-02 20:32:32.217 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:32:32.217 [debug] CommandDetectionCapability#handlePromptStart 0 82
+2024-08-02 20:32:32.218 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:32:32.218 [debug] CommandDetectionCapability#handleCommandStart 10 82
+2024-08-02 20:32:37.405 [debug] CommandDetectionCapability#handlePromptStart 0 82
+2024-08-02 20:32:37.405 [debug] CommandDetectionCapability#handleCommandStart 10 82
+2024-08-02 20:32:37.927 [debug] CommandDetectionCapability#handlePromptStart 0 82
+2024-08-02 20:32:37.927 [debug] CommandDetectionCapability#handleCommandStart 10 82
+2024-08-02 20:32:38.947 [debug] CommandDetectionCapability#setCommandLine ssh-keygen -l -f id_rsa2.pub true
+2024-08-02 20:32:38.947 [debug] CommandDetectionCapability#handleCommandExecuted 0 84
+2024-08-02 20:32:38.953 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ssh-keygen -l -f id_rsa2.pub [object Object]
+2024-08-02 20:32:38.959 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:32:38.959 [debug] CommandDetectionCapability#handlePromptStart 0 87
+2024-08-02 20:32:38.960 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:32:38.960 [debug] CommandDetectionCapability#handleCommandStart 10 87
+2024-08-02 20:35:04.486 [debug] CommandDetectionCapability#setCommandLine ssh-keygen -l -f id_rsa1 true
+2024-08-02 20:35:04.486 [debug] CommandDetectionCapability#handleCommandExecuted 0 88
+2024-08-02 20:35:04.487 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ssh-keygen -l -f id_rsa1 [object Object]
+2024-08-02 20:35:04.494 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:35:04.494 [debug] CommandDetectionCapability#handlePromptStart 0 91
+2024-08-02 20:35:04.494 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:35:04.494 [debug] CommandDetectionCapability#handleCommandStart 10 91
+2024-08-02 20:39:51.988 [debug] CommandDetectionCapability#setCommandLine ssh-keygen -l -f id_rsa true
+2024-08-02 20:39:51.988 [debug] CommandDetectionCapability#handleCommandExecuted 0 92
+2024-08-02 20:39:51.994 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ssh-keygen -l -f id_rsa [object Object]
+2024-08-02 20:39:51.994 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:39:51.994 [debug] CommandDetectionCapability#handlePromptStart 0 95
+2024-08-02 20:39:51.994 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:39:51.994 [debug] CommandDetectionCapability#handleCommandStart 10 95
+2024-08-02 20:42:22.927 [debug] CommandDetectionCapability#setCommandLine ssh-keygen -l -f id_rsa true
+2024-08-02 20:42:22.927 [debug] CommandDetectionCapability#handleCommandExecuted 0 96
+2024-08-02 20:42:22.933 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ssh-keygen -l -f id_rsa [object Object]
+2024-08-02 20:42:22.933 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:42:22.933 [debug] CommandDetectionCapability#handlePromptStart 0 99
+2024-08-02 20:42:22.933 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:42:22.933 [debug] CommandDetectionCapability#handleCommandStart 10 99
+2024-08-02 20:42:37.746 [debug] CommandDetectionCapability#setCommandLine ssh-keygen -l -f id_rsa.pub true
+2024-08-02 20:42:37.747 [debug] CommandDetectionCapability#handleCommandExecuted 0 101
+2024-08-02 20:42:37.753 [debug] CommandDetectionCapability#handleCommandFinished 0 undefined ssh-keygen -l -f id_rsa.pub [object Object]
+2024-08-02 20:42:37.753 [debug] CommandDetectionCapability#setPromptTerminator  
+2024-08-02 20:42:37.753 [debug] CommandDetectionCapability#handlePromptStart 0 104
+2024-08-02 20:42:37.754 [debug] CommandDetectionCapability#onCommandFinished [object Object]
+2024-08-02 20:42:37.754 [debug] CommandDetectionCapability#handleCommandStart 10 104
+2024-08-02 20:47:00.931 [debug] CommandDetectionCapability#handlePromptStart 0 63
+2024-08-02 20:47:00.931 [debug] CommandDetectionCapability#handleCommandStart 10 63
+2024-08-02 20:47:02.014 [debug] CommandDetectionCapability#handlePromptStart 0 104
+2024-08-02 20:47:02.014 [debug] CommandDetectionCapability#handleCommandStart 10 104

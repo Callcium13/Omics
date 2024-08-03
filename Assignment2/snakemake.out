@@ -1,206 +1,32 @@
-SLURM_JOB_ID: 61377286
+SLURM_JOB_ID: 61379281
 SLURM_JOB_USER: vsc36251
 SLURM_JOB_ACCOUNT: lp_edu_large_omics
 SLURM_JOB_NAME: snakemake.slrm
 SLURM_CLUSTER_NAME: wice
 SLURM_JOB_PARTITION: batch
 SLURM_NNODES: 1
-SLURM_NODELIST: s28c11n4
+SLURM_NODELIST: s28c11n2
 SLURM_JOB_CPUS_PER_NODE: 1
-Date: Thu May  2 02:07:26 CEST 2024
+Date: Thu May  2 14:44:00 CEST 2024
 Walltime: 00-00:30:00
 ========================================================================
+localrules directive specifies rules that are not present in the Snakefile:
+	snp_heatmap
+
 Unlocking working directory.
+localrules directive specifies rules that are not present in the Snakefile:
+	snp_heatmap
+
 Building DAG of jobs...
-Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
-Provided cluster nodes: 22
-Job stats:
-job              count
--------------  -------
-SNP_calling          1
-SNP_norm_filt        1
-all                  1
-extract_snps         1
-fastqc               1
-snpeff               1
-total                6
+MissingInputException in rule all in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 36:
+Missing input files for rule all:
+    affected files:
+        snp_heatmap.png
+localrules directive specifies rules that are not present in the Snakefile:
+	snp_heatmap
 
-Select jobs to execute...
-
-[Thu May  2 02:07:29 2024]
-localrule SNP_calling:
-    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 2_bwa/HG00141.GRCh38DH.exome.chr21.bam, 2_bwa/HG00261.GRCh38DH.exome.chr21.bam, 2_bwa/HG00111.GRCh38DH.exome.chr21.bam, 2_bwa/HG00131.GRCh38DH.exome.chr21.bam, 2_bwa/HG00231.GRCh38DH.exome.chr21.bam, 2_bwa/HG01791.GRCh38DH.exome.chr21.bam, 2_bwa/HG04301.GRCh38DH.exome.chr21.bam, 2_bwa/HG00121.GRCh38DH.exome.chr21.bam, 2_bwa/HG00251.GRCh38DH.exome.chr21.bam, 2_bwa/HG00101.GRCh38DH.exome.chr21.bam, 2_bwa/HG00151.GRCh38DH.exome.chr21.bam
-    output: 3_samtools/snps.vcf
-    jobid: 23
-    reason: Missing output files: 3_samtools/snps.vcf
-    resources: mem_mb=1040, mem_mib=992, disk_mb=1040, disk_mib=992, tmpdir=/tmp
-
-
-[Thu May  2 02:07:29 2024]
-rule fastqc:
-    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
-    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt
-    jobid: 1
-    reason: Missing output files: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip
-    wildcards: sample=HG00141.GRCh38DH.exome.chr21
-    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
-
-Performing SNP calling
-Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
-[mpileup] 11 samples in 11 input files
-[mpileup] maximum number of reads per input file set to -d 250
-Submitted job 1 with external jobid 'Submitted batch job 61377287 on cluster wice'.
-[Thu May  2 02:07:48 2024]
-Error in rule fastqc:
-    jobid: 1
-    input: /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz
-    output: 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.zip, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc.html, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/fastqc_data.txt, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_sequence_content.png, 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt
-    shell:
-        
-        export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin:$PATH
-    
-        echo "Input Fastq: HG00141.GRCh38DH.exome.chr21 "
-        
-        #extract the fastqc
-        fastqc -o 1_fastqc /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz --extract
-
-        # # Check if it is in FASTQ format
-        # first_line=$(head -n 1 /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz)
-        # third_line=$(sed -n '3p' /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz)
-
-        # if ! [[ $first_line == "@"* && $second_line != "+" && $third_line == "+"* ]]; then
-        #     echo "File is not in FASTQ format."
-        #     false
-        # fi
-
-        # #check that file is not truncated
-        # if [ $(tail -n 4 /staging/leuven/stg_00079/teaching/1000genomes/HG00141.GRCh38DH.exome.chr21.fq.gz | head -n 1 | cut -c1) = "@" ]; then
-        #     echo "Fourth last line does not begin with '@'!"
-        #     false
-        # fi
-
-        if grep FAIL 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt; then
-            echo "Summary contains Fails!"
-            false
-        fi
-        #these warnings arent severe as bias can be introduced by the adapters used
-        if grep WARN 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/summary.txt; then
-            echo "Summary contains warnings!"
-        fi
-        
-        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
-    cluster_jobid: Submitted batch job 61377287 on cluster wice
-
-Error executing rule fastqc on cluster (jobid: 1, external: Submitted batch job 61377287 on cluster wice, jobscript: /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/.snakemake/tmp.cmaz4uhe/fastqc1_HG00141.GRCh38DH.exome.chr21). For error details see the cluster log and the log files of the involved rule(s).
-[Thu May  2 02:13:47 2024]
-Finished job 23.
-1 of 6 steps (17%) done
-Select jobs to execute...
-
-[Thu May  2 02:13:47 2024]
-localrule SNP_norm_filt:
-    input: /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa, 3_samtools/snps.vcf
-    output: 4_cleaned/snps.cleaned.vcf
-    jobid: 25
-    reason: Missing output files: 4_cleaned/snps.cleaned.vcf; Input files updated by another job: 3_samtools/snps.vcf; Code has changed since last execution
-    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
-
-Normalizing and filtering
-uniq v0.57
-
-options:     input VCF file        -
-         [o] output VCF file       -
-normalize v0.5
-
-options:     input VCF file                                  -
-         [o] output VCF file                                 -
-         [w] sorting window size                             10000
-         [n] no fail on reference inconsistency for non SNPs true
-         [q] quiet                                           false
-         [d] debug                                           false
-         [r] reference FASTA file                            /lustre1/project/stg_00079/teaching/hg38_21/chr21.fa
-
-decompose v0.5
-
-options:     input VCF file        -
-         [s] smart decomposition   false (experimental)
-         [o] output VCF file       -
-
-
-stats: no. variants                 : 82444
-       no. biallelic variants       : 81244
-       no. multiallelic variants    : 1200
-
-       no. additional biallelics    : 1263
-       total no. of biallelics      : 83707
-
-Time elapsed: 0.66s
-
-
-stats: Total number of observed variants   83707
-       Total number of unique variants     83707
-
-Time elapsed: 0.72s
-
-
-stats: biallelic
-          no. left trimmed                      : 0
-          no. right trimmed                     : 9063
-          no. left and right trimmed            : 0
-          no. right trimmed and left aligned    : 0
-          no. left aligned                      : 0
-
-       total no. biallelic normalized           : 9063
-
-       multiallelic
-          no. left trimmed                      : 0
-          no. right trimmed                     : 0
-          no. left and right trimmed            : 0
-          no. right trimmed and left aligned    : 0
-          no. left aligned                      : 0
-
-       total no. multiallelic normalized        : 0
-
-       total no. variants normalized            : 9063
-       total no. variants observed              : 83707
-       total no. reference observed             : 0
-
-Time elapsed: 0.84s
-
-[Thu May  2 02:13:51 2024]
-Finished job 25.
-2 of 6 steps (33%) done
-Select jobs to execute...
-
-[Thu May  2 02:13:51 2024]
-localrule snpeff:
-    input: 4_cleaned/snps.cleaned.vcf
-    output: 5_snpeff/snps.annotated.vcf, 5_snpeff/snpEff_summary.html, 5_snpeff/snpEff_genes.txt
-    log: 5_snpeff/snakemake.err
-    jobid: 24
-    reason: Missing output files: 5_snpeff/snps.annotated.vcf; Input files updated by another job: 4_cleaned/snps.cleaned.vcf
-    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
-
-Annotating
-[Thu May  2 02:14:38 2024]
-Finished job 24.
-3 of 6 steps (50%) done
-Select jobs to execute...
-
-[Thu May  2 02:14:38 2024]
-localrule extract_snps:
-    input: 5_snpeff/snps.annotated.vcf
-    output: genes.vcf
-    jobid: 26
-    reason: Missing output files: genes.vcf; Input files updated by another job: 5_snpeff/snps.annotated.vcf
-    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
-
-[Thu May  2 02:14:39 2024]
-Finished job 26.
-4 of 6 steps (67%) done
-Exiting because a job execution failed. Look above for error message
-Complete log: .snakemake/log/2024-05-02T020727.359430.snakemake.log
 Building DAG of jobs...
-Creating report...
-WorkflowError:
-File 1_fastqc/HG00141.GRCh38DH.exome.chr21_fastqc/Images/per_base_quality.png marked for report but does not exist.
+MissingInputException in rule all in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 36:
+Missing input files for rule all:
+    affected files:
+        snp_heatmap.png

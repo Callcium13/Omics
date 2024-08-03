@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cluster nodes: 22
+Job stats:
+job             count
+------------  -------
+all                 1
+extract_snps        1
+snp_heatmap         1
+total               3
+
+Select jobs to execute...
+
+[Thu May  2 14:01:41 2024]
+localrule extract_snps:
+    input: 5_snpeff/snps.annotated.vcf
+    output: genes.vcf
+    jobid: 37
+    reason: Missing output files: genes.vcf
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+
+[Thu May  2 14:01:41 2024]
+localrule snp_heatmap:
+    input: 5_snpeff/snps.annotated.vcf
+    output: snps_heatmap.png
+    jobid: 38
+    reason: Missing output files: snps_heatmap.png
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp
+
+RuleException in rule snp_heatmap in file /vsc-hard-mounts/leuven-data/362/vsc36251/Assignment2/snakefile, line 383:
+NameError: The name 'print $1,$(NF-1),$NF' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        bcftools query -l {input.vcf} > samples.txt
+        bcftools query -f '%CHROM	%POS[	%GT]
+' {input.vcf} | grep -v '#' | cut -f 3- > genotypes.txt
+        paste samples.txt genotypes.txt | awk '{print $1,$(NF-1),$NF}' | sort | uniq -c | awk '{print $2,$3,$1}' > snps_per_individual.txt
+        awk '{print $1}' snps_per_individual.txt > individuals.txt
+        awk '{print $2}' snps_per_individual.txt > snps.txt
+        python heatmap.py individuals.txt snps.txt {output.heatmap_image}
+        
