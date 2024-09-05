@@ -1,0 +1,158 @@
+
+#
+# See below for the newly added rule
+#
+# One important thing to keep in mind is that if you want the new
+# rule to run automatically, you need to add the indel plot as
+# explicit output of the new rule, and also as  input to the first rule:
+#
+#    rule all:
+#        input:
+#           ...
+#           indelplot = "060.stats/indels.0.png",
+#
+# If you do not do this - then Snakemake will /NOT/ automatically
+# run the new stats rule. Running snakemake without specifying a
+# specific target to create will attempt to run the first
+# rule.
+#
+
+genome_db = "/staging/leuven/stg_00079/teaching/hg19_9/chr9.fa"
+
+sample_names, = glob_wildcards("000.fastq/{name}.fastq")
+
+snpeff_jar = ("/data/leuven/306/vsc30690/miniconda3/"
+              + "pkgs/snpeff-5.0-hdfd78af_1/share/snpeff-5.0-1/snpEff.jar")
+snpeff_db_folder = "/staging/leuven/stg_00079/teaching/snpeff_db/"
+
+
+rule all:
+    input:
+        fastqc_zip=expand("010.fastqc/{name}_fastqc.zip",
+                          name=sample_names),
+        vcf = "050.snpeff/snps.annotated.vcf",
+        indelplot = "060.stats/indels.0.png",
+
+
+rule fastqc:
+    input:
+        fq="000.fastq/{name}.fastq"
+
+    output:
+        zip="010.fastqc/{name}_fastqc.zip",
+        html="010.fastqc/{name}_fastqc.html"
+
+    shell:
+        """
+        echo "Input Fastq: {input.fq} "
+        fastqc -o 010.fastqc {input.fq}
+        """
+
+rule bwa:
+    input:
+        fq="000.fastq/{sample}.fastq",
+    output:
+        bam = "020.bwa/{sample}.bam",
+        bai = "020.bwa/{sample}.bam.bai",
+    params:
+        db=genome_db,
+    shell:
+        """
+        bwa mem {params.db} {input.fq} \
+            | samtools sort - \
+            > {output.bam}
+        samtools index {output.bam}
+        """
+
+print(expand("020.bwa/{sample}.bam", sample=sample_names),)
+
+rule variant_calling:
+    input:
+        db=genome_db,
+        bams=expand("020.bwa/{sample}.bam", sample=sample_names),
+    output:
+        vcf="030.samtools/snps.vcf",
+    shell:
+        """
+        bcftools mpileup -Ou -f {input.db} {input.bams} \
+             | bcftools call -mv -Ov -o {output.vcf}
+        """
+
+
+rule variant_cleanup:
+    input:
+        db=genome_db,
+        vcf="030.samtools/snps.vcf"
+    output:
+        vcf="040.cleaned/snps.cleaned.vcf"
+    shell:
+        """
+        ( cat {input.vcf} \
+           | vt decompose - \
+           | vt normalize -n -r {input.db} - \
+           | vt uniq - \
+           | vt view -f "QUAL>20" -h - \
+           > {output.vcf} )
+        """
+
+rule snpeff:
+    input:
+        vcf = "040.cleaned/snps.cleaned.vcf",
+    params:
+        snpeff_db_folder = snpeff_db_folder,
+        snpeff_jar = snpeff_jar,
+    log:
+        err="050.snpeff/snakemake.err",
+    output:
+        vcf = "050.snpeff/snps.annotated.vcf",
+        html = "050.snpeff/snpEff_summary.html",
+        genetxt = "050.snpeff/snpEff_genes.txt",
+    shell:
+        """
+
+        mkdir -p 050.snpeff
+
+        java -Xmx4096m -jar \
+            {params.snpeff_jar} eff GRCh38.99 \
+            -dataDir {params.snpeff_db_folder} \
+            {input.vcf} > {output.vcf}
+
+        # move output files to the snpeff output folder
+        mv snpEff_genes.txt snpEff_summary.html 050.snpeff
+
+        """
+
+rule stats:
+     input:
+        vcf = "050.snpeff/snps.annotated.vcf",
+     output:
+        stats = "060.stats/snps.stats",
+        indelplot = "060.stats/indels.0.png",
+
+     shell:
+        """
+
+        # ensure the outputfolder exists
+        mkdir -p 060.stats
+
+        # run the bcftools stats command and pipe the output
+        # to the output file.
+        bcftools stats -s - {input.vcf} > {output.stats}
+
+        # and plot.
+        # Note - the -P flag prevents the error message:
+        #       Neither pdflatex or tectonic were found in your PATH,
+        # which causes plot-vcfstats to fail - and the output files
+        # to be deleted. You could find this flag using
+        #     plot-vcfstats --help
+
+        # another way to prevent an problem would be to
+        # catch the bash error:
+        #     plot-vcfstats -p 060.stats {output.stats} || true
+        # but this is more dangerous - as it could also catch
+        # other - unepxected errors
+
+        plot-vcfstats -P -p 060.stats {output.stats}
+
+
+        """

@@ -1,0 +1,15 @@
+Building DAG of jobs...
+Creating report...
+Missing metadata for file 050.snpeff/snps.annotated.vcf. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 050.snpeff/snpEff_summary.html. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 050.snpeff/snpEff_genes.txt. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 040.cleaned/snps.cleaned.vcf. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 030.samtools/snps.vcf. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 020.bwa/TLE66_N.bam. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 020.bwa/TLE66_N.bam.bai. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 020.bwa/TLE66_T.bam. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 020.bwa/TLE66_T.bam.bai. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 060.stats/snps.stats. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Missing metadata for file 060.stats/indels.0.png. Maybe metadata was deleted or it was created using an older version of Snakemake. This is a non critical warning.
+Downloading resources and rendering HTML.
+Report created: report.html.

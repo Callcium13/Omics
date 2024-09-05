@@ -1,0 +1,134 @@
+
+
+
+# default settings
+genome_db = "/staging/leuven/stg_00079/teaching/hg38_9/chr9.fa"
+snpeff_jar = "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/share/snpeff-5.2-0/snpEff.jar"
+snpsift_jar = "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/share/snpsift-5.2-0/SnpSift.jar"
+snpeff_db_folder = "/staging/leuven/stg_00079/teaching/snpeff_db/"
+snpeff_genome = "GRCh38.99"
+
+phastcons_db = "/staging/leuven/stg_00079/teaching/phastcons"
+
+# find input samples
+sample_names, = glob_wildcards("000.fastq/{name}.fastq")
+
+rule all:
+    input:
+        fastqc_zip=expand("010.fastqc/{name}_fastqc.zip",
+                          name=sample_names),
+        vcf = "050.snpeff/snps.annotated.vcf",
+        snpsPhastCons = "060.phastCons/snps.phastcons.vcf"
+
+rule fastqc:
+    input:
+        fq="000.fastq/{name}.fastq"
+
+    output:
+        zip="010.fastqc/{name}_fastqc.zip",
+        html="010.fastqc/{name}_fastqc.html"
+
+    shell:
+        """
+        echo "Input Fastq: {input.fq} "
+        fastqc -o 010.fastqc {input.fq}
+        """
+
+rule bwa:
+    input:
+        fq="000.fastq/{sample}.fastq",
+    output:
+        bam = "020.bwa/{sample}.bam",
+        bai = "020.bwa/{sample}.bam.bai",
+    params:
+        db=genome_db,
+    shell:
+        """
+        bwa mem {params.db} {input.fq} \
+            | samtools sort - \
+            > {output.bam}
+        samtools index {output.bam}
+        """
+
+rule variant_calling:
+    input:
+        db=genome_db,
+        bams=expand("020.bwa/{sample}.bam", sample=sample_names),
+    output:
+        vcf="030.samtools/snps.vcf",
+    shell:
+        """
+        bcftools mpileup -Ou -f {input.db} {input.bams} \
+             | bcftools call -mv -Ov -o {output.vcf}
+        """
+
+
+rule variant_cleanup:
+    input:
+        db=genome_db,
+        vcf="030.samtools/snps.vcf"
+    output:
+        vcf="040.cleaned/snps.cleaned.vcf"
+    shell:
+        """
+        ( cat {input.vcf} \
+           | vt decompose - \
+           | vt normalize -n -r {input.db} - \
+           | vt uniq - \
+           | vt view -f "QUAL>20" -h - \
+           > {output.vcf} )
+        """
+
+rule snpeff:
+    input:
+        vcf = "040.cleaned/snps.cleaned.vcf",
+    params:
+        snpeff_db_folder = snpeff_db_folder,
+        snpeff_jar = snpeff_jar,
+        snpeff_genome = snpeff_genome,
+    log:
+        err="050.snpeff/snakemake.err",
+    output:
+        vcf = "050.snpeff/snps.annotated.vcf",
+        html = "050.snpeff/snpEff_summary.html",
+        genetxt = "050.snpeff/snpEff_genes.txt",
+    shell:
+        """
+
+        mkdir -p 050.snpeff
+
+        java -Xmx4096m -jar \
+            {params.snpeff_jar} eff {params.snpeff_genome} \
+            -dataDir {params.snpeff_db_folder} \
+            {input.vcf} > {output.vcf}
+
+        # move output files to the snpeff output folder
+        mv snpEff_genes.txt snpEff_summary.html 050.snpeff
+
+        """
+
+rule phastCons:
+    input:
+        vcf = "050.snpeff/snps.annotated.vcf"
+    params:
+        snpsift_jar = snpsift_jar,
+        phastcons_db = phastcons_db
+
+    output:
+        phastCons = "060.phastCons/phastcons.txt",
+        snpsPhastCons = "060.phastCons/snps.phastcons.vcf"
+
+    shell:
+        """
+        mkdir -p 060.phastCons
+        
+        # Get phastCon Scores
+        java -jar {params.snpsift_jar} phastCons -bed {params.phastcons_db} {input.vcf} > {output.phastCons}
+
+        # Annotate VCF with PhastCons scores using SnpSift
+        java -jar {params.snpsift_jar} annotate -exists {output.phastCons} {input.vcf} > {output.snpsPhastCons}
+        
+        #bcftools index {input.vcf}
+
+        #bcftools annotate -a {output.phastCons} -c CHROM,POS,ALT,INFO PhastCons -h <(echo '##INFO=<ID=PhastCons,Number=1,Type=Float Description="PhastCons conservation score">') {input.vcf} -o {output.snpsPhastCons}
+        """

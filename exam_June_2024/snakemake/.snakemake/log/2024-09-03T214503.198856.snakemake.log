@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+phastCons        1
+total            2
+
+Select jobs to execute...
+
+[Tue Sep  3 21:45:04 2024]
+rule phastCons:
+    input: 050.snpeff/snps.annotated.vcf
+    output: 060.phastCons/phastcons.txt, 060.phastCons/snps.phastcons.vcf
+    jobid: 8
+    reason: Missing output files: 060.phastCons/snps.phastcons.vcf
+    resources: tmpdir=/tmp
+

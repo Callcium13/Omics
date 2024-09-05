@@ -1,0 +1,124 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+bwa                    2
+fastqc                 2
+snpeff                 1
+variant_calling        1
+variant_cleanup        1
+total                  8
+
+Select jobs to execute...
+
+[Wed Aug  7 18:31:02 2024]
+rule fastqc:
+    input: 000.fastq/TLE66_N.fastq
+    output: 010.fastqc/TLE66_N_fastqc.zip, 010.fastqc/TLE66_N_fastqc.html
+    jobid: 1
+    reason: Forced execution
+    wildcards: name=TLE66_N
+    resources: tmpdir=/tmp
+
+[Wed Aug  7 18:31:07 2024]
+Finished job 1.
+1 of 8 steps (12%) done
+Select jobs to execute...
+
+[Wed Aug  7 18:31:07 2024]
+rule bwa:
+    input: 000.fastq/TLE66_T.fastq
+    output: 020.bwa/TLE66_T.bam, 020.bwa/TLE66_T.bam.bai
+    jobid: 7
+    reason: Forced execution
+    wildcards: sample=TLE66_T
+    resources: tmpdir=/tmp
+
+[Wed Aug  7 18:31:24 2024]
+Finished job 7.
+2 of 8 steps (25%) done
+Select jobs to execute...
+
+[Wed Aug  7 18:31:24 2024]
+rule fastqc:
+    input: 000.fastq/TLE66_T.fastq
+    output: 010.fastqc/TLE66_T_fastqc.zip, 010.fastqc/TLE66_T_fastqc.html
+    jobid: 2
+    reason: Forced execution
+    wildcards: name=TLE66_T
+    resources: tmpdir=/tmp
+
+[Wed Aug  7 18:31:28 2024]
+Finished job 2.
+3 of 8 steps (38%) done
+Select jobs to execute...
+
+[Wed Aug  7 18:31:28 2024]
+rule bwa:
+    input: 000.fastq/TLE66_N.fastq
+    output: 020.bwa/TLE66_N.bam, 020.bwa/TLE66_N.bam.bai
+    jobid: 6
+    reason: Forced execution
+    wildcards: sample=TLE66_N
+    resources: tmpdir=/tmp
+
+[Wed Aug  7 18:31:47 2024]
+Finished job 6.
+4 of 8 steps (50%) done
+Select jobs to execute...
+
+[Wed Aug  7 18:31:47 2024]
+localrule variant_calling:
+    input: /staging/leuven/stg_00079/teaching/hg38_9/chr9.fa, 020.bwa/TLE66_N.bam, 020.bwa/TLE66_T.bam
+    output: 030.samtools/snps.vcf
+    jobid: 5
+    reason: Input files updated by another job: 020.bwa/TLE66_N.bam, 020.bwa/TLE66_T.bam
+    resources: tmpdir=/tmp
+
+[Wed Aug  7 18:32:06 2024]
+Finished job 5.
+5 of 8 steps (62%) done
+Select jobs to execute...
+
+[Wed Aug  7 18:32:06 2024]
+localrule variant_cleanup:
+    input: /staging/leuven/stg_00079/teaching/hg38_9/chr9.fa, 030.samtools/snps.vcf
+    output: 040.cleaned/snps.cleaned.vcf
+    jobid: 4
+    reason: Input files updated by another job: 030.samtools/snps.vcf
+    resources: tmpdir=/tmp
+
+[Wed Aug  7 18:32:06 2024]
+Finished job 4.
+6 of 8 steps (75%) done
+Select jobs to execute...
+
+[Wed Aug  7 18:32:06 2024]
+localrule snpeff:
+    input: 040.cleaned/snps.cleaned.vcf
+    output: 050.snpeff/snps.annotated.vcf, 050.snpeff/snpEff_summary.html, 050.snpeff/snpEff_genes.txt
+    log: 050.snpeff/snakemake.err
+    jobid: 3
+    reason: Input files updated by another job: 040.cleaned/snps.cleaned.vcf
+    resources: tmpdir=/tmp
+
+[Wed Aug  7 18:32:42 2024]
+Finished job 3.
+7 of 8 steps (88%) done
+Select jobs to execute...
+
+[Wed Aug  7 18:32:42 2024]
+localrule all:
+    input: 010.fastqc/TLE66_N_fastqc.zip, 010.fastqc/TLE66_T_fastqc.zip, 050.snpeff/snps.annotated.vcf
+    jobid: 0
+    reason: Input files updated by another job: 050.snpeff/snps.annotated.vcf, 010.fastqc/TLE66_N_fastqc.zip, 010.fastqc/TLE66_T_fastqc.zip
+    resources: tmpdir=/tmp
+
+[Wed Aug  7 18:32:42 2024]
+Finished job 0.
+8 of 8 steps (100%) done
+Complete log: .snakemake/log/2024-08-07T183101.487398.snakemake.log

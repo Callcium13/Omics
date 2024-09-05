@@ -1,0 +1,94 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+bwa                    2
+fastqc                 2
+snpeff                 1
+variant_calling        1
+variant_cleanup        1
+total                  8
+
+Select jobs to execute...
+
+[Mon Sep  2 20:45:52 2024]
+rule fastqc:
+    input: 000.fastq/TLE66_N.fastq
+    output: 010.fastqc/TLE66_N_fastqc.zip, 010.fastqc/TLE66_N_fastqc.html
+    jobid: 1
+    reason: Updated input files: 000.fastq/TLE66_N.fastq
+    wildcards: name=TLE66_N
+    resources: tmpdir=/tmp
+
+[Mon Sep  2 20:46:18 2024]
+Finished job 1.
+1 of 8 steps (12%) done
+Select jobs to execute...
+
+[Mon Sep  2 20:46:18 2024]
+rule bwa:
+    input: 000.fastq/TLE66_T.fastq
+    output: 020.bwa/TLE66_T.bam, 020.bwa/TLE66_T.bam.bai
+    jobid: 7
+    reason: Updated input files: 000.fastq/TLE66_T.fastq
+    wildcards: sample=TLE66_T
+    resources: tmpdir=/tmp
+
+[Mon Sep  2 20:47:14 2024]
+Finished job 7.
+2 of 8 steps (25%) done
+Select jobs to execute...
+
+[Mon Sep  2 20:47:14 2024]
+rule fastqc:
+    input: 000.fastq/TLE66_T.fastq
+    output: 010.fastqc/TLE66_T_fastqc.zip, 010.fastqc/TLE66_T_fastqc.html
+    jobid: 2
+    reason: Updated input files: 000.fastq/TLE66_T.fastq
+    wildcards: name=TLE66_T
+    resources: tmpdir=/tmp
+
+[Mon Sep  2 20:47:17 2024]
+Finished job 2.
+3 of 8 steps (38%) done
+Select jobs to execute...
+
+[Mon Sep  2 20:47:17 2024]
+rule bwa:
+    input: 000.fastq/TLE66_N.fastq
+    output: 020.bwa/TLE66_N.bam, 020.bwa/TLE66_N.bam.bai
+    jobid: 6
+    reason: Updated input files: 000.fastq/TLE66_N.fastq
+    wildcards: sample=TLE66_N
+    resources: tmpdir=/tmp
+
+[Mon Sep  2 20:47:37 2024]
+Finished job 6.
+4 of 8 steps (50%) done
+Select jobs to execute...
+
+[Mon Sep  2 20:47:37 2024]
+rule variant_calling:
+    input: /staging/leuven/stg_00079/teaching/hg38_9/chr9.fa, 020.bwa/TLE66_N.bam, 020.bwa/TLE66_T.bam
+    output: 030.samtools/snps.vcf
+    jobid: 5
+    reason: Input files updated by another job: 020.bwa/TLE66_N.bam, 020.bwa/TLE66_T.bam
+    resources: tmpdir=/tmp
+
+Terminating processes on user request, this might take some time.
+[Mon Sep  2 20:47:46 2024]
+Error in rule variant_calling:
+    jobid: 5
+    input: /staging/leuven/stg_00079/teaching/hg38_9/chr9.fa, 020.bwa/TLE66_N.bam, 020.bwa/TLE66_T.bam
+    output: 030.samtools/snps.vcf
+    shell:
+        
+        bcftools mpileup -Ou -f /staging/leuven/stg_00079/teaching/hg38_9/chr9.fa 020.bwa/TLE66_N.bam 020.bwa/TLE66_T.bam              | bcftools call -mv -Ov -o 030.samtools/snps.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2024-09-02T204511.582592.snakemake.log

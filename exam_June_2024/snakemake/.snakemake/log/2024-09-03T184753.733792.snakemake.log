@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /vsc-hard-mounts/leuven-data/362/vsc36251/exam_June_2024/snakemake/Snakefile, line 16:
+Missing input files for rule all:
+    affected files:
+        060.phastCons/phastcons.annotated.vcf

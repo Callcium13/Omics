@@ -8,15 +8,17 @@ snpsift_jar = "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/share/snpsi
 snpeff_db_folder = "/staging/leuven/stg_00079/teaching/snpeff_db/"
 snpeff_genome = "GRCh38.99"
 
+phastcons_db = "/staging/leuven/stg_00079/teaching/phastcons"
+
 # find input samples
 sample_names, = glob_wildcards("000.fastq/{name}.fastq")
-
 
 rule all:
     input:
         fastqc_zip=expand("010.fastqc/{name}_fastqc.zip",
                           name=sample_names),
         vcf = "050.snpeff/snps.annotated.vcf",
+        snpsPhastCons = "060.phastCons/snps.phastcons.vcf"
 
 rule fastqc:
     input:
@@ -103,4 +105,22 @@ rule snpeff:
         # move output files to the snpeff output folder
         mv snpEff_genes.txt snpEff_summary.html 050.snpeff
 
+        """
+
+rule phastCons:
+    input:
+        vcf = "050.snpeff/snps.annotated.vcf"
+    params:
+        snpsift_jar = snpsift_jar,
+        phastcons_db = phastcons_db
+
+    output:
+        snpsPhastCons = "060.phastCons/snps.phastcons.vcf"
+
+    shell:
+        """
+        mkdir -p 060.phastCons
+        
+        # Get phastCon Scores
+        java -jar {params.snpsift_jar} phastCons {params.phastcons_db} {input.vcf} > {output.snpsPhastCons}
         """

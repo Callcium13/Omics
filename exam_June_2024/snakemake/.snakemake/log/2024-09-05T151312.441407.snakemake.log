@@ -1,0 +1,44 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+phastCons        1
+total            2
+
+Select jobs to execute...
+
+[Thu Sep  5 15:13:14 2024]
+rule phastCons:
+    input: 050.snpeff/snps.annotated.vcf
+    output: 060.phastCons/phastcons.txt, 060.phastCons/snps.phastcons.vcf
+    jobid: 8
+    reason: Missing output files: 060.phastCons/snps.phastcons.vcf
+    resources: tmpdir=/tmp
+
+RuleException in rule phastCons in file /vsc-hard-mounts/leuven-data/362/vsc36251/exam_June_2024/snakemake/Snakefile, line 110:
+NameError: The name 'if (NF == 4) print $0 "\t' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        mkdir -p 060.phastCons
+        
+        # Get phastCon Scores
+        java -jar {params.snpsift_jar} phastCons -bed {params.phastcons_db} {input.vcf} > {output.snpsPhastCons}
+        
+        #ensure all lines have the same number of columns
+        #awk '{if (NF == 4) print $0 "	."; else print $0;}' 060.phastCons/phastcons.txt > 060.phastCons/phastcons_processed.txt
+
+        #compress and index
+        #bgzip -c 060.phastCons/phastcons_processed.txt > 060.phastCons/phastcons_processed.txt.gz
+        #tabix -s 1 -b 2 -e 3 060.phastCons/phastcons_processed.txt.gz
+
+
+        # Annotate VCF with PhastCons scores using SnpSift
+        #java -jar {params.snpsift_jar} annotate -exists {output.phastCons} {input.vcf} > {output.snpsPhastCons}
+        
+        #bcftools index {input.vcf}
+
+        #bcftools annotate -a {output.phastCons} -c CHROM,POS,ALT,INFO PhastCons -h <(echo '##INFO=<ID=PhastCons,Number=1,Type=Float Description="PhastCons conservation score">') {input.vcf} -o {output.snpsPhastCons}
+        

@@ -1,10 +1,28 @@
 
-genome_db = "/staging/leuven/stg_00079/teaching/hg19_9/chr9.fa"
+#
+# See below for the newly added rule
+#
+# One important thing to keep in mind is that if you want the new
+# rule to run automatically, you need to add the indel plot as
+# explicit output of the new rule, and also as  input to the first rule:
+#
+#    rule all:
+#        input:
+#           ...
+#           indelplot = "060.stats/indels.0.png",
+#
+# If you do not do this - then Snakemake will /NOT/ automatically
+# run the new stats rule. Running snakemake without specifying a
+# specific target to create will attempt to run the first
+# rule.
+#
+
+genome_db = "/staging/leuven/stg_00079/teaching/hg38_9/chr9.fa"
 
 sample_names, = glob_wildcards("000.fastq/{name}.fastq")
 
-snpeff_jar = "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/share/snpeff-5.2-0/snpEff.jar"
-
+snpeff_jar = ("/data/leuven/306/vsc30690/miniconda3/"
+              + "pkgs/snpeff-5.0-hdfd78af_1/share/snpeff-5.0-1/snpEff.jar")
 snpeff_db_folder = "/staging/leuven/stg_00079/teaching/snpeff_db/"
 
 
@@ -13,6 +31,8 @@ rule all:
         fastqc_zip=expand("010.fastqc/{name}_fastqc.zip",
                           name=sample_names),
         vcf = "050.snpeff/snps.annotated.vcf",
+        indelplot = "060.stats/indels.0.png",
+
 
 rule fastqc:
     input:
@@ -99,5 +119,40 @@ rule snpeff:
 
         # move output files to the snpeff output folder
         mv snpEff_genes.txt snpEff_summary.html 050.snpeff
+
+        """
+
+rule stats:
+     input:
+        vcf = "050.snpeff/snps.annotated.vcf",
+     output:
+        stats = "060.stats/snps.stats",
+        indelplot = "060.stats/indels.0.png",
+
+     shell:
+        """
+
+        # ensure the outputfolder exists
+        mkdir -p 060.stats
+
+        # run the bcftools stats command and pipe the output
+        # to the output file.
+        bcftools stats -s - {input.vcf} > {output.stats}
+
+        # and plot.
+        # Note - the -P flag prevents the error message:
+        #       Neither pdflatex or tectonic were found in your PATH,
+        # which causes plot-vcfstats to fail - and the output files
+        # to be deleted. You could find this flag using
+        #     plot-vcfstats --help
+
+        # another way to prevent an problem would be to
+        # catch the bash error:
+        #     plot-vcfstats -p 060.stats {output.stats} || true
+        # but this is more dangerous - as it could also catch
+        # other - unepxected errors
+
+        plot-vcfstats -P -p 060.stats {output.stats}
+
 
         """

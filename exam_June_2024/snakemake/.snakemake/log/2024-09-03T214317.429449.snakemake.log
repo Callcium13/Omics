@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+phastCons        1
+total            2
+
+Select jobs to execute...
+
+[Tue Sep  3 21:43:28 2024]
+rule phastCons:
+    input: 050.snpeff/snps.annotated.vcf
+    output: 060.phastCons/phastcons.txt, 060.phastCons/snps.phastcons.vcf
+    jobid: 8
+    reason: Missing output files: 060.phastCons/snps.phastcons.vcf
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule phastCons in file /vsc-hard-mounts/leuven-data/362/vsc36251/exam_June_2024/snakemake/Snakefile, line 110:
+Job 8  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+060.phastCons/snps.phastcons.vcf
+Removing output files of failed job phastCons since they might be corrupted:
+060.phastCons/phastcons.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-03T214317.429449.snakemake.log

@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+phastCons        1
+total            2
+
+Select jobs to execute...
+
+[Mon Sep  2 23:07:15 2024]
+rule phastCons:
+    input: 050.snpeff/snps.annotated.vcf
+    output: 060.phastCons/phastcons.annotated.vcf
+    jobid: 8
+    reason: Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Mon Sep  2 23:07:30 2024]
+Finished job 8.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Mon Sep  2 23:07:30 2024]
+localrule all:
+    input: 010.fastqc/TLE66_N_fastqc.zip, 010.fastqc/TLE66_T_fastqc.zip, 050.snpeff/snps.annotated.vcf, 060.phastCons/phastcons.annotated.vcf
+    jobid: 0
+    reason: Input files updated by another job: 060.phastCons/phastcons.annotated.vcf
+    resources: tmpdir=/tmp
+
+[Mon Sep  2 23:07:30 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-09-02T230712.103573.snakemake.log

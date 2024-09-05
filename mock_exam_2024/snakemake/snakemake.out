@@ -1,0 +1,28 @@
+SLURM_JOB_ID: 62138307
+SLURM_JOB_USER: vsc36251
+SLURM_JOB_ACCOUNT: lp_edu_large_omics
+SLURM_JOB_NAME: snakemake.slrm
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: s28c11n2
+SLURM_JOB_CPUS_PER_NODE: 1
+Date: Tue Aug  6 22:55:26 CEST 2024
+Walltime: 00-00:30:00
+========================================================================
+Unlocking working directory.
+['020.bwa/TLE66_N.bam', '020.bwa/TLE66_T.bam']
+Building DAG of jobs...
+MissingInputException in rule variant_calling in file /vsc-hard-mounts/leuven-data/362/vsc36251/mock_exam_2024/snakemake/Snakefile, line 69:
+Missing input files for rule variant_calling:
+    output: 030.samtools/snps.vcf
+    affected files:
+        /staging/leuven/stg_00079/teaching/hg19_9/chr9.fa
+['020.bwa/TLE66_N.bam', '020.bwa/TLE66_T.bam']
+Building DAG of jobs...
+MissingInputException in rule variant_calling in file /vsc-hard-mounts/leuven-data/362/vsc36251/mock_exam_2024/snakemake/Snakefile, line 69:
+Missing input files for rule variant_calling:
+    output: 030.samtools/snps.vcf
+    affected files:
+        /staging/leuven/stg_00079/teaching/hg19_9/chr9.fa
+['020.bwa/TLE66_N.bam', '020.bwa/TLE66_T.bam']

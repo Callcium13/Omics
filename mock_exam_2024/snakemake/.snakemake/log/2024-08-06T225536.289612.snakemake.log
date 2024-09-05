@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule variant_calling in file /vsc-hard-mounts/leuven-data/362/vsc36251/mock_exam_2024/snakemake/Snakefile, line 69:
+Missing input files for rule variant_calling:
+    output: 030.samtools/snps.vcf
+    affected files:
+        /staging/leuven/stg_00079/teaching/hg19_9/chr9.fa

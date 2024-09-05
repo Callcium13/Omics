@@ -1,0 +1,133 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+bwa                    2
+fastqc                 2
+snpeff                 1
+stats                  1
+variant_calling        1
+variant_cleanup        1
+total                  9
+
+Select jobs to execute...
+
+[Tue Aug  6 23:42:41 2024]
+rule fastqc:
+    input: 000.fastq/TLE66_T.fastq
+    output: 010.fastqc/TLE66_T_fastqc.zip, 010.fastqc/TLE66_T_fastqc.html
+    jobid: 2
+    reason: Missing output files: 010.fastqc/TLE66_T_fastqc.zip
+    wildcards: name=TLE66_T
+    resources: tmpdir=/tmp
+
+[Tue Aug  6 23:42:44 2024]
+Finished job 2.
+1 of 9 steps (11%) done
+Select jobs to execute...
+
+[Tue Aug  6 23:42:44 2024]
+rule fastqc:
+    input: 000.fastq/TLE66_N.fastq
+    output: 010.fastqc/TLE66_N_fastqc.zip, 010.fastqc/TLE66_N_fastqc.html
+    jobid: 1
+    reason: Missing output files: 010.fastqc/TLE66_N_fastqc.zip
+    wildcards: name=TLE66_N
+    resources: tmpdir=/tmp
+
+[Tue Aug  6 23:42:47 2024]
+Finished job 1.
+2 of 9 steps (22%) done
+Select jobs to execute...
+
+[Tue Aug  6 23:42:47 2024]
+rule bwa:
+    input: 000.fastq/TLE66_N.fastq
+    output: 020.bwa/TLE66_N.bam, 020.bwa/TLE66_N.bam.bai
+    jobid: 6
+    reason: Missing output files: 020.bwa/TLE66_N.bam
+    wildcards: sample=TLE66_N
+    resources: tmpdir=/tmp
+
+[Tue Aug  6 23:43:39 2024]
+Finished job 6.
+3 of 9 steps (33%) done
+Select jobs to execute...
+
+[Tue Aug  6 23:43:39 2024]
+rule bwa:
+    input: 000.fastq/TLE66_T.fastq
+    output: 020.bwa/TLE66_T.bam, 020.bwa/TLE66_T.bam.bai
+    jobid: 7
+    reason: Missing output files: 020.bwa/TLE66_T.bam
+    wildcards: sample=TLE66_T
+    resources: tmpdir=/tmp
+
+[Tue Aug  6 23:43:54 2024]
+Finished job 7.
+4 of 9 steps (44%) done
+Select jobs to execute...
+
+[Tue Aug  6 23:43:54 2024]
+rule variant_calling:
+    input: /staging/leuven/stg_00079/teaching/hg38_9/chr9.fa, 020.bwa/TLE66_N.bam, 020.bwa/TLE66_T.bam
+    output: 030.samtools/snps.vcf
+    jobid: 5
+    reason: Missing output files: 030.samtools/snps.vcf; Input files updated by another job: 020.bwa/TLE66_N.bam, 020.bwa/TLE66_T.bam
+    resources: tmpdir=/tmp
+
+[Tue Aug  6 23:44:12 2024]
+Finished job 5.
+5 of 9 steps (56%) done
+Select jobs to execute...
+
+[Tue Aug  6 23:44:12 2024]
+rule variant_cleanup:
+    input: /staging/leuven/stg_00079/teaching/hg38_9/chr9.fa, 030.samtools/snps.vcf
+    output: 040.cleaned/snps.cleaned.vcf
+    jobid: 4
+    reason: Missing output files: 040.cleaned/snps.cleaned.vcf; Input files updated by another job: 030.samtools/snps.vcf
+    resources: tmpdir=/tmp
+
+[Tue Aug  6 23:44:12 2024]
+Finished job 4.
+6 of 9 steps (67%) done
+Select jobs to execute...
+
+[Tue Aug  6 23:44:12 2024]
+rule snpeff:
+    input: 040.cleaned/snps.cleaned.vcf
+    output: 050.snpeff/snps.annotated.vcf, 050.snpeff/snpEff_summary.html, 050.snpeff/snpEff_genes.txt
+    log: 050.snpeff/snakemake.err
+    jobid: 3
+    reason: Missing output files: 050.snpeff/snps.annotated.vcf; Input files updated by another job: 040.cleaned/snps.cleaned.vcf
+    resources: tmpdir=/tmp
+
+[Tue Aug  6 23:44:12 2024]
+Error in rule snpeff:
+    jobid: 3
+    input: 040.cleaned/snps.cleaned.vcf
+    output: 050.snpeff/snps.annotated.vcf, 050.snpeff/snpEff_summary.html, 050.snpeff/snpEff_genes.txt
+    log: 050.snpeff/snakemake.err (check log file(s) for error details)
+    shell:
+        
+
+        mkdir -p 050.snpeff
+
+        java -Xmx4096m -jar             /data/leuven/306/vsc30690/miniconda3/pkgs/snpeff-5.0-hdfd78af_1/share/snpeff-5.0-1/snpEff.jar eff GRCh38.99             -dataDir /staging/leuven/stg_00079/teaching/snpeff_db/             040.cleaned/snps.cleaned.vcf > 050.snpeff/snps.annotated.vcf
+
+        # move output files to the snpeff output folder
+        mv snpEff_genes.txt snpEff_summary.html 050.snpeff
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job snpeff since they might be corrupted:
+050.snpeff/snps.annotated.vcf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-08-06T234240.584115.snakemake.log

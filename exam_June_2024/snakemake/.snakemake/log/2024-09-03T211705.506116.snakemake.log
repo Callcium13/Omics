@@ -1,0 +1,45 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+phastCons        1
+total            2
+
+Select jobs to execute...
+
+[Tue Sep  3 21:17:06 2024]
+rule phastCons:
+    input: 050.snpeff/snps.annotated.vcf
+    output: 060.phastCons/phastcons.txt, 060.phastCons/snps.phastcons.vcf
+    jobid: 8
+    reason: Missing output files: 060.phastCons/snps.phastcons.vcf
+    resources: tmpdir=/tmp
+
+[Tue Sep  3 21:17:20 2024]
+Error in rule phastCons:
+    jobid: 8
+    input: 050.snpeff/snps.annotated.vcf
+    output: 060.phastCons/phastcons.txt, 060.phastCons/snps.phastcons.vcf
+    shell:
+        
+        mkdir -p 060.phastCons
+        
+        # Get phastCon Scores
+        java -jar /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/share/snpsift-5.2-0/SnpSift.jar phastCons -bed /staging/leuven/stg_00079/teaching/phastcons 050.snpeff/snps.annotated.vcf > 060.phastCons/phastcons.txt
+
+        # Annotate VCF with PhastCons scores using SnpSift
+        java -jar /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/share/snpsift-5.2-0/SnpSift.jar annotate -exists -name PhastCons -info 060.phastCons/phastcons.txt 050.snpeff/snps.annotated.vcf > 060.phastCons/snps.phastcons.vcf
+        
+        rm -f 060.phastCons/phastcons.txt.sidx
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job phastCons since they might be corrupted:
+060.phastCons/phastcons.txt, 060.phastCons/snps.phastcons.vcf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-03T211705.506116.snakemake.log

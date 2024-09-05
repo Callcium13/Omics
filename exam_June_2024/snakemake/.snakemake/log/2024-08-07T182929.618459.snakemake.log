@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+all          1
+total        1
+
+Select jobs to execute...
+
+[Wed Aug  7 18:29:31 2024]
+localrule all:
+    input: 010.fastqc/TLE66_N_fastqc.zip, 010.fastqc/TLE66_T_fastqc.zip, 050.snpeff/snps.annotated.vcf
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+[Wed Aug  7 18:29:31 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-08-07T182929.618459.snakemake.log
