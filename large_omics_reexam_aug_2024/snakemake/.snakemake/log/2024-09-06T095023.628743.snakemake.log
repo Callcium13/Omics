@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+phastConsFilter        1
+total                  2
+
+Select jobs to execute...
+
+[Fri Sep  6 09:50:24 2024]
+rule phastConsFilter:
+    input: 060.phastCons/snps.phastcons.vcf
+    output: 060.phastCons/snps.phastconsFiltered.vcf
+    jobid: 9
+    reason: Missing output files: 060.phastCons/snps.phastconsFiltered.vcf
+    resources: tmpdir=/tmp
+
+[Fri Sep  6 09:50:24 2024]
+Error in rule phastConsFilter:
+    jobid: 9
+    input: 060.phastCons/snps.phastcons.vcf
+    output: 060.phastCons/snps.phastconsFiltered.vcf
+    shell:
+        
+        bcftools filter -i 'INFO/MODIFIER!="MODIFIER" && INFO/DP>10' 060.phastCons/snps.phastcons.vcf -o 060.phastCons/snps.phastconsFiltered.vcf
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job phastConsFilter since they might be corrupted:
+060.phastCons/snps.phastconsFiltered.vcf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-06T095023.628743.snakemake.log

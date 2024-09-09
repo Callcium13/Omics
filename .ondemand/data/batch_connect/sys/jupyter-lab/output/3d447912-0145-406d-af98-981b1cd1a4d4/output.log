@@ -1,0 +1,1147 @@
+SLURM_JOB_ID: 62289290
+SLURM_JOB_USER: vsc36251
+SLURM_JOB_ACCOUNT: lp_edu_large_omics
+SLURM_JOB_NAME: sys/dashboard/sys/jupyter-lab
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: n28c22n1
+SLURM_JOB_CPUS_PER_NODE: 1
+Date: Fri Sep  6 12:18:53 CEST 2024
+Walltime: 00-02:00:00
+========================================================================
+Script starting...
+Waiting for Jupyter Notebook server to open port 18503...
+TIMING - Starting wait at: Fri Sep  6 12:18:54 CEST 2024
+TIMING - Starting main script at: Fri Sep  6 12:18:56 CEST 2024
+TIMING - Starting jupyter at: Fri Sep  6 12:18:57 CEST 2024
+++ cut -d: -f6
++++ whoami
+++ getent passwd vsc36251
++ USER_HOME=/user/leuven/362/vsc36251
++ USER_DATA_DIR=/data/leuven/362/vsc36251
++ /apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/bin/jupyter-lab -y --no-browser --config=/data/leuven/362/vsc36251/.ondemand/data/batch_connect/sys/jupyter-lab/output/3d447912-0145-406d-af98-981b1cd1a4d4/config.py /data/leuven/362/vsc36251
+[I 2024-09-06 12:19:01.698 ServerApp] jupyterlab | extension was successfully linked.
+[I 2024-09-06 12:19:03.216 ServerApp] nbclassic | extension was successfully linked.
+[W 2024-09-06 12:19:03.219 ServerApp] Config option `preferred_dir` not recognized by `LargeFileManager`.
+[W 2024-09-06 12:19:03.372 ServerApp] WARNING: The Jupyter server is listening on all IP addresses and not using encryption. This is not recommended.
+[I 2024-09-06 12:19:03.415 ServerApp] nbclassic | extension was successfully loaded.
+[I 2024-09-06 12:19:03.416 LabApp] JupyterLab extension loaded from /apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/lib/python3.9/site-packages/jupyterlab
+[I 2024-09-06 12:19:03.417 LabApp] JupyterLab application directory is /vsc-hard-mounts/leuven-apps/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/share/jupyter/lab
+[I 2024-09-06 12:19:03.422 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2024-09-06 12:19:03.423 ServerApp] Serving notebooks from local directory: /data/leuven/362/vsc36251
+[I 2024-09-06 12:19:03.423 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2024-09-06 12:19:03.423 ServerApp] http://n28c22n1:18503/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab
+[I 2024-09-06 12:19:03.423 ServerApp]  or http://127.0.0.1:18503/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab
+[I 2024-09-06 12:19:03.423 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+Discovered Jupyter Notebook server listening on port 18503!
+TIMING - Wait ended at: Fri Sep  6 12:19:03 CEST 2024
+Generating connection YAML file...
+[I 2024-09-06 12:19:47.214 ServerApp] 302 POST /node/n28c22n1.tier2.hpc.kuleuven.be/18503/login (2a02:2c40:0:240a:3:242:ac11:3) 1.23ms
+[I 2024-09-06 12:19:47.301 ServerApp] 302 GET /node/n28c22n1.tier2.hpc.kuleuven.be/18503/ (2a02:2c40:0:240a:3:242:ac11:3) 0.39ms
+[W 2024-09-06 12:19:53.602 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2024-09-06 12:19:56.554 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725617996242 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:19:56.554 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:19:56.555 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab?",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725617996242",
+      "Content-Length": "39",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:19:56.555 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725617996242 (2a02:2c40:0:240a:3:242:ac11:3) 1.99ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab?
+[W 2024-09-06 12:20:01.839 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618001523 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:20:01.839 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:20:01.840 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725618001523",
+      "Content-Length": "361",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:20:01.840 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618001523 (2a02:2c40:0:240a:3:242:ac11:3) 1.31ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab
+[W 2024-09-06 12:20:07.045 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618006732 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:20:07.046 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:20:07.046 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725618006732",
+      "Content-Length": "431",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:20:07.046 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618006732 (2a02:2c40:0:240a:3:242:ac11:3) 2.29ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024
+[W 2024-09-06 12:20:09.440 ServerApp] Notebook large_omics_reexam_aug_2024/ParseVCF.ipynb is not trusted
+[W 2024-09-06 12:20:10.952 ServerApp] Notebook large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb is not trusted
+[W 2024-09-06 12:20:12.598 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618012251 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:20:12.598 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:20:12.598 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725618012251",
+      "Content-Length": "926",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:20:12.599 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618012251 (2a02:2c40:0:240a:3:242:ac11:3) 5.42ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+[I 2024-09-06 12:20:12.822 ServerApp] Kernel started: 558f5ee0-78f1-4bc9-b998-e06b813a62a0
+[I 2024-09-06 12:20:12.843 ServerApp] Kernel started: e4b4f66b-7431-4652-b3f6-b4e631e63574
+[W 2024-09-06 12:20:14.221 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618013904 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:20:14.221 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:20:14.221 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725618013904",
+      "Content-Length": "926",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:20:14.221 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618013904 (2a02:2c40:0:240a:3:242:ac11:3) 1.90ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+[I 2024-09-06 12:20:17.113 ServerApp] Starting buffering for 558f5ee0-78f1-4bc9-b998-e06b813a62a0:6d5f860a-d7e0-4f8e-8d18-42a2c79f29d1
+[W 2024-09-06 12:20:17.819 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618017488 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:20:17.819 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:20:17.820 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725618017488",
+      "Content-Length": "734",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:20:17.820 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618017488 (2a02:2c40:0:240a:3:242:ac11:3) 1.71ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+[I 2024-09-06 12:20:23.132 ServerApp] Kernel restarted: e4b4f66b-7431-4652-b3f6-b4e631e63574
+[I 2024-09-06 12:20:38.712 ServerApp] Kernel shutdown: e4b4f66b-7431-4652-b3f6-b4e631e63574
+[I 2024-09-06 12:20:38.887 ServerApp] Kernel started: e107cc02-4488-4176-8b0c-f20cf67e7b83
+[I 2024-09-06 12:20:47.621 ServerApp] Kernel shutdown: e107cc02-4488-4176-8b0c-f20cf67e7b83
+[I 2024-09-06 12:20:47.792 ServerApp] Kernel started: a5d2fb9e-2f14-4e88-92b8-120f18ff492c
+[I 2024-09-06 12:20:55.104 ServerApp] Kernel restarted: a5d2fb9e-2f14-4e88-92b8-120f18ff492c
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:21:04.105 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:21:07.113 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (2/5), keep random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:21:10.119 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (3/5), keep random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:21:13.125 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (4/5), keep random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[W 2024-09-06 12:21:16.131 ServerApp] AsyncIOLoopKernelRestarter: restart failed
+[W 2024-09-06 12:21:16.131 ServerApp] Kernel a5d2fb9e-2f14-4e88-92b8-120f18ff492c died, removing from map.
+[W 2024-09-06 12:21:16.131 ServerApp] Restarting kernel failed: a5d2fb9e-2f14-4e88-92b8-120f18ff492c
+[W 2024-09-06 12:21:47.866 ServerApp] Timeout waiting for kernel_info reply from a5d2fb9e-2f14-4e88-92b8-120f18ff492c
+[E 2024-09-06 12:21:47.868 ServerApp] Error opening stream: HTTP 404: Not Found (Kernel does not exist: a5d2fb9e-2f14-4e88-92b8-120f18ff492c)
+Future exception was never retrieved
+future: <Future finished exception=RuntimeError('Restart failed')>
+RuntimeError: Restart failed
+[I 2024-09-06 12:22:11.674 ServerApp] Kernel started: 29aa0243-fbf8-4327-8b1f-bc4a22fa660b
+[I 2024-09-06 12:22:12.153 ServerApp] Saving file at /large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 187, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 146, in _get_module_details
+    return _get_module_details(pkg_main_name, error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 110, in _get_module_details
+    __import__(pkg_name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/__init__.py", line 3, in <module>
+    from .kernel import __version__
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/kernel.py", line 1, in <module>
+    from ipykernel.kernelbase import Kernel
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:22:14.673 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 187, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 146, in _get_module_details
+    return _get_module_details(pkg_main_name, error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 110, in _get_module_details
+    __import__(pkg_name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/__init__.py", line 3, in <module>
+    from .kernel import __version__
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/kernel.py", line 1, in <module>
+    from ipykernel.kernelbase import Kernel
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:22:17.682 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (2/5), new random ports
+[I 2024-09-06 12:22:18.796 ServerApp] Kernel shutdown: 29aa0243-fbf8-4327-8b1f-bc4a22fa660b
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 187, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 146, in _get_module_details
+    return _get_module_details(pkg_main_name, error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 110, in _get_module_details
+    __import__(pkg_name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/__init__.py", line 3, in <module>
+    from .kernel import __version__
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/kernel.py", line 1, in <module>
+    from ipykernel.kernelbase import Kernel
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:22:19.293 ServerApp] Kernel started: 0d6c43fb-87a6-4ea7-b2cc-bbdf87704034
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:22:22.293 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:22:25.301 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (2/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:22:28.307 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (3/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:22:31.314 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (4/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[W 2024-09-06 12:22:34.321 ServerApp] AsyncIOLoopKernelRestarter: restart failed
+[W 2024-09-06 12:22:34.321 ServerApp] Kernel 0d6c43fb-87a6-4ea7-b2cc-bbdf87704034 died, removing from map.
+[W 2024-09-06 12:22:38.540 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618158219 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:22:38.540 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:22:38.541 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725618158219",
+      "Content-Length": "749",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:22:38.541 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618158219 (2a02:2c40:0:240a:3:242:ac11:3) 2.08ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+[W 2024-09-06 12:22:39.988 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618159672 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:22:39.988 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:22:39.989 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725618159672",
+      "Content-Length": "734",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:22:39.989 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618159672 (2a02:2c40:0:240a:3:242:ac11:3) 2.18ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+[W 2024-09-06 12:22:47.938 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618167622 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:22:47.939 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:22:47.939 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725618167622",
+      "Content-Length": "1106",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:22:47.939 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618167622 (2a02:2c40:0:240a:3:242:ac11:3) 1.41ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024
+[I 2024-09-06 12:22:54.213 ServerApp] Kernel started: e59c2b21-a712-4476-b047-043b23a4fc1e
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:22:57.215 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:23:00.223 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (2/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:23:03.231 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (3/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:23:06.238 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (4/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[W 2024-09-06 12:23:07.978 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618187664 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:23:07.978 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:23:07.979 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725618187664",
+      "Content-Length": "734",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:23:07.979 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618187664 (2a02:2c40:0:240a:3:242:ac11:3) 2.18ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+[W 2024-09-06 12:23:09.244 ServerApp] AsyncIOLoopKernelRestarter: restart failed
+[W 2024-09-06 12:23:09.244 ServerApp] Kernel e59c2b21-a712-4476-b047-043b23a4fc1e died, removing from map.
+[W 2024-09-06 12:23:11.832 ServerApp] Timeout waiting for kernel_info reply from 29aa0243-fbf8-4327-8b1f-bc4a22fa660b
+[E 2024-09-06 12:23:11.833 ServerApp] Error opening stream: HTTP 404: Not Found (Kernel does not exist: 29aa0243-fbf8-4327-8b1f-bc4a22fa660b)
+[W 2024-09-06 12:23:15.621 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618195306 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:23:15.621 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:23:15.621 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725618195306",
+      "Content-Length": "1106",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:23:15.622 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618195306 (2a02:2c40:0:240a:3:242:ac11:3) 2.34ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024
+[I 2024-09-06 12:23:18.998 ServerApp] Kernel started: 286f3813-5acc-4b78-8fda-f17aafbcb318
+[W 2024-09-06 12:23:19.380 ServerApp] Timeout waiting for kernel_info reply from 0d6c43fb-87a6-4ea7-b2cc-bbdf87704034
+[E 2024-09-06 12:23:19.380 ServerApp] Error opening stream: HTTP 404: Not Found (Kernel does not exist: 0d6c43fb-87a6-4ea7-b2cc-bbdf87704034)
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 187, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 146, in _get_module_details
+    return _get_module_details(pkg_main_name, error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 110, in _get_module_details
+    __import__(pkg_name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/__init__.py", line 3, in <module>
+    from .kernel import __version__
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/kernel.py", line 1, in <module>
+    from ipykernel.kernelbase import Kernel
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:23:21.997 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 187, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 146, in _get_module_details
+    return _get_module_details(pkg_main_name, error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 110, in _get_module_details
+    __import__(pkg_name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/__init__.py", line 3, in <module>
+    from .kernel import __version__
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/kernel.py", line 1, in <module>
+    from ipykernel.kernelbase import Kernel
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:23:25.003 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (2/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 187, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 146, in _get_module_details
+    return _get_module_details(pkg_main_name, error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 110, in _get_module_details
+    __import__(pkg_name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/__init__.py", line 3, in <module>
+    from .kernel import __version__
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/kernel.py", line 1, in <module>
+    from ipykernel.kernelbase import Kernel
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:23:28.009 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (3/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 187, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 146, in _get_module_details
+    return _get_module_details(pkg_main_name, error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 110, in _get_module_details
+    __import__(pkg_name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/__init__.py", line 3, in <module>
+    from .kernel import __version__
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/kernel.py", line 1, in <module>
+    from ipykernel.kernelbase import Kernel
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[I 2024-09-06 12:23:31.016 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (4/5), new random ports
+Traceback (most recent call last):
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 187, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 146, in _get_module_details
+    return _get_module_details(pkg_main_name, error)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/runpy.py", line 110, in _get_module_details
+    __import__(pkg_name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/__init__.py", line 3, in <module>
+    from .kernel import __version__
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/site-packages/bash_kernel/kernel.py", line 1, in <module>
+    from ipykernel.kernelbase import Kernel
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/ipykernel/connect.py", line 15, in <module>
+    import jupyter_client
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .connect import *
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/jupyter_client/connect.py", line 21, in <module>
+    import zmq
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/__init__.py", line 103, in <module>
+    from zmq import backend
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 32, in <module>
+    raise original_error from None
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/__init__.py", line 27, in <module>
+    _ns = select_backend(first)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/select.py", line 32, in select_backend
+    mod = import_module(name)
+  File "/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py", line 6, in <module>
+    from . import (
+ImportError: cannot import name 'constants' from partially initialized module 'zmq.backend.cython' (most likely due to a circular import) (/apps/leuven/rocky8/icelake/2021a/software/IPython/7.25.0-GCCcore-10.3.0/lib/python3.9/site-packages/zmq/backend/cython/__init__.py)
+[W 2024-09-06 12:23:34.022 ServerApp] AsyncIOLoopKernelRestarter: restart failed
+[W 2024-09-06 12:23:34.022 ServerApp] Kernel 286f3813-5acc-4b78-8fda-f17aafbcb318 died, removing from map.
+[W 2024-09-06 12:23:54.337 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618234016 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:23:54.337 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:23:54.338 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:18503",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-18503=\"2|1:0|10:1725617987|45:username-n28c22n1-tier2-hpc-kuleuven-be-18503|44:NzI4MTc2YTcyODY0NDU4MmJjNzFlMGJjZjkyMWVjZjk=|f0c79ce19b5e7703ac22e558e39231bf95c9b36e45b3966aa00e1a32794d2885\"; _xsrf=2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|6f6f155b|f6b191606e2429c5eb56a46cf18faa16|1725617987",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f18503%2flab%2fapi%2fworkspaces%2fdefault%3f1725618234016",
+      "Content-Length": "734",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:23:54.338 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/api/workspaces/default?1725618234016 (2a02:2c40:0:240a:3:242:ac11:3) 2.39ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/18503/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+[W 2024-09-06 12:23:54.349 ServerApp] Timeout waiting for kernel_info reply from e59c2b21-a712-4476-b047-043b23a4fc1e
+[E 2024-09-06 12:23:54.350 ServerApp] Error opening stream: HTTP 404: Not Found (Kernel does not exist: e59c2b21-a712-4476-b047-043b23a4fc1e)
+[I 2024-09-06 12:24:12.717 ServerApp] Saving file at /large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+slurmstepd: error: *** JOB 62289290 ON n28c22n1 CANCELLED AT 2024-09-06T12:24:17 ***

@@ -1,0 +1,330 @@
+SLURM_JOB_ID: 62289318
+SLURM_JOB_USER: vsc36251
+SLURM_JOB_ACCOUNT: lp_edu_large_omics
+SLURM_JOB_NAME: sys/dashboard/sys/jupyter-lab
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: n28c22n1
+SLURM_JOB_CPUS_PER_NODE: 1
+Date: Fri Sep  6 12:50:08 CEST 2024
+Walltime: 00-02:00:00
+========================================================================
+Script starting...
+Waiting for Jupyter Notebook server to open port 35606...
+TIMING - Starting wait at: Fri Sep  6 12:50:08 CEST 2024
+TIMING - Starting main script at: Fri Sep  6 12:50:11 CEST 2024
+TIMING - Starting jupyter at: Fri Sep  6 12:50:12 CEST 2024
+++ cut -d: -f6
++++ whoami
+++ getent passwd vsc36251
++ USER_HOME=/user/leuven/362/vsc36251
++ USER_DATA_DIR=/data/leuven/362/vsc36251
++ /apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/bin/jupyter-lab -y --no-browser --config=/data/leuven/362/vsc36251/.ondemand/data/batch_connect/sys/jupyter-lab/output/acb2e232-dbec-4832-8904-e311fc64c459/config.py /data/leuven/362/vsc36251
+[I 2024-09-06 12:50:14.601 ServerApp] jupyterlab | extension was successfully linked.
+[I 2024-09-06 12:50:15.229 ServerApp] nbclassic | extension was successfully linked.
+[W 2024-09-06 12:50:15.232 ServerApp] Config option `preferred_dir` not recognized by `LargeFileManager`.
+[W 2024-09-06 12:50:15.277 ServerApp] WARNING: The Jupyter server is listening on all IP addresses and not using encryption. This is not recommended.
+[I 2024-09-06 12:50:15.292 ServerApp] nbclassic | extension was successfully loaded.
+[I 2024-09-06 12:50:15.293 LabApp] JupyterLab extension loaded from /apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/lib/python3.9/site-packages/jupyterlab
+[I 2024-09-06 12:50:15.293 LabApp] JupyterLab application directory is /vsc-hard-mounts/leuven-apps/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/share/jupyter/lab
+[I 2024-09-06 12:50:15.299 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2024-09-06 12:50:15.299 ServerApp] Serving notebooks from local directory: /data/leuven/362/vsc36251
+[I 2024-09-06 12:50:15.299 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2024-09-06 12:50:15.299 ServerApp] http://n28c22n1:35606/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab
+[I 2024-09-06 12:50:15.299 ServerApp]  or http://127.0.0.1:35606/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab
+[I 2024-09-06 12:50:15.299 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+Discovered Jupyter Notebook server listening on port 35606!
+TIMING - Wait ended at: Fri Sep  6 12:50:15 CEST 2024
+Generating connection YAML file...
+[I 2024-09-06 12:50:24.942 ServerApp] 302 POST /node/n28c22n1.tier2.hpc.kuleuven.be/35606/login (2a02:2c40:0:240a:3:242:ac11:3) 1.17ms
+[I 2024-09-06 12:50:24.995 ServerApp] 302 GET /node/n28c22n1.tier2.hpc.kuleuven.be/35606/ (2a02:2c40:0:240a:3:242:ac11:3) 0.35ms
+[W 2024-09-06 12:50:32.138 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2024-09-06 12:50:34.415 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619834066 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:50:34.415 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:50:34.416 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:35606",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-35606=\"2|1:0|10:1725619824|45:username-n28c22n1-tier2-hpc-kuleuven-be-35606|44:ZmI0ZmRiMmI2MzJiNDJhODliZDUzNWI1MTBmZTg0YTc=|bf915482fc653133320a8e157005090044b679c37796a610c709c37d93bf9267\"; _xsrf=2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab?",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f35606%2flab%2fapi%2fworkspaces%2fdefault%3f1725619834066",
+      "Content-Length": "316",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:50:34.416 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619834066 (2a02:2c40:0:240a:3:242:ac11:3) 1.36ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab?
+[W 2024-09-06 12:50:35.510 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619834820 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:50:35.511 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:50:35.511 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:35606",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-35606=\"2|1:0|10:1725619824|45:username-n28c22n1-tier2-hpc-kuleuven-be-35606|44:ZmI0ZmRiMmI2MzJiNDJhODliZDUzNWI1MTBmZTg0YTc=|bf915482fc653133320a8e157005090044b679c37796a610c709c37d93bf9267\"; _xsrf=2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f35606%2flab%2fapi%2fworkspaces%2fdefault%3f1725619834820",
+      "Content-Length": "361",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:50:35.511 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619834820 (2a02:2c40:0:240a:3:242:ac11:3) 298.94ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab
+[W 2024-09-06 12:50:39.679 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619839283 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:50:39.679 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:50:39.679 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:35606",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-35606=\"2|1:0|10:1725619824|45:username-n28c22n1-tier2-hpc-kuleuven-be-35606|44:ZmI0ZmRiMmI2MzJiNDJhODliZDUzNWI1MTBmZTg0YTc=|bf915482fc653133320a8e157005090044b679c37796a610c709c37d93bf9267\"; _xsrf=2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f35606%2flab%2fapi%2fworkspaces%2fdefault%3f1725619839283",
+      "Content-Length": "431",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:50:39.679 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619839283 (2a02:2c40:0:240a:3:242:ac11:3) 1.46ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024
+[W 2024-09-06 12:50:43.045 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619842691 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:50:43.045 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:50:43.045 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:35606",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-35606=\"2|1:0|10:1725619824|45:username-n28c22n1-tier2-hpc-kuleuven-be-35606|44:ZmI0ZmRiMmI2MzJiNDJhODliZDUzNWI1MTBmZTg0YTc=|bf915482fc653133320a8e157005090044b679c37796a610c709c37d93bf9267\"; _xsrf=2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.html",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f35606%2flab%2fapi%2fworkspaces%2fdefault%3f1725619842691",
+      "Content-Length": "739",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:50:43.046 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619842691 (2a02:2c40:0:240a:3:242:ac11:3) 1.96ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.html
+[W 2024-09-06 12:50:45.447 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619845095 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:50:45.447 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:50:45.448 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:35606",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-35606=\"2|1:0|10:1725619824|45:username-n28c22n1-tier2-hpc-kuleuven-be-35606|44:ZmI0ZmRiMmI2MzJiNDJhODliZDUzNWI1MTBmZTg0YTc=|bf915482fc653133320a8e157005090044b679c37796a610c709c37d93bf9267\"; _xsrf=2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f35606%2flab%2fapi%2fworkspaces%2fdefault%3f1725619845095",
+      "Content-Length": "431",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:50:45.448 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619845095 (2a02:2c40:0:240a:3:242:ac11:3) 1.85ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024
+[W 2024-09-06 12:50:46.412 ServerApp] Notebook large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb is not trusted
+[W 2024-09-06 12:50:48.047 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619847698 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:50:48.047 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:50:48.048 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:35606",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-35606=\"2|1:0|10:1725619824|45:username-n28c22n1-tier2-hpc-kuleuven-be-35606|44:ZmI0ZmRiMmI2MzJiNDJhODliZDUzNWI1MTBmZTg0YTc=|bf915482fc653133320a8e157005090044b679c37796a610c709c37d93bf9267\"; _xsrf=2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f35606%2flab%2fapi%2fworkspaces%2fdefault%3f1725619847698",
+      "Content-Length": "734",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:50:48.048 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619847698 (2a02:2c40:0:240a:3:242:ac11:3) 1.84ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+[I 2024-09-06 12:50:48.466 ServerApp] Kernel started: 606a7d6d-0491-40fb-bdb1-4839e6c45ea4
+[W 2024-09-06 12:51:14.711 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619874337 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:51:14.712 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:51:14.712 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:35606",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-35606=\"2|1:0|10:1725619824|45:username-n28c22n1-tier2-hpc-kuleuven-be-35606|44:ZmI0ZmRiMmI2MzJiNDJhODliZDUzNWI1MTBmZTg0YTc=|bf915482fc653133320a8e157005090044b679c37796a610c709c37d93bf9267\"; _xsrf=2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f35606%2flab%2fapi%2fworkspaces%2fdefault%3f1725619874337",
+      "Content-Length": "431",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:51:14.712 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619874337 (2a02:2c40:0:240a:3:242:ac11:3) 18.22ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024
+[W 2024-09-06 12:51:54.204 ServerApp] Notebook large_omics_reexam_aug_2024/ParseVCF.ipynb is not trusted
+[W 2024-09-06 12:51:55.909 ServerApp] Notebook large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb is not trusted
+[W 2024-09-06 12:51:58.004 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619917649 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:51:58.004 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:51:58.004 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:35606",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-35606=\"2|1:0|10:1725619824|45:username-n28c22n1-tier2-hpc-kuleuven-be-35606|44:ZmI0ZmRiMmI2MzJiNDJhODliZDUzNWI1MTBmZTg0YTc=|bf915482fc653133320a8e157005090044b679c37796a610c709c37d93bf9267\"; _xsrf=2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f35606%2flab%2fapi%2fworkspaces%2fdefault%3f1725619917649",
+      "Content-Length": "734",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:51:58.004 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725619917649 (2a02:2c40:0:240a:3:242:ac11:3) 2.01ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+[I 2024-09-06 12:53:03.041 ServerApp] Saving file at /large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+[W 2024-09-06 12:53:03.042 ServerApp] Notebook large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb is not trusted
+[W 2024-09-06 12:53:03.264 ServerApp] Notebook large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb is not trusted
+[W 2024-09-06 12:55:01.010 ServerApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725620100653 (2a02:2c40:0:240a:3:242:ac11:3): [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[W 2024-09-06 12:55:01.010 LabApp] [Errno 13] Permission denied: '/apps/leuven/rocky8/icelake/2021a/software/JupyterLab/3.0.16-GCCcore-10.3.0/etc/jupyter/lab'
+[E 2024-09-06 12:55:01.011 LabApp] {
+      "Host": "n28c22n1.tier2.hpc.kuleuven.be:35606",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip, deflate, br, zstd",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "username-n28c22n1-tier2-hpc-kuleuven-be-35606=\"2|1:0|10:1725619824|45:username-n28c22n1-tier2-hpc-kuleuven-be-35606|44:ZmI0ZmRiMmI2MzJiNDJhODliZDUzNWI1MTBmZTg0YTc=|bf915482fc653133320a8e157005090044b679c37796a610c709c37d93bf9267\"; _xsrf=2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825; iamregistrationdata=eyJsYW5ndWFnZSI6ImVuIiwicmV0dXJuVXJsIjoiaHR0cHM6XC9cL3dlYndzcC5hcHMua3VsZXV2ZW4uYmVcL3NhcFwvYmNcL3VpNV91aTVcL3NhcFwvemNfYWRfYXBwbFwvaW5kZXguaHRtbD9zYXAtc3lzY21kPW5vY29va2llJnNhbWwyaWRwPWh0dHBzOlwvXC9pZHAua3VsZXV2ZW4uYmVcL2lkcHgmaW5zdGVsbGluZz01MDAwMDA1MCIsInJldHVyblRpdGxlIjoiQWRtaXNzaW9ucyBLVSBMZXV2ZW4gQXNzb2NpYXRpb24iLCJhdXRvUmVkaXJlY3QiOnRydWUsImhpZGVWb3VjaGVyIjp0cnVlfQ%3D%3D; _hjSessionUser_1012993=eyJpZCI6Ijc5MzlhYjAzLWNkNDItNTlhMy04ZTFjLTQ5NWRlNjM2YzVmMyIsImNyZWF0ZWQiOjE2NjYwODcxNDIxMzksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_371512=eyJpZCI6Ijg1Mjc5MzYwLTczNTUtNWNhNi1iNjRlLWExYzA2MjFhYjlhZSIsImNyZWF0ZWQiOjE2NjY3OTE1MjgzNjksImV4aXN0aW5nIjp0cnVlfQ==; _hjSessionUser_2939920=eyJpZCI6ImUwZjY2MTljLTFkZmItNTE1NC1hNzAwLWRkZjBiOTU1NjJhMSIsImNyZWF0ZWQiOjE2NjY3ODQ4Nzg2ODAsImV4aXN0aW5nIjp0cnVlfQ==; TFC_18fd37b4=161c760dfe9388fc; OptanonAlertBoxClosed=2024-07-04T15:19:09.458Z; OptanonConsent=isGpcEnabled=0&datestamp=Sat+Aug+10+2024+13%3A29%3A59+GMT%2B0200+(Central+European+Summer+Time)&version=202401.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=44f61698-0e6a-41af-a273-256d1d688255&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false&geolocation=BE%3BBRU; NSC_JOnahgckddxzyghbnhff1idutjq30eT=28d4a3da6b16cf98e16a923e4792965b1cabe9c2e8d34fe62574ec68684481721bc191f9",
+      "Origin": "https://ondemand.hpc.kuleuven.be",
+      "Referer": "https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb",
+      "Sec-Ch-Ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+      "Sec-Ch-Ua-Mobile": "?0",
+      "Sec-Ch-Ua-Platform": "\"Windows\"",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "X-Forwarded-For": "10.46.158.65, 2a02:2c40:0:80::ba:42, 2a02:2c40:0:51:133:b00b:0:1",
+      "X-Forwarded-Host": "ondemand.hpc.kuleuven.be, ondemand.hpc.kuleuven.be",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "http",
+      "X-Forwarded-Server": "50f7e709ee41, ondemand.hpc.kuleuven.be",
+      "X-Real-Ip": "2a02:2c40:0:80::ba:42",
+      "X-Xsrftoken": "2|8120da41|a7ededb8f5272afe4cf0ba9d829a1570|1725619825",
+      "X-Forwarded-User": "vsc36251",
+      "X-Forwarded-Escaped-Uri": "%2fnode%2fn28c22n1.tier2.hpc.kuleuven.be%2f35606%2flab%2fapi%2fworkspaces%2fdefault%3f1725620100653",
+      "Content-Length": "744",
+      "Connection": "close"
+    }
+[E 2024-09-06 12:55:01.011 LabApp] 500 PUT /node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/api/workspaces/default?1725620100653 (2a02:2c40:0:240a:3:242:ac11:3) 3.82ms referer=https://ondemand.hpc.kuleuven.be/node/n28c22n1.tier2.hpc.kuleuven.be/35606/lab/tree/large_omics_reexam_aug_2024/exam_I0U19A_Aug_2024.ipynb
+slurmstepd: error: *** JOB 62289318 ON n28c22n1 CANCELLED AT 2024-09-06T13:00:06 DUE TO TIME LIMIT ***
+slurmstepd: error: *** REASON: Reservation edu-large-omics-9-06, which this job was running under, has ended ***

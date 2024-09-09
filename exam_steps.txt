@@ -1,4 +1,4 @@
-cp -r /staging/leuven/stg_00079/teaching/mock_exam_2024 /data/leuven/362/vsc36251
+cp -r /staging/leuven/stg_00079/teaching/large_omics_reexam_aug_2024 /data/leuven/362/vsc36251
 export PATH=/lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/:$PATH
 
 #start the interactive session
@@ -13,9 +13,4 @@ snakemake
 sbatch mock_exam_2024 snakemake.slrm
 #check status
 squeue
-
-Question 2: 
-
-
-Question 3: Visualisation
 

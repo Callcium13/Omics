@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+phastConsFilter        1
+total                  2
+
+Select jobs to execute...
+
+[Fri Sep  6 09:31:09 2024]
+rule phastConsFilter:
+    input: 060.phastCons/snps.phastcons.vcf
+    output: 060.phastCons/snps.phastconsFiltered.vcf
+    jobid: 9
+    reason: Missing output files: 060.phastCons/snps.phastconsFiltered.vcf
+    resources: tmpdir=/tmp
+
+RuleException in rule phastConsFilter in file /vsc-hard-mounts/leuven-data/362/vsc36251/large_omics_reexam_aug_2024/snakemake/Snakefile, line 130:
+NameError: The name '1,' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        grep -v 'MODIFIER' {input.snpsPhastCons} | grep -E 'PhastCons=[0-9]*\.[0-9]{1,};' | sed -n '/PhastCons=0\.[5-9]/p;/PhastCons=1\./p' > {output.snpsPhastConsFiltered}
+        

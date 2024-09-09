@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+phastConsFilter        1
+total                  2
+
+Select jobs to execute...
+
+[Fri Sep  6 09:53:20 2024]
+rule phastConsFilter:
+    input: 060.phastCons/snps.phastcons.vcf
+    output: 060.phastCons/snps.phastconsFiltered.vcf
+    jobid: 9
+    reason: Missing output files: 060.phastCons/snps.phastconsFiltered.vcf
+    resources: tmpdir=/tmp
+
+[Fri Sep  6 09:53:20 2024]
+Finished job 9.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Fri Sep  6 09:53:20 2024]
+localrule all:
+    input: 010.fastqc/TLE66_N_fastqc.zip, 010.fastqc/TLE66_T_fastqc.zip, 050.snpeff/snps.annotated.vcf, 060.phastCons/snps.phastcons.vcf, 060.phastCons/snps.phastconsFiltered.vcf
+    jobid: 0
+    reason: Input files updated by another job: 060.phastCons/snps.phastconsFiltered.vcf
+    resources: tmpdir=/tmp
+
+[Fri Sep  6 09:53:20 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-09-06T095319.534876.snakemake.log

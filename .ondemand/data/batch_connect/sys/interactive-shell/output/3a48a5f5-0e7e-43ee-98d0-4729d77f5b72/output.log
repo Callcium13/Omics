@@ -1,0 +1,15 @@
+SLURM_JOB_ID: 62289301
+SLURM_JOB_USER: vsc36251
+SLURM_JOB_ACCOUNT: lp_edu_large_omics
+SLURM_JOB_NAME: sys/dashboard/sys/interactive-shell
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: n28c22n1
+SLURM_JOB_CPUS_PER_NODE: 1
+Date: Fri Sep  6 12:31:07 CEST 2024
+Walltime: 00-02:00:00
+========================================================================
+Script starting...
+Generating connection YAML file...
+slurmstepd: error: *** JOB 62289301 ON n28c22n1 CANCELLED AT 2024-09-06T12:47:18 ***

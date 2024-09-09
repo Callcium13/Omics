@@ -1,0 +1,10 @@
+c.LabServerApp.open_browser = False
+c.ServerApp.allow_origin = '*'
+c.ServerApp.base_url = '/node/n28c22n1.tier2.hpc.kuleuven.be/18339/'
+c.ServerApp.disable_check_xsrf = True
+c.LabServerApp.open_browser = False
+c.ServerApp.ip = '*'
+c.ServerApp.password = u'sha1:pH1lWamCYILhbYFy:e09434302cf3c49527f9b23c96cf54d77a23d36f'
+c.ServerApp.port = 18339
+c.ServerApp.port_retries = 0
+c.FileContentsManager.preferred_dir = '/data/leuven/362/vsc36251'

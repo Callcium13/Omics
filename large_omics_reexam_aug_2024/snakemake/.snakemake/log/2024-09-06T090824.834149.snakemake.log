@@ -1,0 +1,66 @@
+Building DAG of jobs...
+Using shell: /lustre1/project/stg_00079/teaching/I0U19a_conda_2024/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+snpeff                 1
+variant_calling        1
+variant_cleanup        1
+total                  4
+
+Select jobs to execute...
+
+[Fri Sep  6 09:08:49 2024]
+rule variant_calling:
+    input: /staging/leuven/stg_00079/teaching/hg38_9/chr9.fa, 020.bwa/TLE66_N.bam, 020.bwa/TLE66_T.bam
+    output: 030.samtools/snps.vcf
+    jobid: 5
+    reason: Updated input files: 020.bwa/TLE66_T.bam, 020.bwa/TLE66_N.bam
+    resources: tmpdir=/tmp
+
+[Fri Sep  6 09:09:08 2024]
+Finished job 5.
+1 of 4 steps (25%) done
+Select jobs to execute...
+
+[Fri Sep  6 09:09:08 2024]
+rule variant_cleanup:
+    input: /staging/leuven/stg_00079/teaching/hg38_9/chr9.fa, 030.samtools/snps.vcf
+    output: 040.cleaned/snps.cleaned.vcf
+    jobid: 4
+    reason: Input files updated by another job: 030.samtools/snps.vcf
+    resources: tmpdir=/tmp
+
+[Fri Sep  6 09:09:08 2024]
+Finished job 4.
+2 of 4 steps (50%) done
+Select jobs to execute...
+
+[Fri Sep  6 09:09:08 2024]
+rule snpeff:
+    input: 040.cleaned/snps.cleaned.vcf
+    output: 050.snpeff/snps.annotated.vcf, 050.snpeff/snpEff_summary.html, 050.snpeff/snpEff_genes.txt
+    log: 050.snpeff/snakemake.err
+    jobid: 3
+    reason: Input files updated by another job: 040.cleaned/snps.cleaned.vcf
+    resources: tmpdir=/tmp
+
+[Fri Sep  6 09:09:48 2024]
+Finished job 3.
+3 of 4 steps (75%) done
+Select jobs to execute...
+
+[Fri Sep  6 09:09:48 2024]
+localrule all:
+    input: 010.fastqc/TLE66_N_fastqc.zip, 010.fastqc/TLE66_T_fastqc.zip, 050.snpeff/snps.annotated.vcf
+    jobid: 0
+    reason: Input files updated by another job: 050.snpeff/snps.annotated.vcf
+    resources: tmpdir=/tmp
+
+[Fri Sep  6 09:09:48 2024]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: .snakemake/log/2024-09-06T090824.834149.snakemake.log

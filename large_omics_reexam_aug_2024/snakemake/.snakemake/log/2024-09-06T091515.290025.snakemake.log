@@ -1,0 +1,3 @@
+NameError in file /vsc-hard-mounts/leuven-data/362/vsc36251/large_omics_reexam_aug_2024/snakemake/Snakefile, line 115:
+name 'phastcons_db' is not defined
+  File "/vsc-hard-mounts/leuven-data/362/vsc36251/large_omics_reexam_aug_2024/snakemake/Snakefile", line 115, in <module>
